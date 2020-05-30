@@ -7,6 +7,9 @@
   "scripts": {
     "build": "rollup -c"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "MIT",
   "peerDependencies": {
@@ -29,5 +32,8 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^6.1.0"
+  },
+  "dependencies": {
+    "styled-system": "^5.1.5"
   }
 }
