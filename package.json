@@ -1,0 +1,28 @@
+{
+  "name": "swtch-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:storybook": "start-storybook",
+    "build:all": "lerna run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.1",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "lerna": "^3.22.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "storybook": "^5.3.19"
+  },
+  "dependencies": {
+    "@styled-system/props": "^5.1.5",
+    "styled-normalize": "^8.0.7",
+    "styled-system": "^5.1.5",
+    "styled-components": "^5.1.1"
+  }
+}
