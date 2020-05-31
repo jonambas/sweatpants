@@ -1,12 +1,12 @@
 # Welcome to sweatpants 🙂
 
-#### What is this
+### What is this?
 
 Sweatpants is a themable and lightweight React component library as a thin layer on top of [styled-system](https://styled-system.com/) and [styled-components](https://styled-components.com/).
 
 This library is built to speed up your workflow by giving you a few components to work with.
 
-##### The components, **so far**
+**The components, so far**
 
 - **Theme** - The styled-components theme provider
 - **Box** - A primitive component with access to your theme
@@ -16,9 +16,9 @@ This library is built to speed up your workflow by giving you a few components t
 
 ---
 
-#### How to use
+### How to use
 
-###### First install what you need with npm
+**First install what you need with npm**
 
 ```bash
 # This theme provider is required to use any of the components
@@ -28,7 +28,7 @@ npm i @sweatpants/theme --save
 npm i @sweatpants/box @sweatpants/stack --save
 ```
 
-###### Wrap your code with the theme
+**Wrap your code with the theme**
 
 ```js
 import Theme from '@sweatpants/theme';
@@ -38,7 +38,7 @@ import Theme from '@sweatpants/theme';
 </Theme>;
 ```
 
-###### Creating your theme
+**Creating your theme**
 
 Themeing is optional, and the components will work out of the box with non-themed values. However, Sweatpants includes `styled-system` and `styled-components` with a default theme which you can extend:
 
@@ -68,23 +68,22 @@ To extend this theme, pass a `theme` object as a prop to the `<Theme>` component
 ```js
 <Theme
   theme={{
-    theme={{
-      space: {
-        big: "4rem",
-        medium: "1rem",
-        small: "0.5rem"
+    space: {
+      big: "4rem",
+      medium: "1rem",
+      small: "0.5rem"
+    },
+    {
+      colors: {
+        blue: '#0000ff',
+        red: '#ff0000'
       },
-      {
-        colors: {
-          blue: '#0000ff',
-          red: '#ff0000'
-        },
-      }
+    }
   }}
 />
 ```
 
-###### Using your theme
+**Using your theme**
 
 Your theme is now accessible with the `Box` component:
 
@@ -92,12 +91,14 @@ Your theme is now accessible with the `Box` component:
 <Box margin="medium" color="blue" />
 ```
 
-#### Component API
+---
+
+### Component API
 
 _coming soon_
 
 ---
 
-##### About
+###### About
 
-Created by [jonambas](https://jonambas.com) 😊 because I hated setting this up in every side-project.
+<small>Created by [jonambas](https://jonambas.com) 😊 because I hated setting this up in every side-project.</small>
