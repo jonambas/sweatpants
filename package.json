@@ -1,5 +1,5 @@
 {
-  "name": "swtch-ui",
+  "name": "sweatpants",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,16 @@
     "start:storybook": "start-storybook",
     "build:all": "lerna run build"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonambas/sweatpants.git"
+  },
+  "author": "Jon Ambas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonambas/sweatpants/issues"
+  },
+  "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
     "@babel/core": "^7.10.1",
     "@storybook/react": "^5.3.19",
