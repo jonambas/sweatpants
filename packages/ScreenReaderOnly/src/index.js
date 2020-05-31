@@ -9,7 +9,7 @@ const StyledScreenReaderOnly = styled.span`
 const ScreenReaderOnly = React.forwardRef(function ScreenReaderOnly(props, ref) {
   const { children, as, id } = props;
   return (
-    <StyledScreenReaderOnly id={id} as={as}>
+    <StyledScreenReaderOnly id={id} as={as} ref={ref}>
       {children}
     </StyledScreenReaderOnly>
   );
