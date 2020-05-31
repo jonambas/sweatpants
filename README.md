@@ -8,15 +8,15 @@ This library is built to speed up your workflow by giving you a few components t
 
 ##### The components, **so far**
 
-- Theme - The styled-components theme provider
-- Box - A primitive component with access to your theme
-- Stack - A layout component which vertically stacks its children
-- Inline - A layout component which inline-wraps its children
-- ScreenReaderOnly - A component that visually hides its contents
+- **Theme** - The styled-components theme provider
+- **Box** - A primitive component with access to your theme
+- **Stack** - A layout component which vertically stacks its children
+- **Inline** - A layout component which inline-wraps its children
+- **ScreenReaderOnly** - A component that visually hides its contents
 
 ---
 
-How to use
+#### How to use
 
 ###### First install what you need with npm
 
@@ -40,7 +40,7 @@ import Theme from '@sweatpants.theme';
 
 ###### Creating your theme
 
-Sweatpants includes `styled-system` and `styled-components` with a default theme:
+Themeing is optional, and the components will work out of the box with non-themed values. However, Sweatpants includes `styled-system` and `styled-components` with a default theme which you can extend:
 
 ```js
 radii: {
@@ -91,6 +91,10 @@ Your theme is now accessible with the `Box` component:
 ```js
 <Box margin="medium" color="blue" />
 ```
+
+#### Component API
+
+_coming soon_
 
 ---
 
