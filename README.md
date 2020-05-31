@@ -31,7 +31,7 @@ npm i @sweatpants/box @sweatpants/stack --save
 ###### Wrap your code with the theme
 
 ```js
-import Theme from '@sweatpants.theme';
+import Theme from '@sweatpants/theme';
 
 <Theme>
   <YourCode />
