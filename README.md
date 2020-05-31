@@ -2,7 +2,7 @@
 
 ### What is this?
 
-Sweatpants is a themable and lightweight React component library as a thin layer on top of [styled-system](https://styled-system.com/) and [styled-components](https://styled-components.com/).
+Sweatpants is a themable and lightweight React component library and is a thin layer on top of [styled-system](https://styled-system.com/) and [styled-components](https://styled-components.com/).
 
 This library is built to speed up your workflow by giving you a few components to work with.
 
