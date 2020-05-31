@@ -1,5 +1,5 @@
 {
-  "name": "@sweatpants/stack",
+  "name": "@sweatpants/screenreaderonly",
   "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",

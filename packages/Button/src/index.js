@@ -41,11 +41,19 @@ const Button = React.forwardRef(function Button(props, ref) {
     children,
     className,
     disabled,
+    id,
     isExternalLink,
     href,
     onClick,
     onFocus,
     onBlur,
+    onMouseDown,
+    onMouseEnter,
+    onMouseLeave,
+    onMouseMove,
+    onMouseOver,
+    onMouseOut,
+    mouseup,
     target,
     title,
     type = 'button',
@@ -60,10 +68,18 @@ const Button = React.forwardRef(function Button(props, ref) {
       as={as}
       className={className}
       disabled={disabled}
+      id={id}
       href={href}
       onClick={onClick}
       onFocus={onFocus}
       onBlur={onBlur}
+      onMouseDown={onMouseDown}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onMouseMove={onMouseMove}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      mouseup={mouseup}
       target={isExternalLink ? '_blank' : target}
       rel={isExternalLink ? 'noopener noreferrer' : rel}
       title={title}

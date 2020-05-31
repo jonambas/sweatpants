@@ -26,7 +26,7 @@ const Child = styled.div`
 `;
 
 const Stack = React.forwardRef(function Stack(props, ref) {
-  const { children, align, space } = props;
+  const { children, id, align, space } = props;
   const items = React.Children.toArray(children);
 
   if (items.length <= 1 && !align) {
@@ -34,7 +34,7 @@ const Stack = React.forwardRef(function Stack(props, ref) {
   }
 
   return (
-    <div>
+    <div id={id} ref={ref}>
       {items.map((child, i) => (
         <Child key={i} alignment={align} gutter={i < items.length - 1 ? space : null}>
           {child}
