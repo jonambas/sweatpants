@@ -16,6 +16,84 @@ This library is built to speed up your workflow by giving you a few components t
 
 ---
 
+How to use
+
+###### First install what you need with npm
+
+```bash
+# This theme provider is required to use any of the components
+npm i @sweatpants/theme --save
+
+# And install what you need
+npm i @sweatpants/box @sweatpants/stack --save
+```
+
+###### Wrap your code with the theme
+
+```js
+import Theme from '@sweatpants.theme';
+
+<Theme>
+  <YourCode />
+</Theme>;
+```
+
+###### Creating your theme
+
+Sweatpants includes `styled-system` and `styled-components` with a default theme:
+
+```js
+radii: {
+  default: '0px'
+},
+colors: {
+  background: '#fff',
+  foreground: '#000',
+  accent: '#1273e6'
+},
+fonts: {
+  sans: "'Calibre', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
+  mono: "'SFMono-Regular', Monaco, Consolas, 'Lucida Console', monospace"
+},
+fontSizes: {
+  default: '16px'
+}
+```
+
+To extend this theme, pass a `theme` object as a prop to the `<Theme>` component. For more information on theming see:
+
+- [styled-components theming documentation](https://styled-components.com/docs/advanced)
+- [styled-system table reference](https://styled-system.com/table)
+
+```js
+<Theme
+  theme={{
+    theme={{
+      space: {
+        big: "4rem",
+        medium: "1rem",
+        small: "0.5rem"
+      },
+      {
+        colors: {
+          blue: '#0000ff',
+          red: '#ff0000'
+        },
+      }
+  }}
+/>
+```
+
+###### Using your theme
+
+Your theme is now accessible with the `Box` component:
+
+```js
+<Box margin="medium" color="blue" />
+```
+
+---
+
 ##### About
 
-Created by [jonambas](https://jonambas.com) 😊
+Created by [jonambas](https://jonambas.com) 😊 because I hated setting this up in every side-project.
