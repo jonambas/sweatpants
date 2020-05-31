@@ -75,20 +75,21 @@ To extend this theme, pass a `theme` object as a prop to the `<Theme>` component
     },
     {
       colors: {
-        blue: '#0000ff',
-        red: '#ff0000'
-      },
-    }
+      blue: '#0000ff',
+      red: '#ff0000'
+    },
   }}
 />
 ```
 
 **Using your theme**
 
-Your theme is now accessible with the `Box` component:
+Your theme is now accessible:
 
 ```js
-<Box margin="medium" color="blue" />
+<Stack space="big">
+  <Box color="blue" />
+</Stack>
 ```
 
 ---
