@@ -2,8 +2,8 @@ import React from 'react';
 import * as storybook from '@storybook/react';
 // import { setDefaults } from '@storybook/addon-info';
 // import { setOptions } from '@storybook/addon-options';
-import Box from '@swtch-ui/box';
-import ThemeProvider from '@swtch-ui/themeprovider';
+import Box from '@sweatpants/box';
+import ThemeProvider from '@sweatpants/theme';
 
 // setOptions({
 //   theme: {

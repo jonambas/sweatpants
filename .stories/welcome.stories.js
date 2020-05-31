@@ -1,13 +1,15 @@
 import React from 'react';
-import Box from '@swtch-ui/box';
-import Button from '@swtch-ui/button';
-import Stack from '@swtch-ui/stack';
-import Inline from '@swtch-ui/inline';
+import Box from '@sweatpants/box';
+import Button from '@sweatpants/button';
+import Stack from '@sweatpants/stack';
+import Inline from '@sweatpants/inline';
+import ScreenReaderOnly, { hidden } from '@sweatpants/screenreaderonly';
 
 export default { title: 'testing' };
-
+console.log({ hidden });
 export const testRoom = () => (
   <Box>
+    <ScreenReaderOnly>hey</ScreenReaderOnly>
     <Stack space="5rem" align="center">
       <Box>
         <Button width="100" color="#000" size="100px">

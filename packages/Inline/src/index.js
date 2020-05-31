@@ -48,11 +48,11 @@ const Child = styled.div`
 `;
 
 const Inline = React.forwardRef(function Inline(props, ref) {
-  const { children, align, space } = props;
+  const { children, id, align, space } = props;
   const items = React.Children.toArray(children);
 
   return (
-    <OuterWrapper gutter={space} ref={ref}>
+    <OuterWrapper id={id} gutter={space} ref={ref}>
       <InnerWrapper gutter={space} align={align}>
         {items.map((child, i) => (
           <Child key={i} pt={space} pl={space}>
