@@ -31,7 +31,7 @@ export const testRoom = () => (
     <Inline space="100">
       <Button color="#000">Test</Button>
       <Button color="#000">Test</Button>
-      <Button color="#000">dsafdf</Button>
+      <Button color="#000">df</Button>
       <Button color="#000">asdf</Button>
       <Button color="#000">Test</Button>
       <Button color="#000">asdfasdfasdf</Button>
