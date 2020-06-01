@@ -2,7 +2,7 @@
 
 ### What is this?
 
-Sweatpants is a themable and lightweight React component library and is a thin layer on top of [styled-system](https://styled-system.com/) and [styled-components](https://styled-components.com/).
+Sweatpants is a lightweight React component library and is a thin layer on top of [styled-system](https://styled-system.com/) and [styled-components](https://styled-components.com/).
 
 This library is built to speed up your workflow by giving you a few components to work with.
 
@@ -40,15 +40,11 @@ import Theme from '@sweatpants/theme';
 
 **Creating your theme**
 
-Themeing is optional, and the components will work out of the box with non-themed values. However, Sweatpants includes `styled-system` and `styled-components` with a default theme which you can extend:
+Themeing is optional, and the components will work out of the box with non-themed values - for example, hex colors and pixel values. However, Sweatpants includes `styled-system` and `styled-components` with a default theme which you can extend:
 
 ```js
-colors: {
-  background: '#fff',
-  foreground: '#000'
-},
 fonts: {
-  sans: "'Calibre', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
+  sans: "-apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
   mono: "'SFMono-Regular', Monaco, Consolas, 'Lucida Console', monospace"
 },
 fontSizes: {

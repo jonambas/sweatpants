@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { system } from 'styled-system';
+import { padding, system } from 'styled-system';
 
 // Negates children padding top
 // Overflow: auto is set here to prevent margin collapse
@@ -43,8 +43,7 @@ const InnerWrapper = styled('div')`
 `;
 
 const Child = styled.div`
-  padding-top: ${(props) => props.pt};
-  padding-left: ${(props) => props.pl};
+  ${padding}
 `;
 
 const Inline = React.forwardRef(function Inline(props, ref) {
