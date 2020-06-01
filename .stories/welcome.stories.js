@@ -3,14 +3,14 @@ import Box from '@sweatpants/box';
 import Button from '@sweatpants/button';
 import Stack from '@sweatpants/stack';
 import Inline from '@sweatpants/inline';
-import ScreenReaderOnly, { hidden } from '@sweatpants/screenreaderonly';
+import ScreenReaderOnly from '@sweatpants/screenreaderonly';
 
-export default { title: 'testing' };
-console.log({ hidden });
+export default { title: 'TestRoom' };
+
 export const testRoom = () => (
   <Box>
     <ScreenReaderOnly>hey</ScreenReaderOnly>
-    <Stack space="5rem" align="center">
+    <Stack space="100" align="center">
       <Box>
         <Button width="100" color="#000" size="100px">
           Test
@@ -28,7 +28,7 @@ export const testRoom = () => (
       </Box>
     </Stack>
     <Box my="4rem"></Box>
-    <Inline>
+    <Inline space="100">
       <Button color="#000">Test</Button>
       <Button color="#000">Test</Button>
       <Button color="#000">df</Button>

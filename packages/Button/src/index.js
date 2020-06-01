@@ -28,11 +28,22 @@ const Styled = styled.button.withConfig({
 })`
   ${system}
   border: none;
-  border-radius: ${(props) => props.theme.radii.default};
-  background: ${(props) => props.theme.colors.foreground};
-  color: ${(props) => props.theme.colors.background};
-  padding: 0.75rem 1.25rem;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: auto;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 `;
 
 const Button = React.forwardRef(function Button(props, ref) {
