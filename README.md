@@ -43,13 +43,9 @@ import Theme from '@sweatpants/theme';
 Themeing is optional, and the components will work out of the box with non-themed values. However, Sweatpants includes `styled-system` and `styled-components` with a default theme which you can extend:
 
 ```js
-radii: {
-  default: '0px'
-},
 colors: {
   background: '#fff',
-  foreground: '#000',
-  accent: '#1273e6'
+  foreground: '#000'
 },
 fonts: {
   sans: "'Calibre', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
