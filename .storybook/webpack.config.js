@@ -6,7 +6,7 @@ module.exports = async ({ config, mode }) => {
       // '@sweatpants/box': path.resolve(__dirname, '../packages/Box/src'),
       // '@sweatpants/button': path.resolve(__dirname, '../packages/Button/src'),
       '@sweatpants/inline': path.resolve(__dirname, '../packages/Inline/src/index.tsx'),
-      // '@sweatpants/stack': path.resolve(__dirname, '../packages/Stack/src'),
+      '@sweatpants/stack': path.resolve(__dirname, '../packages/Stack/src/index.tsx'),
       '@sweatpants/screenreaderonly': path.resolve(
         __dirname,
         '../packages/ScreenReaderOnly/src/index.tsx'

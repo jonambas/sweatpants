@@ -2,7 +2,21 @@ import React from 'react';
 import { system } from 'styled-system';
 import styled from 'styled-components';
 
-const Child = styled.div`
+type Alignment = 'center' | 'left' | 'right';
+
+interface StackItemProps {
+  alignment?: Alignment;
+  gutter?: string | null;
+}
+
+export interface StackProps {
+  align?: Alignment;
+  children?: React.ReactNode;
+  id?: string;
+  space?: string;
+}
+
+const StackItem = styled.div<StackItemProps>`
   display: flex;
   flex-direction: column;
   ${() =>
@@ -25,7 +39,7 @@ const Child = styled.div`
     })}
 `;
 
-const Stack = React.forwardRef(function Stack(props, ref) {
+const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack(props, ref) {
   const { children, id, align, space } = props;
   const items = React.Children.toArray(children);
 
@@ -36,9 +50,9 @@ const Stack = React.forwardRef(function Stack(props, ref) {
   return (
     <div id={id} ref={ref}>
       {items.map((child, i) => (
-        <Child key={i} alignment={align} gutter={i < items.length - 1 ? space : null}>
+        <StackItem key={i} alignment={align} gutter={i < items.length - 1 ? space : null}>
           {child}
-        </Child>
+        </StackItem>
       ))}
     </div>
   );
