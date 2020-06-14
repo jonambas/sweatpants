@@ -18,6 +18,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "pretty": true,
+    "rootDirs": ["packages", "stories"],
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": true,
@@ -25,5 +26,7 @@
     "strictPropertyInitialization": true,
     "stripInternal": true,
     "target": "es5"
-  }
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "build", "scripts"]
 }
