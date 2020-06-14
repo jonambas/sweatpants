@@ -1,17 +1,20 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript2';
 
 export default ({ module, main }) => ({
-  input: 'src/index.js',
+  input: 'src/index.tsx',
   output: [
     {
       file: module,
-      format: 'esm'
+      format: 'esm',
+      sourcemap: true
     },
     {
       file: main,
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: true
     }
   ],
   external: [
@@ -24,6 +27,7 @@ export default ({ module, main }) => ({
   ],
   plugins: [
     resolve(),
+    typescript(),
     babel({
       babelrc: false,
       babelHelpers: 'bundled',

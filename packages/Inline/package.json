@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "publishConfig": {
     "access": "public"
@@ -26,12 +27,15 @@
     "@babel/preset-react": "^7.10.1",
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "@types/styled-system": "^5.1.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.11.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^6.1.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "styled-system": "^5.1.5"
