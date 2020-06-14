@@ -28,9 +28,16 @@
     "storybook": "^5.3.19"
   },
   "dependencies": {
+    "@storybook/preset-typescript": "^3.0.0",
     "@styled-system/props": "^5.1.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.0",
+    "@types/styled-system": "^5.1.9",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
     "styled-system": "^5.1.5",
-    "styled-components": "^5.1.1"
+    "typescript": "^3.9.5"
   }
 }
