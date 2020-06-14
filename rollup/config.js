@@ -8,11 +8,13 @@ export default ({ module, main }) => ({
   output: [
     {
       file: module,
-      format: 'esm'
+      format: 'esm',
+      sourcemap: true
     },
     {
       file: main,
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: true
     }
   ],
   external: [

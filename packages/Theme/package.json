@@ -32,7 +32,9 @@
     "rollup": "^2.11.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^6.1.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "styled-normalize": "^8.0.7"

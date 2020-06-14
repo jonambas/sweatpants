@@ -3,7 +3,10 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
+    "baseUrl": ".",
     "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist",
     "emitDecoratorMetadata": false,
     "esModuleInterop": true,
     "experimentalDecorators": false,
@@ -18,15 +21,14 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "pretty": true,
-    "rootDirs": ["packages", "stories"],
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "es5"
-  },
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+    "target": "es5",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["react"]
+  }
 }
