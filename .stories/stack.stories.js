@@ -1,5 +1,6 @@
 import React from 'react';
 import Stack from '@sweatpants/stack';
+import Box from '@sweatpants/box';
 import Theme from '@sweatpants/theme';
 
 export default { title: 'Layout|Stack' };
@@ -7,10 +8,18 @@ export default { title: 'Layout|Stack' };
 export const stack = () => (
   <Theme>
     <Stack space="1rem" align="center">
-      <div>Foo Bar</div>
-      <div>Bar</div>
-      <div>Baz Foo Bar</div>
-      <div>Foo Bar</div>
+      <Box bg="#cce3ff" p="1rem">
+        Foo Bar
+      </Box>
+      <Box bg="#cce3ff" p="1rem">
+        Bar
+      </Box>
+      <Box bg="#cce3ff" p="1rem">
+        Baz Foo Bar
+      </Box>
+      <Box bg="#cce3ff" p="1rem">
+        Foo Bar
+      </Box>
     </Stack>
   </Theme>
 );

@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = async ({ config, mode }) => {
   config.resolve = {
     alias: {
-      // '@sweatpants/box': path.resolve(__dirname, '../packages/Box/src'),
+      '@sweatpants/box': path.resolve(__dirname, '../packages/Box/src/index.tsx'),
       // '@sweatpants/button': path.resolve(__dirname, '../packages/Button/src'),
       '@sweatpants/inline': path.resolve(__dirname, '../packages/Inline/src/index.tsx'),
       '@sweatpants/stack': path.resolve(__dirname, '../packages/Stack/src/index.tsx'),

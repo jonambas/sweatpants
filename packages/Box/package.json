@@ -35,6 +35,7 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
+    "@types/styled-system": "^5.1.9",
     "styled-system": "^5.1.5"
   }
 }
