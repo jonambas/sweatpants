@@ -32,10 +32,14 @@
     "rollup": "^2.11.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^6.1.0",
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "@styled-system/props": "^5.1.5",
+    "@types/styled-system": "^5.1.9",
     "styled-system": "^5.1.5"
   }
 }
