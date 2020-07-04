@@ -122,7 +122,6 @@ const Button = React.forwardRef<
     ...rest
   } = props;
   const userSystemProps = pick(rest);
-  console.log(userSystemProps);
   return (
     <StyledButton
       as={as}
