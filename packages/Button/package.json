@@ -33,6 +33,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5"
