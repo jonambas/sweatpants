@@ -15,7 +15,7 @@ interface ThemeProps {
 export interface SweatpantsProviderProps {
   children?: React.ReactNode;
   styleSheetManagerProps?: object;
-  theme: object;
+  theme?: object;
 }
 
 const baseTheme = {
