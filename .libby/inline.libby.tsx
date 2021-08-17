@@ -1,7 +1,7 @@
 import React from 'react';
 import Inline from '@sweatpants/inline';
 import Theme from '@sweatpants/theme';
-import { describe, add } from 'libby-react';
+import { describe, add } from '@sparkpost/libby-react';
 
 describe('Inline', () => {
   add('renders correctly', () => (
