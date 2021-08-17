@@ -60,21 +60,6 @@ export const buttonReset = `
 // Component
 //////////////////////
 
-interface SystemProps
-  extends BorderProps,
-    ColorProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    TypographyProps {}
-
-export interface ButtonProps extends SystemProps {
-  isExternalLink?: boolean;
-}
-
 const StyledButton = styled.button.withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) => !isSystemProp(prop) && defaultValidatorFn(prop)
 })`
@@ -82,67 +67,23 @@ const StyledButton = styled.button.withConfig({
   ${system}
 `;
 
-export interface ButtonProps
-  extends BorderProps,
-    ColorProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    TypographyProps {
-  as?: React.ElementType;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-}
+type SystemProps = BorderProps &
+  ColorProps &
+  FlexboxProps &
+  GridProps &
+  LayoutProps &
+  PositionProps &
+  ShadowProps &
+  SpaceProps &
+  TypographyProps;
 
 const Button = React.forwardRef<
   HTMLButtonElement,
-  ButtonProps & React.HTMLAttributes<HTMLButtonElement>
->(function Button(props, ref) {
-  const {
-    as,
-    children,
-    className,
-    disabled,
-    id,
-    onClick,
-    onFocus,
-    onBlur,
-    onMouseDown,
-    onMouseEnter,
-    onMouseLeave,
-    onMouseMove,
-    onMouseOver,
-    onMouseOut,
-    onMouseUp,
-    title,
-    type = 'button',
-    ...rest
-  } = props;
-  const userSystemProps = pick(rest);
+  SystemProps & React.ComponentPropsWithoutRef<'button'>
+>(function Button(props, userRef) {
+  const { children, title, type = 'button', ...rest } = props;
   return (
-    <StyledButton
-      as={as}
-      className={className}
-      disabled={disabled}
-      id={id}
-      onClick={onClick}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onMouseDown={onMouseDown}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onMouseMove={onMouseMove}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}
-      onMouseUp={onMouseUp}
-      title={title}
-      type={type}
-      ref={ref}
-      {...userSystemProps}
-    >
+    <StyledButton ref={userRef} {...rest}>
       {children}
     </StyledButton>
   );
