@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@sweatpants/button';
 import Theme from '@sweatpants/theme';
 import Stack from '@sweatpants/stack';
-import { describe, add } from 'libby-react';
+import { describe, add } from '@sparkpost/libby-react';
 
 describe('Button', () => {
   add('renders correctly', () => (

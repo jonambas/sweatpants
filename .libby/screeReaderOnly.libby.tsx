@@ -1,6 +1,6 @@
 import React from 'react';
 import ScreenReaderOnly from '@sweatpants/screenreaderonly';
-import { describe, add } from 'libby-react';
+import { describe, add } from '@sparkpost/libby-react';
 
 describe('ScreenReaderOnly', () => {
   add('renders visually hidden correctly', () => (
