@@ -60,16 +60,15 @@ export const buttonReset = `
 // Component
 //////////////////////
 
-interface SystemProps
-  extends BorderProps,
-    ColorProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    TypographyProps {}
+type SystemProps = BorderProps &
+  ColorProps &
+  FlexboxProps &
+  GridProps &
+  LayoutProps &
+  PositionProps &
+  ShadowProps &
+  SpaceProps &
+  TypographyProps;
 
 export interface ButtonProps extends SystemProps {
   isExternalLink?: boolean;
@@ -82,16 +81,7 @@ const StyledButton = styled.button.withConfig({
   ${system}
 `;
 
-export interface ButtonProps
-  extends BorderProps,
-    ColorProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    TypographyProps {
+export interface ButtonProps extends SystemProps {
   as?: React.ElementType;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
