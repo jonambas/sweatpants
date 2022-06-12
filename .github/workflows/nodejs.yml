@@ -1,10 +1,10 @@
-name: Build
+name: Build Packages
 
 on: [push]
 
 jobs:
   build:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: [ubuntu-latest, macos-11]
 
     strategy:
       matrix:
@@ -16,9 +16,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: CI and Build
-        run: |
-          npm ci
-          npm run build
+
+      - name: Clean Install
+        run: npm ci
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
         env:
           CI: true
