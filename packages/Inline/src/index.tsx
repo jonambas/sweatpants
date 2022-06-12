@@ -26,17 +26,17 @@ function negativeVal(value: any, scale?: any) {
 // Negates children padding top
 // Overflow: auto is set here to prevent margin collapse
 // If this becomes flakey, padding-top: 1px is also an option
-const OuterWrapper = styled('div')<Gutter>`
+const OuterWrapper = styled('div') <Gutter>`
   &:before {
     display: block;
     content: '';
     ${system({
-      gutter: {
-        property: 'marginTop',
-        scale: 'space',
-        transform: negativeVal
-      }
-    })}
+  gutter: {
+    property: 'marginTop',
+    scale: 'space',
+    transform: negativeVal
+  }
+})}
   }
 `;
 
@@ -45,22 +45,22 @@ const InnerWrapper = styled.div<Gutter & Align>`
   display: flex;
   flex-wrap: wrap;
   ${system({
-    gutter: {
-      property: 'marginLeft',
-      scale: 'space',
-      transform: negativeVal
-    }
-  })}
+  gutter: {
+    property: 'marginLeft',
+    scale: 'space',
+    transform: negativeVal
+  }
+})}
   ${system({
-    align: {
-      property: 'justifyContent',
-      defaultScale: {
-        center: 'center',
-        left: 'flex-start',
-        right: 'flex-end'
-      }
+  align: {
+    property: 'justifyContent',
+    defaultScale: {
+      center: 'center',
+      left: 'flex-start',
+      right: 'flex-end'
     }
-  })}
+  }
+})}
 `;
 
 ////////////////////
@@ -85,7 +85,7 @@ const Inline = React.forwardRef<HTMLDivElement, InlineProps>(function Inline(pro
       <InnerWrapper
         gutter={space}
         align={align}
-        //
+      //
       >
         {items.map((child, i) => (
           <Child
@@ -103,7 +103,4 @@ const Inline = React.forwardRef<HTMLDivElement, InlineProps>(function Inline(pro
 });
 
 Inline.displayName = 'Inline';
-Inline.defaultProps = {
-  space: '1rem'
-};
-export default Inline;
+export { Inline };

@@ -1,11 +1,11 @@
 import React from 'react';
-import Inline from '@sweatpants/inline';
-import Theme from '@sweatpants/theme';
+import { Inline } from '@sweatpants/inline';
+import { SweatpantsProvider } from '@sweatpants/theme';
 import { describe, add } from '@sparkpost/libby-react';
 
 describe('Inline', () => {
   add('renders correctly', () => (
-    <Theme>
+    <SweatpantsProvider>
       <Inline>
         <div>Foo Bar</div>
         <div>Bar</div>
@@ -23,6 +23,6 @@ describe('Inline', () => {
         <div>Foo Bar</div>
         <div>Bar</div>
       </Inline>
-    </Theme>
+    </SweatpantsProvider>
   ));
 });

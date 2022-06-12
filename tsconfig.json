@@ -1,9 +1,19 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@sweatpants/box": ["packages/Box/src/*"],
+      "@sweatpants/stack": ["packages/Stack/src/*"],
+      "@sweatpants/theme": ["packages/Theme/src/*"],
+      "@sweatpants/button": ["packages/Button/src/*"],
+      "@sweatpants/inline": ["packages/Inline/src/*"],
+      "@sweatpants/screenreaderonly": [
+        "packages/ScreenReaderOnly/src/*"
+      ]
+    },
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "baseUrl": ".",
     "declaration": true,
     "declarationDir": "dist/types",
     "outDir": "dist",
@@ -12,7 +22,7 @@
     "experimentalDecorators": false,
     "importHelpers": true,
     "jsx": "react",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": true,
@@ -27,8 +37,8 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "es5",
-    "typeRoots": ["./node_modules/@types", "./types"],
+    "target": "ES6",
     "types": ["react"]
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

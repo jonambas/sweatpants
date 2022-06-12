@@ -62,4 +62,4 @@ Stack.displayName = 'Stack';
 Stack.defaultProps = {
   space: '1rem'
 };
-export default Stack;
+export { Stack };

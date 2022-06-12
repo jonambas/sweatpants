@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const visuallyHidden: string = `
+const visuallyHidden: string = `
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   clip-path: inset(50%) !important;
@@ -26,7 +26,7 @@ const StyledScreenReaderOnly = styled.span`
 
 const ScreenReaderOnly = React.forwardRef<HTMLElement, ScreenReaderOnlyProps>(
   function ScreenReaderOnly(props, ref) {
-    const { children, as, id } = props;
+    const { children, as = 'span', id } = props;
     return (
       <StyledScreenReaderOnly id={id} as={as} ref={ref}>
         {children}
@@ -35,10 +35,5 @@ const ScreenReaderOnly = React.forwardRef<HTMLElement, ScreenReaderOnlyProps>(
   }
 );
 
-ScreenReaderOnly.defaultProps = {
-  as: 'span'
-};
-
 ScreenReaderOnly.displayName = 'ScreenReaderOnly';
-
-export default ScreenReaderOnly;
+export { ScreenReaderOnly, visuallyHidden };

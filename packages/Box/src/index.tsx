@@ -25,18 +25,18 @@ const system = compose(border, color, flexbox, grid, layout, position, shadow, s
 
 export interface BoxProps
   extends BorderProps,
-    ColorProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    TypographyProps {}
+  ColorProps,
+  FlexboxProps,
+  GridProps,
+  LayoutProps,
+  PositionProps,
+  ShadowProps,
+  SpaceProps,
+  TypographyProps { }
 
 const Box = styled.div<BoxProps>`
   ${system}
 `;
 
 Box.displayName = 'Box';
-export default Box;
+export { Box };

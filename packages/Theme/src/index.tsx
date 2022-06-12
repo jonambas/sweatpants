@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle, StyleSheetManager, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, StyleSheetManager, ThemeProvider, StyleSheetManagerProps } from 'styled-components';
 import normalize from 'styled-normalize';
 
 interface ThemeProps {
@@ -14,8 +14,8 @@ interface ThemeProps {
 
 export interface SweatpantsProviderProps {
   children?: React.ReactNode;
-  styleSheetManagerProps?: object;
-  theme?: object;
+  styleSheetManagerProps?: StyleSheetManagerProps;
+  theme?: Record<any, any>;
 }
 
 const baseTheme = {
@@ -55,4 +55,4 @@ function SweatpantsProvider(props: SweatpantsProviderProps) {
 
 SweatpantsProvider.displayName = 'SweatpantsProvider';
 
-export default SweatpantsProvider;
+export { SweatpantsProvider };

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { pick } from '@styled-system/props';
 import {
   border,
   color,
@@ -37,7 +36,7 @@ const systemPropNames = () =>
 const system = compose(...systemProps);
 const isSystemProp = (name: string) => name && systemPropNames().includes(name);
 
-export const buttonReset = `
+const buttonReset = `
   border: none;
   margin: 0;
   padding: 0;
@@ -90,4 +89,4 @@ const Button = React.forwardRef<
 });
 
 Button.displayName = 'Button';
-export default Button;
+export { Button, buttonReset };
