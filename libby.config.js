@@ -3,23 +3,15 @@ export default {
   openBrowser: true,
   port: 9000,
   title: 'Sweatpants',
-  layout: 'libby/layout.tsx',
-  backgrounds: {
-    default: 'white',
-    values: [
-      {
-        name: 'white',
-        value: '#ffffff'
-      },
-      {
-        name: 'gray',
-        value: '#ebf0f5'
-      }
-    ]
-  },
+  layout: '.libby/layout.tsx',
+  backgrounds: ['#ffffff', '#ebf0f5', '#2c353d'],
   vite: ({ root, resolve }) => ({
     resolve: {
       alias: {
+        'styled-components': resolve(
+          root,
+          'node_modules/styled-components'
+        ),
         '@sweatpants/button': resolve(
           root,
           'packages/Button/src/index.tsx'
