@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "rollup -c",
+    "postbuild": "tsc --p tsconfig.json",
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
@@ -14,29 +16,13 @@
   "author": "",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0",
     "styled-components": "^5.1.0"
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "@babel/core": "^7.10.1",
-    "@babel/preset-env": "^7.10.1",
-    "@babel/preset-react": "^7.10.1",
-    "@rollup/plugin-babel": "^5.0.2",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "rollup": "^2.11.2",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "styled-components": "^5.1.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "styled-components": "^5.1.1"
   },
   "dependencies": {
     "@types/styled-system": "^5.1.9",

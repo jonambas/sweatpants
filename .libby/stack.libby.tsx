@@ -1,12 +1,12 @@
 import React from 'react';
-import Stack from '@sweatpants/stack';
-import Box from '@sweatpants/box';
-import Theme from '@sweatpants/theme';
-import { describe, add } from 'libby-react';
+import { Stack } from '@sweatpants/stack';
+import { Box } from '@sweatpants/box';
+import { SweatpantsProvider } from '@sweatpants/theme';
+import { describe, add } from '@sparkpost/libby-react';
 
 describe('Stack', () => {
   add('renders correctly', () => (
-    <Theme>
+    <SweatpantsProvider>
       <Stack space="1rem" align="center">
         <Box bg="#cce3ff" p="1rem">
           Foo Bar
@@ -21,6 +21,6 @@ describe('Stack', () => {
           Foo Bar
         </Box>
       </Stack>
-    </Theme>
+    </SweatpantsProvider>
   ));
 });

@@ -1,4 +1,4 @@
 import pkg from './package.json';
-import generateConfig from '../../rollup/config';
+import generateConfig from '../../makeRollup';
 
 export default generateConfig(pkg);

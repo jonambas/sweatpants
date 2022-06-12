@@ -22,23 +22,41 @@ module.exports = {
     },
     resolve: {
       alias: {
-        '@sweatpants/box': path.resolve(__dirname, './packages/Box/src/index.tsx'),
-        // '@sweatpants/button': path.resolve(__dirname, './packages/Button/src/index.tsx'),
-        '@sweatpants/inline': path.resolve(__dirname, './packages/Inline/src/index.tsx'),
-        '@sweatpants/stack': path.resolve(__dirname, './packages/Stack/src/index.tsx'),
+        '@sweatpants/box': path.resolve(
+          __dirname,
+          './packages/Box/src/index.tsx'
+        ),
+        '@sweatpants/button': path.resolve(
+          __dirname,
+          './packages/Button/src/index.tsx'
+        ),
+        '@sweatpants/inline': path.resolve(
+          __dirname,
+          './packages/Inline/src/index.tsx'
+        ),
+        '@sweatpants/stack': path.resolve(
+          __dirname,
+          './packages/Stack/src/index.tsx'
+        ),
         '@sweatpants/screenreaderonly': path.resolve(
           __dirname,
           './packages/ScreenReaderOnly/src/index.tsx'
         ),
-        '@sweatpants/theme': path.resolve(__dirname, './packages/Theme/src/index.tsx'),
+        '@sweatpants/theme': path.resolve(
+          __dirname,
+          './packages/Theme/src/index.tsx'
+        ),
         react: path.resolve(__dirname, './node_modules/react'),
-        'styled-components': path.resolve(__dirname, './node_modules/styled-components')
+        'styled-components': path.resolve(
+          __dirname,
+          './node_modules/styled-components'
+        )
       }
-    },
-    externals: {
-      fs: 'commonjs fs',
-      console: 'commonjs console'
     }
+    //   externals: {
+    //     fs: 'commonjs fs',
+    //     console: 'commonjs console'
+    //   }
   }),
   backgrounds: {
     default: 'white',
