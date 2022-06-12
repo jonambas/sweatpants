@@ -9,7 +9,7 @@
     "build": "turbo run build",
     "change:make": "changeset",
     "change:version": "changeset version",
-    "change:publish": "npm run build && changeset publish"
+    "change:publish": "npm run build && changeset publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@sparkpost/libby-react": "../libby-react",
     "@types/eslint": "^8.4.3",
     "@types/estree": "^0.0.51",
     "@types/react": "^18.0.12",
