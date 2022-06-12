@@ -6,7 +6,10 @@
   "scripts": {
     "start": "libby start",
     "build:libby": "libby build",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "change:make": "changeset",
+    "change:version": "changeset version",
+    "change:publish": "npm run build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.23.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/eslint": "^8.4.3",
     "@types/estree": "^0.0.51",
