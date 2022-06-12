@@ -1,63 +1,9 @@
-const path = require('path');
-
-// libby.config.js
-module.exports = {
-  // Required
-  entries: () => require.context('./.libby/', true, /\.libby\.tsx$/),
-
-  // Optional
+export default {
   outputPath: 'dist',
   openBrowser: true,
   port: 9000,
   title: 'Sweatpants',
-  webpackConfig: () => ({
-    module: {
-      rules: [
-        {
-          test: /\.(ts|tsx)$/,
-          use: 'ts-loader',
-          exclude: /node_modules/
-        }
-      ]
-    },
-    resolve: {
-      alias: {
-        '@sweatpants/box': path.resolve(
-          __dirname,
-          './packages/Box/src/index.tsx'
-        ),
-        '@sweatpants/button': path.resolve(
-          __dirname,
-          './packages/Button/src/index.tsx'
-        ),
-        '@sweatpants/inline': path.resolve(
-          __dirname,
-          './packages/Inline/src/index.tsx'
-        ),
-        '@sweatpants/stack': path.resolve(
-          __dirname,
-          './packages/Stack/src/index.tsx'
-        ),
-        '@sweatpants/screenreaderonly': path.resolve(
-          __dirname,
-          './packages/ScreenReaderOnly/src/index.tsx'
-        ),
-        '@sweatpants/theme': path.resolve(
-          __dirname,
-          './packages/Theme/src/index.tsx'
-        ),
-        react: path.resolve(__dirname, './node_modules/react'),
-        'styled-components': path.resolve(
-          __dirname,
-          './node_modules/styled-components'
-        )
-      }
-    }
-    //   externals: {
-    //     fs: 'commonjs fs',
-    //     console: 'commonjs console'
-    //   }
-  }),
+  layout: 'libby/layout.tsx',
   backgrounds: {
     default: 'white',
     values: [
@@ -70,5 +16,35 @@ module.exports = {
         value: '#ebf0f5'
       }
     ]
-  }
+  },
+  vite: ({ root, resolve }) => ({
+    resolve: {
+      alias: {
+        '@sweatpants/button': resolve(
+          root,
+          'packages/Button/src/index.tsx'
+        ),
+        '@sweatpants/box': resolve(
+          root,
+          'packages/Box/src/index.tsx'
+        ),
+        '@sweatpants/inline': resolve(
+          root,
+          'packages/Inline/src/index.tsx'
+        ),
+        '@sweatpants/theme': resolve(
+          root,
+          'packages/Theme/src/index.tsx'
+        ),
+        '@sweatpants/screenreaderonly': resolve(
+          root,
+          'packages/ScreenReaderOnly/src/index.tsx'
+        ),
+        '@sweatpants/stack': resolve(
+          root,
+          'packages/Stack/src/index.tsx'
+        )
+      }
+    }
+  })
 };

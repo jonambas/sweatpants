@@ -22,10 +22,6 @@ import {
   TypographyProps
 } from 'styled-system';
 
-//////////////////////
-// Utils
-//////////////////////
-
 const systemProps = [border, color, flexbox, grid, layout, position, shadow, space, typography];
 const systemPropNames = () =>
   systemProps.reduce(
@@ -53,11 +49,8 @@ const buttonReset = `
     border: 0;
     padding: 0;
   }
+  cursor: pointer;
 `;
-
-//////////////////////
-// Component
-//////////////////////
 
 const StyledButton = styled.button.withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) => !isSystemProp(prop) && defaultValidatorFn(prop)
@@ -80,9 +73,9 @@ const Button = React.forwardRef<
   HTMLButtonElement,
   SystemProps & React.ComponentPropsWithoutRef<'button'>
 >(function Button(props, userRef) {
-  const { children, title, type = 'button', ...rest } = props;
+  const { children, type = 'button', ...rest } = props;
   return (
-    <StyledButton ref={userRef} {...rest}>
+    <StyledButton ref={userRef} type={type} {...rest}>
       {children}
     </StyledButton>
   );
