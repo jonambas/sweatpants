@@ -21,8 +21,22 @@ import {
   SpaceProps,
   TypographyProps
 } from 'styled-system';
+import {
+  polymorphicForwardRef,
+  PolymorphicComponentProps
+} from '@sweatpants/utils';
 
-const systemProps = [border, color, flexbox, grid, layout, position, shadow, space, typography];
+const systemProps = [
+  border,
+  color,
+  flexbox,
+  grid,
+  layout,
+  position,
+  shadow,
+  space,
+  typography
+];
 const systemPropNames = () =>
   systemProps.reduce(
     (acc, prop) => (prop.propNames ? [...acc, ...prop.propNames] : acc),
@@ -52,14 +66,7 @@ const buttonReset = `
   cursor: pointer;
 `;
 
-const StyledButton = styled.button.withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) => !isSystemProp(prop) && defaultValidatorFn(prop)
-})`
-  ${buttonReset}
-  ${system}
-`;
-
-type SystemProps = BorderProps &
+export type ButtonOwnProps = BorderProps &
   ColorProps &
   FlexboxProps &
   GridProps &
@@ -69,13 +76,28 @@ type SystemProps = BorderProps &
   SpaceProps &
   TypographyProps;
 
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  SystemProps & React.ComponentPropsWithoutRef<'button'>
->(function Button(props, userRef) {
-  const { children, type = 'button', ...rest } = props;
+export type ButtonProps<E = 'button'> = PolymorphicComponentProps<
+  E,
+  ButtonOwnProps
+>;
+
+const StyledButton = styled.button.withConfig<ButtonOwnProps & { color?: any }>(
+  {
+    shouldForwardProp: (prop, defaultValidatorFn) =>
+      !isSystemProp(prop) && defaultValidatorFn(prop)
+  }
+)`
+  ${buttonReset}
+  ${system}
+`;
+
+const Button = polymorphicForwardRef<'button', ButtonOwnProps>(function Button(
+  props,
+  userRef
+) {
+  const { as = 'button', children, type = 'button', ...rest } = props;
   return (
-    <StyledButton ref={userRef} type={type} {...rest}>
+    <StyledButton as={as} ref={userRef} type={type} {...rest}>
       {children}
     </StyledButton>
   );

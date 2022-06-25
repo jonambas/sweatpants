@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { padding, PaddingProps, system } from 'styled-system';
+import {
+  polymorphicForwardRef,
+  PolymorphicComponentProps
+} from '@sweatpants/utils';
 
 type Gutter = {
   gutter?: string | number | (string | number)[];
@@ -9,12 +13,6 @@ type Gutter = {
 type Align = {
   align?: 'center' | 'left' | 'right';
 };
-
-export interface InlineProps extends Align {
-  id?: string;
-  space?: string | number | (string | number)[];
-  children?: React.ReactNode;
-}
 
 function negativeVal(value: any, scale?: any) {
   if (!scale) {
@@ -26,17 +24,17 @@ function negativeVal(value: any, scale?: any) {
 // Negates children padding top
 // Overflow: auto is set here to prevent margin collapse
 // If this becomes flakey, padding-top: 1px is also an option
-const OuterWrapper = styled('div') <Gutter>`
+const OuterWrapper = styled.div<Gutter>`
   &:before {
     display: block;
     content: '';
     ${system({
-  gutter: {
-    property: 'marginTop',
-    scale: 'space',
-    transform: negativeVal
-  }
-})}
+      gutter: {
+        property: 'marginTop',
+        scale: 'space',
+        transform: negativeVal
+      }
+    })}
   }
 `;
 
@@ -45,55 +43,51 @@ const InnerWrapper = styled.div<Gutter & Align>`
   display: flex;
   flex-wrap: wrap;
   ${system({
-  gutter: {
-    property: 'marginLeft',
-    scale: 'space',
-    transform: negativeVal
-  }
-})}
-  ${system({
-  align: {
-    property: 'justifyContent',
-    defaultScale: {
-      center: 'center',
-      left: 'flex-start',
-      right: 'flex-end'
+    gutter: {
+      property: 'marginLeft',
+      scale: 'space',
+      transform: negativeVal
     }
-  }
-})}
+  })}
+  ${system({
+    align: {
+      property: 'justifyContent',
+      defaultScale: {
+        center: 'center',
+        left: 'flex-start',
+        right: 'flex-end'
+      }
+    }
+  })}
 `;
-
-////////////////////
 
 const Child = styled.div<PaddingProps>`
   ${padding}
 `;
 
-////////////////////
+export type InlineOwnProps = Align & {
+  id?: string;
+  space?: string | number | (string | number)[];
+  children?: React.ReactNode;
+};
 
-const Inline = React.forwardRef<HTMLDivElement, InlineProps>(function Inline(props, ref) {
-  const { children, id, align, space = '1rem' } = props;
+export type InlineProps<E = 'div'> = PolymorphicComponentProps<
+  E,
+  InlineOwnProps
+>;
+
+const Inline = polymorphicForwardRef<'div', InlineOwnProps>(function Inline(
+  props,
+  userRef
+) {
+  const { as = 'div', children, id, align, space = '1rem' } = props;
   const items = React.Children.toArray(children);
 
   return (
-    <OuterWrapper
-      id={id}
-      gutter={space}
-      //
-      ref={ref}
-    >
-      <InnerWrapper
-        gutter={space}
-        align={align}
-      //
-      >
+    <OuterWrapper as={as} id={id} gutter={space} ref={userRef}>
+      <InnerWrapper gutter={space} align={align}>
         {items.map((child, i) => (
-          <Child
-            //
-            key={i}
-            pt={space}
-            pl={space}
-          >
+          <Child key={i} pt={space} pl={space}>
             {child}
           </Child>
         ))}

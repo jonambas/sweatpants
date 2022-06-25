@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
@@ -27,6 +28,7 @@
     "styled-components": "5.3.5"
   },
   "dependencies": {
+    "@sweatpants/utils": "^0.0.6",
     "@styled-system/props": "^5.1.5",
     "@types/styled-system": "^5.1.9",
     "styled-system": "^5.1.5"

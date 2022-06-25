@@ -1,19 +1,16 @@
 import React from 'react';
 import { system } from 'styled-system';
 import styled from 'styled-components';
+import {
+  polymorphicForwardRef,
+  PolymorphicComponentProps
+} from '@sweatpants/utils';
 
 type Alignment = 'center' | 'left' | 'right';
 
 interface StackItemProps {
   alignment?: Alignment;
   gutter?: string | null;
-}
-
-export interface StackProps {
-  align?: Alignment;
-  children?: React.ReactNode;
-  id?: string;
-  space?: string;
 }
 
 const StackItem = styled.div<StackItemProps>`
@@ -39,8 +36,19 @@ const StackItem = styled.div<StackItemProps>`
     })}
 `;
 
-const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack(props, ref) {
-  const { children, id, align, space } = props;
+export type StackOwnProps = {
+  align?: Alignment;
+  id?: string;
+  space?: string;
+};
+
+export type StackProps<E = 'div'> = PolymorphicComponentProps<E, StackOwnProps>;
+
+const Stack = polymorphicForwardRef<'div', StackOwnProps>(function Stack(
+  props,
+  userRef
+) {
+  const { as: Elem = 'div', children, id, align, space = '1rem' } = props;
   const items = React.Children.toArray(children);
 
   if (items.length <= 1 && !align) {
@@ -48,18 +56,19 @@ const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack(props,
   }
 
   return (
-    <div id={id} ref={ref}>
+    <Elem id={id} ref={userRef}>
       {items.map((child, i) => (
-        <StackItem key={i} alignment={align} gutter={i < items.length - 1 ? space : null}>
+        <StackItem
+          key={i}
+          alignment={align}
+          gutter={i < items.length - 1 ? space : null}
+        >
           {child}
         </StackItem>
       ))}
-    </div>
+    </Elem>
   );
 });
 
 Stack.displayName = 'Stack';
-Stack.defaultProps = {
-  space: '1rem'
-};
 export { Stack };
