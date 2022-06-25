@@ -24,7 +24,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@sparkpost/libby-react": "../libby-react",
+    "@sparkpost/libby-react": "0.0.57",
     "@types/eslint": "^8.4.3",
     "@types/estree": "^0.0.51",
     "@types/react": "^18.0.12",
@@ -32,8 +32,8 @@
     "@types/styled-components": "^5.1.25",
     "@types/styled-system": "^5.1.15",
     "prettier": "^2.6.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.75.6",
     "rollup-plugin-esbuild": "^4.9.1",
@@ -56,8 +56,8 @@
     "packages/Theme"
   ],
   "overrides": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   },
   "engines": {
     "npm": "8.12.1"
