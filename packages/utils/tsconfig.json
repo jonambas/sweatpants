@@ -1,22 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@sweatpants/box": ["packages/Box/src"],
-      "@sweatpants/stack": ["packages/Stack/src"],
-      "@sweatpants/theme": ["packages/Theme/src"],
-      "@sweatpants/button": ["packages/Button/src"],
-      "@sweatpants/inline": ["packages/Inline/src"],
-      "@sweatpants/screenreaderonly": [
-        "packages/ScreenReaderOnly/src"
-      ],
-      "@sweatpants/utils": ["packages/utils/src"]
-    },
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "declaration": true,
-    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist",
     "outDir": "dist",
     "emitDecoratorMetadata": false,
     "esModuleInterop": true,
@@ -41,5 +31,6 @@
     "target": "ES6",
     "types": ["react"]
   },
+  "include": ["src/index.tsx"],
   "exclude": ["node_modules", "dist"]
 }

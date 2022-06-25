@@ -1,8 +1,13 @@
 import React from 'react';
-import { createGlobalStyle, StyleSheetManager, ThemeProvider, StyleSheetManagerProps } from 'styled-components';
+import {
+  createGlobalStyle,
+  StyleSheetManager,
+  ThemeProvider,
+  StyleSheetManagerProps
+} from 'styled-components';
 import normalize from 'styled-normalize';
 
-interface ThemeProps {
+type ThemeProps = {
   default: {
     fonts: {
       sans?: string;
@@ -10,19 +15,18 @@ interface ThemeProps {
     };
     fontSize: string;
   };
-}
+};
 
-export interface SweatpantsProviderProps {
+export type SweatpantsProviderProps = {
   children?: React.ReactNode;
   styleSheetManagerProps?: StyleSheetManagerProps;
   theme?: Record<any, any>;
-}
+};
 
 const baseTheme = {
   default: {
     fonts: {
-      sans:
-        "-apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
+      sans: "-apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, sans-serif",
       mono: "'SFMono-Regular', Monaco, Consolas, 'Lucida Console', monospace"
     },
     fontSize: '16px'
@@ -54,5 +58,4 @@ function SweatpantsProvider(props: SweatpantsProviderProps) {
 }
 
 SweatpantsProvider.displayName = 'SweatpantsProvider';
-
 export { SweatpantsProvider };

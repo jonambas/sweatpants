@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+  polymorphicForwardRef,
+  PolymorphicComponentProps
+} from '@sweatpants/utils';
 
 const visuallyHidden: string = `
   border: 0 !important;
@@ -14,17 +18,20 @@ const visuallyHidden: string = `
   word-wrap: normal !important;
 `;
 
-export interface ScreenReaderOnlyProps {
-  as?: React.ElementType;
-  children?: React.ReactNode;
+export type ScreenReaderOnlyOwnProps = {
   id?: string;
-}
+};
+
+export type ScreenReaderOnlyProps<E = 'div'> = PolymorphicComponentProps<
+  E,
+  ScreenReaderOnlyOwnProps
+>;
 
 const StyledScreenReaderOnly = styled.span`
   ${visuallyHidden}
 `;
 
-const ScreenReaderOnly = React.forwardRef<HTMLElement, ScreenReaderOnlyProps>(
+const ScreenReaderOnly = polymorphicForwardRef<'div', ScreenReaderOnlyOwnProps>(
   function ScreenReaderOnly(props, ref) {
     const { children, as = 'span', id } = props;
     return (
