@@ -24,7 +24,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@types/styled-system": "^5.1.9"
+    "@types/styled-system": "5.1.15"
   },
   "dependencies": {
     "styled-system": "^5.1.5"

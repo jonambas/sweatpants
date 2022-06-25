@@ -24,7 +24,7 @@
     "dist"
   ],
   "devDependencies": {
-    "styled-components": "^5.1.1"
+    "styled-components": "5.3.5"
   },
   "dependencies": {
     "@styled-system/props": "^5.1.5",
