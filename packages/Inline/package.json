@@ -8,8 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "postbuild": "tsc --p tsconfig.json",
-    "prepublishOnly": "npm run build"
+    "postbuild": "tsc --p tsconfig.json"
   },
   "publishConfig": {
     "access": "public"
