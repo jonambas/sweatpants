@@ -18,7 +18,8 @@ export default {
         '@sweatpants/theme': '/packages/Theme/src/index.tsx',
         '@sweatpants/screenreaderonly':
           '/packages/ScreenReaderOnly/src/index.tsx',
-        '@sweatpants/stack': '/packages/Stack/src/index.tsx'
+        '@sweatpants/stack': '/packages/Stack/src/index.tsx',
+        '@sweatpants/utils': '/packages/utils/src/index.tsx'
       }
     }
   })
