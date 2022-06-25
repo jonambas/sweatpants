@@ -1,41 +1,24 @@
+/**
+ * @type {import('@sparkpost/libby-react').Config}
+ */
 export default {
+  entries: () => require.context('./.libby', true, /\.libby\.tsx$/),
   outputPath: 'dist',
   openBrowser: true,
   port: 9000,
   title: 'Sweatpants',
   layout: '.libby/layout.tsx',
   backgrounds: ['#ffffff', '#ebf0f5', '#2c353d'],
-  vite: ({ root, resolve }) => ({
+  webpack: () => ({
     resolve: {
       alias: {
-        'styled-components': resolve(
-          root,
-          'node_modules/styled-components'
-        ),
-        '@sweatpants/button': resolve(
-          root,
-          'packages/Button/src/index.tsx'
-        ),
-        '@sweatpants/box': resolve(
-          root,
-          'packages/Box/src/index.tsx'
-        ),
-        '@sweatpants/inline': resolve(
-          root,
-          'packages/Inline/src/index.tsx'
-        ),
-        '@sweatpants/theme': resolve(
-          root,
-          'packages/Theme/src/index.tsx'
-        ),
-        '@sweatpants/screenreaderonly': resolve(
-          root,
-          'packages/ScreenReaderOnly/src/index.tsx'
-        ),
-        '@sweatpants/stack': resolve(
-          root,
-          'packages/Stack/src/index.tsx'
-        )
+        '@sweatpants/button': '/packages/Button/src/index.tsx',
+        '@sweatpants/box': '/packages/Box/src/index.tsx',
+        '@sweatpants/inline': '/packages/Inline/src/index.tsx',
+        '@sweatpants/theme': '/packages/Theme/src/index.tsx',
+        '@sweatpants/screenreaderonly':
+          '/packages/ScreenReaderOnly/src/index.tsx',
+        '@sweatpants/stack': '/packages/Stack/src/index.tsx'
       }
     }
   })
