@@ -50,17 +50,9 @@ export type BoxOwnProps = BorderProps &
 
 export type BoxProps<E = 'div'> = PolymorphicComponentProps<E, BoxOwnProps>;
 
-const StyledBox = styled.div<BoxOwnProps & { color?: any }>`
+const Box = styled.div<BoxOwnProps>`
   ${system}
 `;
-
-const Box = polymorphicForwardRef<'div', BoxOwnProps>(function Box(
-  props,
-  userRef
-) {
-  const { as = 'div', ...rest } = props;
-  return <StyledBox as={as} ref={userRef} {...rest} />;
-});
 
 Box.displayName = 'Box';
 export { Box };
