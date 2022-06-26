@@ -1,6 +1,9 @@
 import React from 'react';
-import { Box } from '@sweatpants/box';
+import { Box, BoxOwnProps } from '@sweatpants/box';
 import { describe, add } from '@sparkpost/libby-react';
+import styled from 'styled-components';
+
+const Nested = styled(Box)<BoxOwnProps>``;
 
 describe('Box', () => {
   add('renders correctly', () => (
@@ -12,5 +15,18 @@ describe('Box', () => {
         As a link
       </Box>
     </>
+  ));
+
+  add('nested component', () => (
+    <Nested
+      as="a"
+      display="block"
+      p="1rem"
+      mb="1rem"
+      borderRadius="8px"
+      border="test"
+    >
+      Foo Bar
+    </Nested>
   ));
 });
