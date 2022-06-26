@@ -1,5 +1,11 @@
 # @sweatpants/box
 
+## 0.0.8
+
+### Patch Changes
+
+- 357b817: Fixes as prop propagation when using styled-components
+
 ## 0.0.7
 
 ### Patch Changes
