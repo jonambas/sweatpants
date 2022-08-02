@@ -24,7 +24,7 @@
   "devDependencies": {
     "@changesets/cli": "2.23.1",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@sparkpost/libby-react": "0.0.57",
+    "@sparkpost/libby-react": "0.0.58",
     "@types/eslint": "8.4.5",
     "@types/estree": "0.0.52",
     "@types/react": "18.0.15",
