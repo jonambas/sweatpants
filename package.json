@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
-    "@changesets/cli": "2.23.1",
+    "@changesets/cli": "2.26.2",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@sparkpost/libby-react": "0.0.57",
     "@types/eslint": "8.4.5",
