@@ -1,6 +1,6 @@
 {
-  "name": "@sweatpants/box",
-  "version": "0.0.8",
+  "name": "@sweatpants/component",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -27,8 +27,6 @@
     "styled-components": "5.3.5"
   },
   "dependencies": {
-    "@sweatpants/utils": "^0.0.7",
-    "@types/styled-system": "^5.1.9",
-    "styled-system": "^5.1.5"
+    "styled-normalize": "^8.0.7"
   }
 }
