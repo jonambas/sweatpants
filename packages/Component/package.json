@@ -24,7 +24,7 @@
     "dist"
   ],
   "devDependencies": {
-    "styled-components": "5.3.5"
+    "styled-components": "5.3.11"
   },
   "dependencies": {
     "styled-normalize": "^8.0.7"
