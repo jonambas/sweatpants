@@ -8,6 +8,7 @@ export default {
   port: 8080,
   inspect: true,
   layout: './libra/DefaultLayout.tsx',
+  outDir: 'dist',
   viteConfig: () => {
     return {
       resolve: {
@@ -16,7 +17,7 @@ export default {
         }
       },
       optimizeDeps: {
-        exclude: ['@sweatpants/react', '@sweatpants/preset', '@/styles']
+        exclude: ['@sweatpants/react', '@sweatpants/preset', '@styles/css']
       }
     };
   }
