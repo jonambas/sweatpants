@@ -1,13 +1,14 @@
 {
-  "name": "@sweatpants/component",
+  "name": "@sweatpants/react",
   "version": "0.0.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "prebuild": "rimraf dist && rimraf styles && panda codegen",
+    "build": "rollup -c && panda cssgen -c panda.config.ts --outfile dist/styles.css",
     "postbuild": "tsc --p tsconfig.json"
   },
   "publishConfig": {
@@ -17,16 +18,14 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "styled-components": "^5.1.0"
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "files": [
+    "src",
     "dist"
   ],
   "devDependencies": {
-    "styled-components": "5.3.5"
-  },
-  "dependencies": {
-    "styled-normalize": "^8.0.7"
+    "@pandacss/dev": "^0.11.1",
+    "@sweatpants/panda-preset": "^0.0.7"
   }
 }
