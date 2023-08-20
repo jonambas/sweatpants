@@ -7,7 +7,6 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
     "prebuild": "rimraf dist && rimraf styles && panda codegen",
     "build": "rollup -c && panda cssgen -c panda.config.ts --outfile dist/styles.css",
     "postbuild": "tsc --p tsconfig.json"
