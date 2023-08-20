@@ -22,7 +22,7 @@ export const makeConfig = ({
   ],
   external: [
     'react/jsx-runtime',
-    '@sweatpants/styled-system',
+    '@sweatpants/panda-preset',
     '@styles/css',
     ...Object.keys(pkg.devDependencies),
     ...Object.keys(dependencies ?? {})
