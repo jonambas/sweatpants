@@ -1,8 +1,10 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import { cva, cx } from '@styles/css';
 import { useButtonGroup } from '../button-group/ButtonGroup.context';
+import { Slot } from '../slot/Slot';
 
 export type ButtonProps = ComponentPropsWithRef<'button'> & {
+  asChild?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg';
   variant?: 'primary' | 'destructive' | 'neutral' | 'bare';
   disabled?: boolean;
@@ -149,6 +151,7 @@ const styles = cva({
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
   const {
+    asChild,
     type = 'button',
     variant = 'neutral',
     size = 'md',
@@ -164,8 +167,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
     size: group?.size || size
   };
 
+  const Element = asChild ? Slot : 'button';
+
   return (
-    <button
+    <Element
       ref={userRef}
       type={type}
       className={cx(styles({ ...finalStyles, disabled }), className)}

@@ -97,4 +97,14 @@ directory('Button', () => {
       </div>
     );
   });
+
+  add('Slot as anchor', () => {
+    return (
+      <Button asChild variant="primary">
+        <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+          Link to google.com
+        </a>
+      </Button>
+    );
+  });
 });
