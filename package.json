@@ -33,8 +33,8 @@
     "typescript": "^5.1.6"
   },
   "workspaces": [
-    "packages/panda-preset",
-    "packages/react"
+    "packages/react",
+    "packages/panda-preset"
   ],
   "overrides": {
     "react": "18.2.0",
