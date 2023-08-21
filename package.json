@@ -7,7 +7,10 @@
     "prepare": "npm run build:packages && panda codegen",
     "start": "libra start",
     "build:libra": "libra build",
-    "build:packages": "npm run build --workspaces"
+    "build:packages": "npm run build --workspaces",
+    "change": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@pandacss/dev": "0.11.1",
     "@sweatpants/libra": "0.0.16",
     "@types/react": "18.2.20",
