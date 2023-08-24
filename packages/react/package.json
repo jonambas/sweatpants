@@ -1,6 +1,6 @@
 {
   "name": "@sweatpants/react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -26,7 +26,7 @@
   ],
   "devDependencies": {
     "@pandacss/dev": "^0.11.1",
-    "@sweatpants/panda-preset": "^0.1.0"
+    "@sweatpants/panda-preset": "^0.2.0"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2"
