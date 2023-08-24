@@ -3,14 +3,13 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 
 export type CardProps = ComponentPropsWithRef<'div'> & {
   padding?: 'loose' | 'normal' | 'tight' | 'none';
-  variant?: 'white' | 'neutral';
+  kind?: 'white' | 'neutral';
 };
 
 const styles = cva({
   base: {
     borderRadius: 'md'
   },
-
   variants: {
     padding: {
       none: { padding: '0' },
@@ -18,7 +17,7 @@ const styles = cva({
       normal: { padding: '5' },
       loose: { padding: '7' }
     },
-    variant: {
+    kind: {
       white: {
         bg: 'white',
         boxShadow: '0 4px 12px 0 rgba(0,0,0,0.04)'
@@ -37,14 +36,14 @@ export const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {
     children,
     className,
     padding = 'normal',
-    variant = 'neutral',
+    kind = 'neutral',
     ...rest
   } = props;
 
   return (
     <div
       ref={userRef}
-      className={cx(styles({ padding, variant }), className)}
+      className={cx(styles({ padding, kind }), className)}
       {...rest}
     >
       {children}

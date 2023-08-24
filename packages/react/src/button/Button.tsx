@@ -3,15 +3,26 @@ import { cva, cx } from '@styles/css';
 import { useButtonGroup } from '../button-group/ButtonGroup.context';
 import { Slot } from '../slot/Slot';
 
-export type ButtonProps = ComponentPropsWithRef<'button'> & {
+type BaseProps = ComponentPropsWithRef<'button'> & {
   asChild?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg';
-  variant?: 'primary' | 'destructive' | 'neutral' | 'bare';
+  kind?: 'primary' | 'destructive' | 'neutral' | 'bare';
   disabled?: boolean;
 };
 
+export type ButtonProps =
+  | ({
+      kind?: 'neutral' | 'bare';
+      selected?: boolean;
+    } & BaseProps)
+  | ({
+      kind?: 'primary' | 'destructive';
+      selected?: undefined;
+    } & BaseProps);
+
 const styles = cva({
   base: {
+    position: 'relative',
     display: 'inline-flex',
     textDecoration: 'none',
     cursor: 'pointer',
@@ -33,16 +44,34 @@ const styles = cva({
   },
   variants: {
     size: {
-      lg: { fontSize: '6', paddingX: '4', paddingY: '3' },
-      md: { fontSize: '5', paddingX: '4', paddingY: '3' },
-      sm: { fontSize: '3', paddingX: '4', paddingY: '3' },
-      xs: { fontSize: '2', paddingX: '3', paddingY: '2' }
+      lg: {
+        fontSize: '6',
+        paddingX: '5',
+        lineHeight: 'calc(2.5rem - 2px)'
+      },
+      md: { fontSize: '5', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
+      sm: { fontSize: '4', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
+      xs: { fontSize: '3', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
     },
     disabled: {
       true: { cursor: 'not-allowed' },
       false: {}
     },
-    variant: {
+    selected: {
+      true: {
+        bg: 'blue4',
+        color: 'blue11',
+        _before: {
+          display: 'none'
+        },
+        _hover: {
+          bg: 'blue4',
+          color: 'blue11'
+        }
+      },
+      false: {}
+    },
+    kind: {
       primary: {
         background: 'gray14',
         borderColor: 'gray14',
@@ -62,7 +91,7 @@ const styles = cva({
         }
       },
       neutral: {
-        borderColor: 'gray8'
+        borderColor: 'gray7'
       },
       bare: {
         bg: 'transparent',
@@ -72,19 +101,21 @@ const styles = cva({
           content: '""',
           position: 'absolute',
           zIndex: '1',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
+          top: '-1px',
+          bottom: '-1px',
+          left: '-1px',
+          right: '-1px',
           bg: 'gray12',
-          borderRadius: 'sm',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'gray12',
+          borderRadius: 'inherit',
           opacity: '0',
           transition: 'opacity 0.15s'
         },
         _hover: {
           color: 'black',
           bg: 'transparent',
-          borderColor: 'transparent',
           _before: {
             opacity: '0.1'
           }
@@ -94,7 +125,7 @@ const styles = cva({
   },
   compoundVariants: [
     {
-      variant: 'neutral',
+      kind: 'neutral',
       disabled: true,
       css: {
         borderColor: 'gray7',
@@ -108,7 +139,7 @@ const styles = cva({
       }
     },
     {
-      variant: 'primary',
+      kind: 'primary',
       disabled: true,
       css: {
         background: 'gray11',
@@ -121,7 +152,7 @@ const styles = cva({
       }
     },
     {
-      variant: 'destructive',
+      kind: 'destructive',
       disabled: true,
       css: {
         background: 'red8',
@@ -134,7 +165,7 @@ const styles = cva({
       }
     },
     {
-      variant: 'bare',
+      kind: 'bare',
       disabled: true,
       css: {
         color: 'gray9',
@@ -153,28 +184,31 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
   const {
     asChild,
     type = 'button',
-    variant = 'neutral',
+    kind = 'neutral',
     size = 'md',
     className,
     disabled = false,
+    selected,
     ...rest
   } = props;
 
   const group = useButtonGroup();
 
   const finalStyles = {
-    variant: group?.variant || variant,
+    kind: group?.kind || kind,
     size: group?.size || size
   };
 
   const Element = asChild ? Slot : 'button';
+  const pressedProps = selected ? { 'aria-pressed': true } : {};
 
   return (
     <Element
       ref={userRef}
       type={type}
-      className={cx(styles({ ...finalStyles, disabled }), className)}
+      className={cx(styles({ ...finalStyles, disabled, selected }), className)}
       disabled={disabled}
+      {...pressedProps}
       {...rest}
     />
   );

@@ -4,17 +4,18 @@ import { ButtonProps } from '../button/Button';
 import { ButtonGroupContext } from './ButtonGroup.context';
 
 export type ButtonGroupProps = ComponentPropsWithRef<'div'> & {
-  spacing?: 'tight' | 'loose' | 'none';
-} & Pick<ButtonProps, 'size' | 'variant'>;
+  space?: 'tight' | 'loose' | 'normal' | 'none';
+} & Pick<ButtonProps, 'size' | 'kind'>;
 
 const styles = cva({
   base: {
     display: 'flex'
   },
   variants: {
-    spacing: {
+    space: {
       tight: { gap: '2' },
-      loose: { gap: '4' },
+      normal: { gap: '4' },
+      loose: { gap: '6' },
       none: {
         gap: '0',
         '& > *:not(:first-child)': {
@@ -43,18 +44,14 @@ const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
     const {
       children,
       className,
-      spacing = 'none',
+      space = 'normal',
       size,
-      variant,
+      kind,
       ...rest
     } = props;
     return (
-      <div
-        ref={userRef}
-        className={cx(styles({ spacing }), className)}
-        {...rest}
-      >
-        <ButtonGroupContext.Provider value={{ size, variant }}>
+      <div ref={userRef} className={cx(styles({ space }), className)} {...rest}>
+        <ButtonGroupContext.Provider value={{ size, kind }}>
           {children}
         </ButtonGroupContext.Provider>
       </div>

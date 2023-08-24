@@ -19,6 +19,6 @@
     },
     "types": ["@sweatpants/libra"]
   },
-  "include": ["libra/*.tsx", "./styles/**/*"],
+  "include": ["libra/**/*.tsx", "./styles/**/*"],
   "exclude": ["node_modules", "dist"]
 }

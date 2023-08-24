@@ -1,4 +1,4 @@
-import { Button } from '../packages/react/src';
+import { Button, ButtonGroup } from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Button', () => {
@@ -8,7 +8,9 @@ directory('Button', () => {
 
   add('Sizes', () => {
     return (
-      <div className={css({ display: 'flex', gap: '4' })}>
+      <div
+        className={css({ display: 'flex', gap: '4', alignItems: 'flex-start' })}
+      >
         <div>
           <Button size="xs">Click Me</Button>
         </div>
@@ -25,20 +27,20 @@ directory('Button', () => {
     );
   });
 
-  add('Variants', () => {
+  add('kinds', () => {
     return (
       <div className={css({ display: 'flex', gap: '4' })}>
         <div>
-          <Button variant="neutral">Click Me</Button>
+          <Button kind="neutral">Click Me</Button>
         </div>
         <div>
-          <Button variant="primary">Click Me</Button>
+          <Button kind="primary">Click Me</Button>
         </div>
         <div>
-          <Button variant="destructive">Click Me</Button>
+          <Button kind="destructive">Click Me</Button>
         </div>
         <div>
-          <Button variant="bare">Click Me</Button>
+          <Button kind="bare">Click Me</Button>
         </div>
       </div>
     );
@@ -48,22 +50,22 @@ directory('Button', () => {
     return (
       <div className={css({ display: 'flex', flexDir: 'column' })}>
         <div className={css({ padding: '4', bg: 'green5' })}>
-          <Button size="md" variant="bare">
+          <Button size="md" kind="bare">
             Click Me
           </Button>
         </div>
         <div className={css({ padding: '4', bg: 'red5' })}>
-          <Button size="md" variant="bare">
+          <Button size="md" kind="bare">
             Click Me
           </Button>
         </div>
         <div className={css({ padding: '4', bg: 'gray4' })}>
-          <Button size="md" variant="bare">
+          <Button size="md" kind="bare">
             Click Me
           </Button>
         </div>
         <div className={css({ padding: '4', bg: 'gray1' })}>
-          <Button size="md" variant="bare">
+          <Button size="md" kind="bare">
             Click Me
           </Button>
         </div>
@@ -75,22 +77,22 @@ directory('Button', () => {
     return (
       <div className={css({ display: 'flex', gap: '4' })}>
         <div>
-          <Button disabled variant="neutral">
+          <Button disabled kind="neutral">
             Click Me
           </Button>
         </div>
         <div>
-          <Button disabled variant="primary">
+          <Button disabled kind="primary">
             Click Me
           </Button>
         </div>
         <div>
-          <Button disabled variant="destructive">
+          <Button disabled kind="destructive">
             Click Me
           </Button>
         </div>
         <div>
-          <Button disabled variant="bare">
+          <Button disabled kind="bare">
             Click Me
           </Button>
         </div>
@@ -100,11 +102,30 @@ directory('Button', () => {
 
   add('Slot as anchor', () => {
     return (
-      <Button asChild variant="primary">
+      <Button asChild kind="primary">
         <a href="https://google.com" target="_blank" rel="noopener noreferrer">
           Link to google.com
         </a>
       </Button>
+    );
+  });
+
+  add('Selected', () => {
+    return (
+      <div className={css({ display: 'flex', gap: '4' })}>
+        <ButtonGroup space="none">
+          <Button selected kind="neutral">
+            Click Me
+          </Button>
+          <Button kind="neutral">Click Me</Button>
+        </ButtonGroup>
+        <ButtonGroup space="tight">
+          <Button selected kind="bare">
+            Click Me
+          </Button>
+          <Button kind="bare">Click Me</Button>
+        </ButtonGroup>
+      </div>
     );
   });
 });

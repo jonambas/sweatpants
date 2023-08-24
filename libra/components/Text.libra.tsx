@@ -1,4 +1,4 @@
-import { Text } from '../packages/react/src';
+import { Text } from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Text', () => {

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Card, Text } from '../packages/react/src';
+import { Button, ButtonGroup, Card, Text } from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Card', () => {
@@ -26,9 +26,9 @@ directory('Card', () => {
   add('White Variant', () => {
     return (
       <div className={css({ bg: 'gray3', padding: '8' })}>
-        <Card padding="tight" variant="white">
-          <ButtonGroup size="sm" variant="bare">
-            <Button>3m</Button>
+        <Card padding="tight" kind="white">
+          <ButtonGroup size="md" kind="bare" space="tight">
+            <Button selected>3m</Button>
             <Button>6m</Button>
             <Button>1y</Button>
             <Button>ytd</Button>
@@ -66,7 +66,7 @@ directory('Card', () => {
           </Text>
         </Card>
         <Card padding="tight">
-          <ButtonGroup size="sm" variant="bare">
+          <ButtonGroup size="sm" kind="bare" space="none">
             <Button>Tight</Button>
             <Button>6m</Button>
             <Button>1y</Button>
@@ -77,16 +77,16 @@ directory('Card', () => {
           <div
             className={css({ display: 'flex', flexDir: 'column', gap: '1' })}
           >
-            <Button variant="bare" size="sm">
+            <Button kind="bare" size="sm">
               None
             </Button>
-            <Button variant="bare" size="sm">
+            <Button kind="bare" size="sm">
               Option
             </Button>
-            <Button variant="bare" size="sm">
+            <Button kind="bare" size="sm">
               Option
             </Button>
-            <Button variant="bare" size="sm">
+            <Button kind="bare" size="sm">
               Option
             </Button>
           </div>

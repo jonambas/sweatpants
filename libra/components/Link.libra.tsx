@@ -1,4 +1,4 @@
-import { Link, Text } from '../packages/react/src';
+import { Link, Text } from '../../packages/react/src';
 
 directory('Link', () => {
   add('Default', () => {
@@ -9,7 +9,7 @@ directory('Link', () => {
         </Text>
         <Text>
           Lorem ipsum dolor{' '}
-          <Link inheritColor href="#">
+          <Link dark href="#">
             link click me inherited color
           </Link>{' '}
           sit amet conscet

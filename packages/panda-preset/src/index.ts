@@ -45,18 +45,19 @@ export const preset = definePreset({
         purple10: { value: '#644fc1' },
         purple11: { value: '#5746af' },
         purple12: { value: '#2f265f' },
-        blue1: { value: '#fbfdff' },
-        blue2: { value: '#f5faff' },
-        blue3: { value: '#edf6ff' },
-        blue4: { value: '#e1f0ff' },
-        blue5: { value: '#cee7fe' },
-        blue6: { value: '#b7d9f8' },
-        blue7: { value: '#96c7f2' },
-        blue8: { value: '#5eb0ef' },
-        blue9: { value: '#0091ff' },
-        blue10: { value: '#0880ea' },
-        blue11: { value: '#0b68cb' },
-        blue12: { value: '#113264' },
+
+        blue1: { value: '#fdfdfe' },
+        blue2: { value: '#f8faff' },
+        blue3: { value: '#f0f4ff' },
+        blue4: { value: '#e6edfe' },
+        blue5: { value: '#d9e2fc' },
+        blue6: { value: '#c6d4f9' },
+        blue7: { value: '#aec0f5' },
+        blue8: { value: '#8da4ef' },
+        blue9: { value: '#3e63dd' },
+        blue10: { value: '#3a5ccc' },
+        blue11: { value: '#3451b2' },
+        blue12: { value: '#1f2d5c' },
         green1: { value: '#fbfefb' },
         green2: { value: '#f3fcf3' },
         green3: { value: '#ebf9eb' },
@@ -128,7 +129,7 @@ export const preset = definePreset({
         }
       },
       shadows: {
-        focus: { value: '0 0 0 1px #fff, 0 0 0 4px #0880ea' }
+        focus: { value: '0 0 0 1px #fff, 0 0 0 3px #0880ea' }
       }
     }
   }

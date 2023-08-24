@@ -1,7 +1,7 @@
 import { cva, cx } from '@styles/css';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentProps, ComponentPropsWithRef, forwardRef } from 'react';
 
-export type TextProps = ComponentPropsWithRef<'p'> & {
+export type TextProps = ComponentPropsWithRef<'span'> & {
   looksLike?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'em' | 'strong';
   element?:
     | 'h1'
@@ -13,7 +13,9 @@ export type TextProps = ComponentPropsWithRef<'p'> & {
     | 'p'
     | 'span'
     | 'em'
-    | 'strong';
+    | 'strong'
+    | 'label';
+  htmlFor?: ComponentProps<'label'>['htmlFor'];
 };
 
 const styles = cva({
@@ -33,24 +35,24 @@ const styles = cva({
   }
 });
 
-export const Text = forwardRef<HTMLParagraphElement, TextProps>(
-  (props, userRef) => {
-    const {
-      element: Elem = 'p',
-      children,
-      className,
-      looksLike = 'p',
-      ...rest
-    } = props;
+export const Text = forwardRef<HTMLSpanElement, TextProps>((props, userRef) => {
+  const {
+    element = 'p',
+    children,
+    className,
+    looksLike = 'p',
+    ...rest
+  } = props;
 
-    return (
-      <Elem
-        ref={userRef}
-        className={cx(styles({ looksLike }), className)}
-        {...rest}
-      >
-        {children}
-      </Elem>
-    );
-  }
-);
+  const Elem = element;
+
+  return (
+    <Elem
+      ref={userRef as any}
+      className={cx(styles({ looksLike }), className)}
+      {...rest}
+    >
+      {children}
+    </Elem>
+  );
+});
