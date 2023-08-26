@@ -24,6 +24,7 @@ const styles = cva({
   base: {
     position: 'relative',
     display: 'inline-flex',
+    alignItems: 'center',
     textDecoration: 'none',
     cursor: 'pointer',
     borderWidth: '1px',
@@ -75,11 +76,11 @@ const styles = cva({
       primary: {
         background: 'gray14',
         borderColor: 'gray14',
-        color: 'gray1',
-        _hover: {
-          bg: 'gray12',
-          borderColor: 'gray12'
-        }
+        color: 'gray1'
+        // _hover: {
+        //   bg: 'gray12',
+        //   borderColor: 'gray12'
+        // }
       },
       destructive: {
         background: 'red10',

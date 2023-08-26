@@ -39,6 +39,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>((props, userRef) => {
     space = 'normal',
     ...rest
   } = props;
+
   return (
     <div
       className={cx(styles({ align, direction, space }), className)}

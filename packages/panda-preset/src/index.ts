@@ -129,7 +129,8 @@ export const preset = definePreset({
         }
       },
       shadows: {
-        focus: { value: '0 0 0 1px #fff, 0 0 0 3px #0880ea' }
+        focus: { value: '0 0 0 1px #fff, 0 0 0 3px #0880ea' },
+        focusInset: { value: 'inset 0 0 0 2px #0880ea' }
       }
     }
   }
