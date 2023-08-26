@@ -5,7 +5,8 @@ export const makeConfig = ({
   module,
   main,
   dependencies,
-  input = 'src/index.tsx'
+  input = 'src/index.tsx',
+  plugins = []
 }) => ({
   input,
   output: [
@@ -23,11 +24,11 @@ export const makeConfig = ({
   external: [
     'react/jsx-runtime',
     '@sweatpants/panda-preset',
-    '@styles/css',
     ...Object.keys(pkg.devDependencies),
     ...Object.keys(dependencies ?? {})
   ],
   plugins: [
+    ...plugins,
     esbuild({
       include: /\.[jt]sx?$/,
       minify: true
