@@ -1,5 +1,6 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
-import { ScreenReaderOnly, Text } from '..';
+import { ScreenReaderOnly } from '../screen-reader-only/ScreenReaderOnly';
+import { Text } from '../text/Text';
 import { css, cx } from '@styles/css';
 
 const labelStyles = css({
