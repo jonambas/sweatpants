@@ -7,9 +7,8 @@ import {
   useRef,
   useState
 } from 'react';
-import { Text } from '../text/Text';
 import { css, cva } from '@styles/css';
-import { ScreenReaderOnly } from '../screen-reader-only/ScreenReaderOnly';
+import { Label } from '../label/Label';
 
 export type TextFieldProps = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   label?: string;
@@ -21,11 +20,6 @@ export type TextFieldProps = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   suffix?: ReactNode;
   align?: 'left' | 'right';
 };
-
-const labelStyles = css({
-  display: 'block',
-  color: 'gray12'
-});
 
 const containerStyles = css({
   w: '100%'
@@ -46,12 +40,12 @@ const inputStyles = cva({
     background: 'white',
     fontSize: '3',
     paddingX: '3',
-    transition: 'border 0.15s',
+    transition: '0.15s',
+    outline: 'none',
     '&:hover:not(:focus)': {
       borderColor: 'gray9'
     },
     _focus: {
-      outline: 'none',
       borderColor: 'gray12'
     }
   },
@@ -132,18 +126,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
     return (
       <div className={containerStyles}>
-        {hideLabel ? (
-          <ScreenReaderOnly>{label}</ScreenReaderOnly>
-        ) : (
-          <Text
-            htmlFor={id}
-            element="label"
-            looksLike="p"
-            className={labelStyles}
-          >
-            {label}
-          </Text>
-        )}
+        <Label hide={hideLabel} id={id}>
+          {label}
+        </Label>
         <div className={inputContainerStyles}>
           <input
             id={id}
@@ -176,4 +161,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     );
   }
 );
+
+TextField.displayName = 'TextField';
+
 export { TextField };

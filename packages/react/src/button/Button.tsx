@@ -24,6 +24,7 @@ const styles = cva({
   base: {
     position: 'relative',
     display: 'inline-flex',
+    alignItems: 'center',
     textDecoration: 'none',
     cursor: 'pointer',
     borderWidth: '1px',
