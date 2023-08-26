@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.2
+
+### Patch Changes
+
+- 03acce4: Fix CSS class name hashing
+
 ## 0.3.1
 
 ### Patch Changes
