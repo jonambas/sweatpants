@@ -1,6 +1,7 @@
 export * from './button/Button';
 export * from './button-group/ButtonGroup';
 export * from './card/Card';
+export * from './label/Label';
 export * from './link/Link';
 export * from './select/Select';
 export * from './screen-reader-only/ScreenReaderOnly';
