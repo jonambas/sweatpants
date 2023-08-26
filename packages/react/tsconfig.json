@@ -17,6 +17,8 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "dist",
+    "declarationDir": "dist/types",
+    "baseUrl": ".",
     "paths": {
       "@styles/*": ["./styles/*"]
     }
