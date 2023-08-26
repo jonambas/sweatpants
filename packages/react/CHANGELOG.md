@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.1
+
+### Patch Changes
+
+- Fix internal styles/css resolution
+
 ## 0.3.0
 
 ### Minor Changes
