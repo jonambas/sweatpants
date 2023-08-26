@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.0
+
+### Minor Changes
+
+- Add Select and Label components
+
 ## 0.2.0
 
 ### Minor Changes
