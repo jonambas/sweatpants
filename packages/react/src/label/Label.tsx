@@ -16,7 +16,11 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>((props, userRef) => {
   const { children, className, hide = false, id, ...rest } = props;
 
   return hide ? (
-    <ScreenReaderOnly>{children}</ScreenReaderOnly>
+    <ScreenReaderOnly asChild>
+      <label htmlFor={id} ref={userRef}>
+        {children}
+      </label>
+    </ScreenReaderOnly>
   ) : (
     <Text
       htmlFor={id}
