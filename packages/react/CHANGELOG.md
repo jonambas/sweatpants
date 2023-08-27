@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.5
+
+### Patch Changes
+
+- Label component now renders a label instead of a span when hidden
+
 ## 0.3.4
 
 ### Patch Changes
