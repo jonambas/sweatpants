@@ -1,4 +1,5 @@
 import esbuild from 'rollup-plugin-esbuild';
+import size from 'rollup-plugin-bundle-size';
 import pkg from '../package.json' assert { type: 'json' };
 
 export const makeConfig = ({
@@ -33,6 +34,7 @@ export const makeConfig = ({
     esbuild({
       include: /\.[jt]sx?$/,
       minify: true
-    })
+    }),
+    size()
   ]
 });
