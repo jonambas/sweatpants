@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.3
+
+### Patch Changes
+
+- bf3dd02: panda theme is exported by default
+
 ## 0.3.2
 
 ### Patch Changes

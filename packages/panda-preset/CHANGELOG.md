@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.3.1
+
+### Patch Changes
+
+- bf3dd02: panda theme is exported by default
+
 ## 0.3.0
 
 ### Minor Changes
