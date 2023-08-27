@@ -1,11 +1,10 @@
 import { defineConfig } from '@pandacss/dev';
-import { preset } from '@sweatpants/panda-preset';
 
 export default defineConfig({
   preflight: false,
   include: ['src/**/*.tsx'],
   exclude: [],
-  presets: [preset],
+  presets: ['@sweatpants/panda-preset'],
 
   // Library options
   emitPackage: false,

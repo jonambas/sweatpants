@@ -1,4 +1,4 @@
-import { preset } from '../../packages/panda-preset/src';
+import preset from '../../packages/panda-preset/src';
 import { Text } from '../../packages/react/src';
 import { css } from '@styles/css';
 
