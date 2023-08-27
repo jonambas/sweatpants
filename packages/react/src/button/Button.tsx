@@ -62,12 +62,12 @@ const styles = cva({
       true: {
         bg: 'blue4',
         color: 'blue11',
-        _before: {
-          display: 'none'
-        },
         _hover: {
           bg: 'blue4',
-          color: 'blue11'
+          color: 'blue11',
+          _before: {
+            opacity: '0.05'
+          }
         }
       },
       false: {}
