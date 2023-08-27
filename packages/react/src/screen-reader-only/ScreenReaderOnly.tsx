@@ -1,9 +1,17 @@
 import { css } from '@styles/css';
 import { FC, PropsWithChildren } from 'react';
 
-const ScreenReaderOnly: FC<PropsWithChildren> = (props) => {
+import { Slot } from '../slot/Slot';
+
+const ScreenReaderOnly: FC<PropsWithChildren<{ asChild?: boolean }>> = (
+  props
+) => {
+  const { asChild = false, children, ...rest } = props;
+
+  const Element = asChild ? Slot : 'span';
   return (
-    <span
+    <Element
+      {...rest}
       className={css({
         clip: 'rect(1px, 1px, 1px, 1px)',
         clipPath: 'inset(50%)',
@@ -15,8 +23,8 @@ const ScreenReaderOnly: FC<PropsWithChildren> = (props) => {
         position: 'absolute'
       })}
     >
-      {props.children}
-    </span>
+      {children}
+    </Element>
   );
 };
 
