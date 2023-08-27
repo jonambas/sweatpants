@@ -1,6 +1,6 @@
 import { definePreset } from '@pandacss/dev';
 
-export const preset = definePreset({
+export default definePreset({
   theme: {
     tokens: {
       spacing: {
