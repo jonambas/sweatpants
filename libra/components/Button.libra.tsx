@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, ButtonGroup } from '../../packages/react/src';
 import { css } from '@styles/css';
 
@@ -111,6 +112,8 @@ directory('Button', () => {
   });
 
   add('Selected', () => {
+    const [selected, setSelected] = useState(0);
+
     return (
       <div className={css({ display: 'flex', gap: '4' })}>
         <ButtonGroup space="none">
@@ -120,10 +123,20 @@ directory('Button', () => {
           <Button kind="neutral">Click Me</Button>
         </ButtonGroup>
         <ButtonGroup space="tight">
-          <Button selected kind="bare">
+          <Button
+            selected={selected === 0}
+            onClick={() => setSelected(0)}
+            kind="bare"
+          >
             Click Me
           </Button>
-          <Button kind="bare">Click Me</Button>
+          <Button
+            selected={selected === 1}
+            onClick={() => setSelected(1)}
+            kind="bare"
+          >
+            Click Me
+          </Button>
         </ButtonGroup>
       </div>
     );
