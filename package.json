@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "npm run build:packages && panda codegen",
     "start": "libra start",
+    "preview": "npm run prepare && libra preview",
     "build:libra": "libra build",
     "build:packages": "npm run build --workspaces",
     "change": "changeset",

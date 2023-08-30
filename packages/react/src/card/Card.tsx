@@ -1,9 +1,15 @@
 import { cva, cx } from '@styles/css';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import {
+  ComponentPropsWithRef,
+  ForwardRefExoticComponent,
+  forwardRef
+} from 'react';
+import { Divider } from './CardDivider';
+import { CardContext, CardContextValue } from './Card.context';
 
 export type CardProps = ComponentPropsWithRef<'div'> & {
-  padding?: 'loose' | 'normal' | 'tight' | 'none';
-  kind?: 'white' | 'neutral';
+  space?: CardContextValue['space'];
+  kind?: CardContextValue['kind'];
 };
 
 const styles = cva({
@@ -11,42 +17,51 @@ const styles = cva({
     borderRadius: 'md'
   },
   variants: {
-    padding: {
+    space: {
       none: { padding: '0' },
       tight: { padding: '2' },
       normal: { padding: '5' },
       loose: { padding: '7' }
     },
     kind: {
-      white: {
+      elevated: {
         bg: 'white',
-        boxShadow: '0 4px 12px 0 rgba(0,0,0,0.04)'
+        border: '1px solid token(colors.gray4)',
+        boxShadow: '0 4px 8px 0px rgba(0,0,0,0.04)'
       },
       neutral: {
         bg: 'transparent',
-        border: '1px solid',
-        borderColor: 'gray5'
+        border: '1px solid token(colors.gray5)'
       }
     }
   }
 });
 
-export const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {
+const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {
   const {
     children,
     className,
-    padding = 'normal',
+    space = 'normal',
     kind = 'neutral',
     ...rest
   } = props;
 
   return (
-    <div
-      ref={userRef}
-      className={cx(styles({ padding, kind }), className)}
-      {...rest}
-    >
-      {children}
-    </div>
+    <CardContext.Provider value={{ kind, space }}>
+      <div
+        ref={userRef}
+        className={cx(styles({ space, kind }), className)}
+        {...rest}
+      >
+        {children}
+      </div>
+    </CardContext.Provider>
   );
-});
+}) as ForwardRefExoticComponent<CardProps> & {
+  Divider: typeof Divider;
+};
+
+Card.displayName = 'Card';
+Card.Divider = Divider;
+
+export { Card };

@@ -129,7 +129,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
             <RadixSelect.Viewport asChild>
               <Card
                 kind="white"
-                padding="tight"
+                space="tight"
                 className={css({
                   borderWidth: '1px',
                   borderStyle: 'solid',

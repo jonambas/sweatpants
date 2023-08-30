@@ -1,32 +1,40 @@
-import { Button, ButtonGroup, Card, Text } from '../../packages/react/src';
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  Stack,
+  Text
+} from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Card', () => {
   add('Default', () => {
     return (
       <Card>
-        <Text element="h1" looksLike="h3">
-          Heading
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
-          amet justo donec enim. Nibh venenatis cras sed felis eget. At
-          consectetur lorem donec massa sapien faucibus et molestie. Sit amet
-          mattis vulputate enim. Egestas dui id ornare arcu odio ut sem nulla.
-          Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
-          consectetur adipiscing elit ut aliquam purus. Arcu dui vivamus arcu
-          felis bibendum ut. Volutpat lacus laoreet non curabitur gravida arcu.
-          Adipiscing diam donec adipiscing tristique.
-        </Text>
+        <Stack>
+          <Text element="h1" looksLike="h3">
+            Heading
+          </Text>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum
+            sit amet justo donec enim. Nibh venenatis cras sed felis eget. At
+            consectetur lorem donec massa sapien faucibus et molestie. Sit amet
+            mattis vulputate enim. Egestas dui id ornare arcu odio ut sem nulla.
+            Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
+            consectetur adipiscing elit ut aliquam purus. Arcu dui vivamus arcu
+            felis bibendum ut. Volutpat lacus laoreet non curabitur gravida
+            arcu. Adipiscing diam donec adipiscing tristique.
+          </Text>
+        </Stack>
       </Card>
     );
   });
 
-  add('White Variant', () => {
+  add('Elevated Variant', () => {
     return (
       <div className={css({ bg: 'gray3', padding: '8' })}>
-        <Card padding="tight" kind="white">
+        <Card space="tight" kind="elevated">
           <ButtonGroup size="md" kind="bare" space="tight">
             <Button selected>3m</Button>
             <Button>6m</Button>
@@ -38,10 +46,10 @@ directory('Card', () => {
     );
   });
 
-  add('Padding Variants', () => {
+  add('Space Variants', () => {
     return (
       <div className={css({ display: 'flex', flexDir: 'column', gap: '6' })}>
-        <Card padding="loose">
+        <Card space="loose">
           <Text element="h1" looksLike="h3">
             Loose
           </Text>
@@ -53,7 +61,7 @@ directory('Card', () => {
             mattis vulputate enim.
           </Text>
         </Card>
-        <Card padding="normal">
+        <Card space="normal">
           <Text element="h1" looksLike="h3">
             Normal
           </Text>
@@ -65,7 +73,7 @@ directory('Card', () => {
             mattis vulputate enim.
           </Text>
         </Card>
-        <Card padding="tight">
+        <Card space="tight">
           <ButtonGroup size="sm" kind="bare" space="none">
             <Button>Tight</Button>
             <Button>6m</Button>
@@ -73,7 +81,7 @@ directory('Card', () => {
             <Button>ytd</Button>
           </ButtonGroup>
         </Card>
-        <Card padding="none">
+        <Card space="none">
           <div
             className={css({ display: 'flex', flexDir: 'column', gap: '1' })}
           >
@@ -92,6 +100,40 @@ directory('Card', () => {
           </div>
         </Card>
       </div>
+    );
+  });
+
+  add('Dividers', () => {
+    return (
+      <Card kind="elevated" space="normal">
+        <Text element="h1" looksLike="h3">
+          Heading
+        </Text>
+        <Card.Divider />
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
+          amet justo donec enim. Nibh venenatis cras sed felis eget. At
+          consectetur lorem donec massa sapien faucibus et molestie. Sit amet
+          mattis vulputate enim. Egestas dui id ornare arcu odio ut sem nulla.
+          Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
+          consectetur adipiscing elit ut aliquam purus. Arcu dui vivamus arcu
+          felis bibendum ut. Volutpat lacus laoreet non curabitur gravida arcu.
+          Adipiscing diam donec adipiscing tristique.
+        </Text>
+        <Card.Divider />
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
+          amet justo donec enim. Nibh venenatis cras sed felis eget. At
+          consectetur lorem donec massa sapien faucibus et molestie. Sit amet
+          mattis vulputate enim. Egestas dui id ornare arcu odio ut sem nulla.
+          Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
+          consectetur adipiscing elit ut aliquam purus. Arcu dui vivamus arcu
+          felis bibendum ut. Volutpat lacus laoreet non curabitur gravida arcu.
+          Adipiscing diam donec adipiscing tristique.
+        </Text>
+      </Card>
     );
   });
 });
