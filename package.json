@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/jonambas/sweatpants.git"
   },
-  "author": "Jon Ambas",
+  "author": "Jon Ambas <jon@jonambas.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jonambas/sweatpants/issues"

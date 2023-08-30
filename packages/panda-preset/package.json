@@ -13,7 +13,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Jon Ambas",
+  "author": "Jon Ambas <jon@jonambas.com>",
   "license": "MIT",
   "files": [
     "dist"
