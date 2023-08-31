@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "npm run build:packages && panda codegen",
     "start": "libra start",
+    "preview": "npm run prepare && libra preview",
     "build:libra": "libra build",
     "build:packages": "npm run build --workspaces",
     "change": "changeset",
@@ -26,7 +27,7 @@
     "@changesets/cli": "2.26.2",
     "@pandacss/dev": "0.13.1",
     "@rollup/plugin-alias": "5.0.0",
-    "@sweatpants/libra": "0.0.22",
+    "@sweatpants/libra": "0.0.23",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "prettier": "3.0.3",
