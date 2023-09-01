@@ -46,12 +46,12 @@ const styles = cva({
   variants: {
     size: {
       lg: {
-        fontSize: '6',
+        fontSize: '5',
         paddingX: '5',
         lineHeight: 'calc(2.5rem - 2px)'
       },
-      md: { fontSize: '5', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
-      sm: { fontSize: '4', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
+      md: { fontSize: '4', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
+      sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
       xs: { fontSize: '3', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
     },
     disabled: {
@@ -118,7 +118,7 @@ const styles = cva({
           color: 'black',
           bg: 'transparent',
           _before: {
-            opacity: '0.1'
+            opacity: '0.08'
           }
         }
       }

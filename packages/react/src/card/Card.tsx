@@ -26,11 +26,10 @@ const styles = cva({
     kind: {
       elevated: {
         bg: 'white',
-        border: '1px solid token(colors.gray4)',
         boxShadow: '0 4px 8px 0px rgba(0,0,0,0.04)'
       },
       neutral: {
-        bg: 'transparent',
+        bg: 'white',
         border: '1px solid token(colors.gray5)'
       }
     }
