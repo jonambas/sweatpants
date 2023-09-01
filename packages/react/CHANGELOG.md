@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.3.7
+
+### Patch Changes
+
+- 5b2b285: Fix negative token bug, update styles
+
 ## 0.3.6
 
 ### Patch Changes
