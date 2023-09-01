@@ -16,6 +16,7 @@ export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
     label?: string;
     id: string;
     size?: 'sm' | 'md' | 'lg';
+    hideChevron?: boolean;
     hideLabel?: boolean;
     hasError?: boolean;
   };
@@ -102,6 +103,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
     id,
     label,
     hasError = false,
+    hideChevron = false,
     hideLabel = false,
     placeholder = 'Select...',
     size = 'md',
@@ -120,9 +122,11 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
           ref={userRef}
         >
           <RadixSelect.Value placeholder={placeholder} />
-          <RadixSelect.Icon>
-            <ChevronDown width="11" height="11" />
-          </RadixSelect.Icon>
+          {!hideChevron && (
+            <RadixSelect.Icon>
+              <ChevronDown width="11" height="11" />
+            </RadixSelect.Icon>
+          )}
         </RadixSelect.Trigger>
         <RadixSelect.Portal>
           <RadixSelect.Content>
