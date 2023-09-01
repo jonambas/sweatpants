@@ -11,27 +11,27 @@ const styles = cva({
   variants: {
     kind: {
       elevated: {
-        bg: 'gray4'
+        bg: 'gray3'
       },
       neutral: {
-        bg: 'gray5'
+        bg: 'gray4'
       }
     },
     space: {
       none: { marginY: '0' },
       tight: {
         marginY: '2',
-        marginLeft: '-2',
+        marginLeft: 'calc(token(spacing.2) * -1)',
         width: 'calc(100% + token(spacing.4) * 2)'
       },
       normal: {
         marginY: '5',
-        left: '-5',
+        left: 'calc(token(spacing.5) * -1)',
         width: 'calc(100% + token(spacing.5) * 2)'
       },
       loose: {
         marginY: '7',
-        left: '-7',
+        left: 'calc(token(spacing.7) * -1)',
         width: 'calc(100% + token(spacing.9) * 2)'
       }
     }

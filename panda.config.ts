@@ -8,5 +8,6 @@ export default defineConfig({
   presets: [preset],
 
   // Library options
-  outdir: 'styles'
+  outdir: 'styles',
+  hash: true
 });

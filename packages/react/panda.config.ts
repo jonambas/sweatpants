@@ -8,7 +8,7 @@ export default defineConfig({
 
   // Library options
   emitPackage: false,
-  prefix: 'sp-',
+  prefix: 'sp',
   hash: true,
   outdir: 'styles',
   minify: true
