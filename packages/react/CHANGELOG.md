@@ -1,5 +1,13 @@
 # @sweatpants/react
 
+## 0.3.6
+
+### Patch Changes
+
+- a3f9082: Fix cjs export
+- a0115e2: Add Card.Divider component
+- ea3e425: Pin dependencies and clean up package.json
+
 ## 0.3.5
 
 ### Patch Changes

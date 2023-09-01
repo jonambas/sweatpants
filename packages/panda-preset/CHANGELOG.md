@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.3.2
+
+### Patch Changes
+
+- ea3e425: Pin dependencies and clean up package.json
+
 ## 0.3.1
 
 ### Patch Changes
