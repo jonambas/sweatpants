@@ -6,8 +6,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/types/src/index.d.ts",
   "scripts": {
-    "prebuild": "rimraf dist && rimraf styles && panda codegen && panda cssgen",
-    "build": "rollup -c",
+    "prebuild": "rimraf dist && rimraf styles && panda codegen",
+    "build": "rollup -c && panda cssgen --minify -c panda.config.ts --outfile dist/styles.css",
     "postbuild": "tsc --p tsconfig.json"
   },
   "publishConfig": {
