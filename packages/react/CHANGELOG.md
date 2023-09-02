@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.5.0
+
+### Minor Changes
+
+- e8b5690: Support dark mode
+
 ## 0.4.1
 
 ### Patch Changes

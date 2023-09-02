@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.4.0
+
+### Minor Changes
+
+- e8b5690: Support dark mode
+
 ## 0.3.2
 
 ### Patch Changes
