@@ -9,8 +9,9 @@
     "preview": "npm run prepare && libra preview",
     "build:libra": "libra build",
     "build:packages": "npm run build --workspaces",
-    "change": "changeset",
+    "change": "changeset && git add . && git commit -m 'chore(change): add change'",
     "version": "changeset version",
+    "prerelease": "npm run build:packages",
     "release": "changeset publish"
   },
   "repository": {
