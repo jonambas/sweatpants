@@ -65,10 +65,11 @@ const triggerStyles = cva({
     cursor: 'pointer',
     outline: 'none',
     '&:hover:not(:focus)': {
-      borderColor: 'gray9'
+      borderColor: 'gray8'
     },
     _focus: {
-      borderColor: 'gray12'
+      borderColor: 'blue9',
+      background: 'blue2'
     }
   },
   variants: {
@@ -95,6 +96,10 @@ const triggerStyles = cva({
       false: {}
     }
   }
+});
+
+const cardStyles = css({
+  boxShadow: '0 1px 4px 0px rgba(0,0,0,0.12), 0 4px 12px 0px rgba(0,0,0,0.06)'
 });
 
 const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
@@ -131,7 +136,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
         <RadixSelect.Portal>
           <RadixSelect.Content>
             <RadixSelect.Viewport asChild>
-              <Card kind="elevated" space="tight">
+              <Card kind="elevated" space="tight" className={cardStyles}>
                 <Stack space="tight">{children}</Stack>
               </Card>
             </RadixSelect.Viewport>
