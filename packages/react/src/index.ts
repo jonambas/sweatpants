@@ -9,3 +9,4 @@ export * from './slot/Slot';
 export * from './stack/Stack';
 export * from './text/Text';
 export * from './text-field/TextField';
+export * from './use-color-scheme/useColorScheme';
