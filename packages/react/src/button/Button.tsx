@@ -31,8 +31,9 @@ const styles = cva({
     borderStyle: 'solid',
     borderRadius: 'sm',
     color: 'gray12',
-    bg: 'white',
+
     transition: '0.15s',
+    whiteSpace: 'nowrap',
     _hover: {
       bg: 'gray3'
     },
