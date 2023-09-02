@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { SchemeContextValue } from './useColorScheme.context';
+
+export type UseColorScheme = {
+  prefers: 'light' | 'dark';
+  setPreference: (scheme: UseColorScheme['prefers']) => void;
+};
 
 const useColorScheme = ({
   setHtmlAttribute = false
-} = {}): SchemeContextValue['prefers'] => {
-  const [prefers, setPrefers] =
-    useState<SchemeContextValue['prefers']>('light');
+} = {}): UseColorScheme['prefers'] => {
+  const [prefers, setPrefers] = useState<UseColorScheme['prefers']>('light');
   const mql = useRef<MediaQueryList>();
 
   const handleScheme = useCallback((event: MediaQueryListEvent) => {
