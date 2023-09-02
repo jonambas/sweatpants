@@ -30,13 +30,8 @@ const styles = cva({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderRadius: 'sm',
-    color: 'gray12',
-
     transition: '0.15s',
     whiteSpace: 'nowrap',
-    _hover: {
-      bg: 'gray3'
-    },
     _focusVisible: {
       position: 'relative',
       zIndex: '1',
@@ -56,16 +51,19 @@ const styles = cva({
       xs: { fontSize: '3', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
     },
     disabled: {
-      true: { cursor: 'not-allowed' },
+      true: { cursor: 'not-allowed', opacity: '0.7' },
       false: {}
     },
     selected: {
       true: {
-        bg: 'blue4',
-        color: 'blue11',
-        _hover: {
-          bg: 'blue4',
-          color: 'blue11',
+        zIndex: '1',
+        borderColor: 'blue9',
+        _lightScheme: { bg: 'blue3', color: 'blue11' },
+        _darkScheme: { bg: 'blue6', color: 'blue12' },
+        '&:hover:not(:disabled)': {
+          borderColor: 'blue9',
+          _lightScheme: { bg: 'blue3', color: 'blue11' },
+          _darkScheme: { bg: 'blue6', color: 'blue12' },
           _before: {
             opacity: '0.05'
           }
@@ -75,30 +73,35 @@ const styles = cva({
     },
     kind: {
       primary: {
-        background: 'gray14',
-        borderColor: 'gray14',
+        bg: 'gray12',
+        borderColor: 'gray12',
         color: 'gray1',
-        _hover: {
-          bg: 'gray12',
-          borderColor: 'gray12'
+        '&:hover:not(:disabled)': {
+          bg: 'gray11',
+          borderColor: 'gray11'
         }
       },
       destructive: {
-        background: 'red10',
-        borderColor: 'red11',
-        color: 'white',
-        _hover: {
-          bg: 'red11',
-          borderColor: 'red11'
+        bg: 'red5',
+        borderColor: 'red8',
+        color: 'red11',
+        '&:hover:not(:disabled)': {
+          bg: 'red6'
         }
       },
       neutral: {
-        borderColor: 'gray7'
+        bg: 'transparent',
+        borderColor: 'gray7',
+        color: 'gray12',
+        '&:hover:not(:disabled)': {
+          bg: 'gray4'
+        }
       },
       bare: {
         bg: 'transparent',
         borderColor: 'transparent',
         position: 'relative',
+        color: 'gray12',
         _before: {
           content: '""',
           position: 'absolute',
@@ -115,8 +118,7 @@ const styles = cva({
           opacity: '0',
           transition: 'opacity 0.15s'
         },
-        _hover: {
-          color: 'black',
+        '&:hover:not(:disabled)': {
           bg: 'transparent',
           _before: {
             opacity: '0.08'
@@ -124,62 +126,7 @@ const styles = cva({
         }
       }
     }
-  },
-  compoundVariants: [
-    {
-      kind: 'neutral',
-      disabled: true,
-      css: {
-        borderColor: 'gray7',
-        color: 'gray9',
-        bg: 'gray3',
-        _hover: {
-          borderColor: 'gray7',
-          color: 'gray9',
-          bg: 'gray3'
-        }
-      }
-    },
-    {
-      kind: 'primary',
-      disabled: true,
-      css: {
-        background: 'gray11',
-        borderColor: 'gray11',
-        color: 'gray5',
-        _hover: {
-          bg: 'gray11',
-          borderColor: 'gray11'
-        }
-      }
-    },
-    {
-      kind: 'destructive',
-      disabled: true,
-      css: {
-        background: 'red8',
-        borderColor: 'red8',
-        color: 'red3',
-        _hover: {
-          bg: 'red8',
-          borderColor: 'red8'
-        }
-      }
-    },
-    {
-      kind: 'bare',
-      disabled: true,
-      css: {
-        color: 'gray9',
-        _hover: {
-          color: 'gray9',
-          _before: {
-            opacity: '0'
-          }
-        }
-      }
-    }
-  ]
+  }
 });
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {

@@ -16,10 +16,11 @@ export type TextProps = ComponentPropsWithRef<'span'> & {
     | 'strong'
     | 'label';
   htmlFor?: ComponentProps<'label'>['htmlFor'];
+  muted?: boolean;
 };
 
 const styles = cva({
-  base: {},
+  base: { fontFamily: 'sans' },
   variants: {
     looksLike: {
       h1: { fontSize: '12', fontWeight: 'bold', lineHeight: '1.2em' },
@@ -31,6 +32,14 @@ const styles = cva({
       p: { fontSize: '4', fontWeight: 'normal', lineHeight: '1.7em' },
       em: { fontSize: '4', fontStyle: 'italic', lineHeight: '1.7em' },
       strong: { fontSize: '4', fontWeight: 'bold', lineHeight: '1.7em' }
+    },
+    muted: {
+      true: {
+        color: 'gray10'
+      },
+      false: {
+        color: 'gray12'
+      }
     }
   }
 });
@@ -41,6 +50,7 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>((props, userRef) => {
     children,
     className,
     looksLike = 'p',
+    muted = false,
     ...rest
   } = props;
 
@@ -49,7 +59,7 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>((props, userRef) => {
   return (
     <Elem
       ref={userRef as any}
-      className={cx(styles({ looksLike }), className)}
+      className={cx(styles({ looksLike, muted }), className)}
       {...rest}
     >
       {children}

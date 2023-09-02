@@ -20,7 +20,7 @@ const styles = cva({
   variants: {
     dark: {
       true: {
-        color: 'gray14',
+        color: 'gray12',
         textDecorationColor: 'gray8',
         _hover: {
           textDecorationColor: 'gray11'

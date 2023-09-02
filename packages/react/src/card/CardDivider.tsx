@@ -11,10 +11,12 @@ const styles = cva({
   variants: {
     kind: {
       elevated: {
-        bg: 'gray3'
+        _lightScheme: { bg: 'gray4' },
+        _darkScheme: { bg: 'gray1' }
       },
       neutral: {
-        bg: 'gray4'
+        _lightScheme: { bg: 'gray4' },
+        _darkScheme: { bg: 'gray6' }
       }
     },
     space: {

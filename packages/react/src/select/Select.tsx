@@ -58,12 +58,13 @@ const triggerStyles = cva({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderRadius: 'sm',
-    background: 'white',
+    background: 'transparent',
     fontSize: '3',
     paddingX: '3',
     transition: '0.15s',
     cursor: 'pointer',
-    outline: 'none'
+    outline: 'none',
+    color: 'gray12'
   },
   variants: {
     size: {
@@ -84,7 +85,7 @@ const triggerStyles = cva({
         _focus: {
           outline: 'none',
           borderColor: 'blue9',
-          background: 'blue2'
+          bg: 'blue2'
         }
       },
       bare: {
@@ -107,8 +108,8 @@ const triggerStyles = cva({
           opacity: '0',
           transition: 'opacity 0.15s'
         },
-        _hover: {
-          color: 'black',
+        '&:hover:not(:focus)': {
+          color: 'gray12',
           bg: 'transparent',
           _before: {
             opacity: '0.08'
@@ -116,7 +117,8 @@ const triggerStyles = cva({
         },
         _focus: {
           outline: 'none',
-          boxShadow: 'focus'
+          boxShadow: 'focus',
+          bg: 'blue2'
         }
       }
     },
@@ -128,7 +130,8 @@ const triggerStyles = cva({
           borderColor: 'red9!'
         },
         _focus: {
-          borderColor: 'red9'
+          borderColor: 'red9',
+          background: 'red2'
         }
       },
       false: {}

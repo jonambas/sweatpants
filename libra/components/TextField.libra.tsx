@@ -3,7 +3,7 @@ import { TextField } from '../../packages/react/src';
 
 directory('TextField', () => {
   add('Default', () => {
-    return <TextField id="test" label="Label" />;
+    return <TextField placeholder="placeholder" id="test" label="Label" />;
   });
 
   add('Sizes', () => {
@@ -16,7 +16,13 @@ directory('TextField', () => {
           alignItems: 'flex-start'
         })}
       >
-        <TextField id="test" hideLabel label="Label" size="sm" />
+        <TextField
+          placeholder="placeholder"
+          id="test"
+          hideLabel
+          label="Label"
+          size="sm"
+        />
         <TextField id="test2" hideLabel label="Label" />
         <TextField id="test3" hideLabel label="Label" size="lg" />
       </div>

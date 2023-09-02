@@ -18,7 +18,7 @@ directory('Text', () => {
     );
   });
 
-  add('Element', () => {
+  add('Element and muted', () => {
     return (
       <div className={css({ display: 'flex', gap: '4', flexDir: 'column' })}>
         <Text element="h1" looksLike="h3">
@@ -28,9 +28,11 @@ directory('Text', () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
           amet justo donec ddenim. Nibh venenatis cras sed felis eget. At
-          consectetur lorem donec massa sapien faucibus et molestie. Sit amet
-          mattis vulputate enim. Egestas dui id ornare arcu odio ut sem nulla.
-          Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
+          consectetur lorem donec massa sapien faucibus et molestie.
+        </Text>
+        <Text element="p" looksLike="p" muted>
+          Sit amet mattis vulputate enim. Egestas dui id ornare arcu odio ut sem
+          nulla. Lectus vestibulum mattis ullamcorper velit sed. Dolor sit amet
           consectetur adipiscing elit ut aliquam purus. Arcu dui vivamus arcu
           felis bibendum ut. Volutpat lacus laoreet non curabitur gravida arcu.
           Adipiscing diam donec adipiscing tristique.

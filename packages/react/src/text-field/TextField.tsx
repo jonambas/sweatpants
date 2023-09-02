@@ -37,11 +37,12 @@ const inputStyles = cva({
     borderStyle: 'solid',
     borderColor: 'gray7',
     borderRadius: 'sm',
-    background: 'white',
+    background: 'transparent',
     fontSize: '3',
     paddingX: '3',
     transition: '0.15s',
     outline: 'none',
+    color: 'gray12',
     '&:hover:not(:focus)': {
       borderColor: 'gray8'
     },
@@ -72,7 +73,8 @@ const inputStyles = cva({
           borderColor: 'red9'
         },
         _focus: {
-          borderColor: 'red9'
+          borderColor: 'red9',
+          background: 'red2'
         }
       },
       false: {}
