@@ -11,6 +11,7 @@
     "build:packages": "npm run build --workspaces",
     "change": "changeset && git add . && git commit -m 'chore(change): add change'",
     "version": "changeset version",
+    "prerelease": "npm run build:packages",
     "release": "changeset publish"
   },
   "repository": {
