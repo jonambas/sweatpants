@@ -1,5 +1,16 @@
 # @sweatpants/react
 
+## 0.4.0
+
+### Minor Changes
+
+- beac85d: Add hideChevron option on Select
+- 6a6b7b2: Add useColorScheme hook, add bare Select kind
+
+### Patch Changes
+
+- 60db132: Fix Button text wrapping
+
 ## 0.3.7
 
 ### Patch Changes
