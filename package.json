@@ -12,7 +12,8 @@
     "change": "changeset && git add . && git commit -m 'chore(change): add change'",
     "version": "changeset version",
     "prerelease": "npm run build:packages",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "postrelease": "git add . && git commit -m 'chore(change): release' && git push --follow-tags"
   },
   "repository": {
     "type": "git",
