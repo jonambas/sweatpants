@@ -53,11 +53,21 @@ const itemStyles = cva({
       bg: 'gray6'
     },
     '&[data-state=checked]': {
-      borderColor: 'blue8',
-      bg: 'blue8',
-      color: 'blue12',
-      '&:hover, &:focus': {
-        bg: 'blue8'
+      _lightScheme: {
+        borderColor: 'blue8',
+        bg: 'blue4',
+        color: 'blue12',
+        '&:hover, &:focus': {
+          bg: 'blue4'
+        }
+      },
+      _darkScheme: {
+        borderColor: 'blue8',
+        bg: 'blue8',
+        color: 'blue12',
+        '&:hover, &:focus': {
+          bg: 'blue8'
+        }
       }
     }
   }
