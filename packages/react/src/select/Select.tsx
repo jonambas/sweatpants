@@ -58,7 +58,7 @@ const triggerStyles = cva({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderRadius: 'sm',
-    background: 'contentBg',
+    background: 'transparent',
     fontSize: '3',
     paddingX: '3',
     transition: '0.15s',

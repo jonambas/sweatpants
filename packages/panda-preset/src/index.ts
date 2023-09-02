@@ -161,8 +161,10 @@ export default definePreset({
       shadows: {
         focus: {
           value: {
-            _lightScheme: '0 0 0 1px {colors.gray1}, 0 0 0 3px {colors.blue9}',
-            _darkScheme: '0 0 0 1px {colors.gray1}, 0 0 0 3px {colors.blue9}'
+            _lightScheme:
+              '0 0 0 1px {colors.contentBg}, 0 0 0 3px {colors.blue9}',
+            _darkScheme:
+              '0 0 0 1px {colors.contentBg}, 0 0 0 3px {colors.blue9}'
           }
         },
         focusInset: { value: 'inset 0 0 0 2px #0880ea' }
