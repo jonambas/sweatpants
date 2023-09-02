@@ -24,6 +24,74 @@ directory('Select', () => {
     );
   });
 
+  add('Hide Chevron', () => {
+    return (
+      <div style={{ position: 'relative', display: 'inline-block' }}>
+        <Select hideChevron hideLabel defaultValue="test" label="Label" id="t1">
+          <Select.Item value="test">test</Select.Item>
+          <Select.Item value="test2">test 2</Select.Item>
+          <Select.Item value="test3">test 3</Select.Item>
+          <Select.Item value="test4">test 4</Select.Item>
+        </Select>
+      </div>
+    );
+  });
+
+  add('Bare Kind', () => {
+    return (
+      <div
+        style={{
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.5rem'
+        }}
+      >
+        <Select
+          kind="bare"
+          hideChevron
+          hideLabel
+          defaultValue="test"
+          label="Label"
+          id="t0"
+          size="sm"
+        >
+          <Select.Item value="test">test</Select.Item>
+          <Select.Item value="test2">test 2</Select.Item>
+          <Select.Item value="test3">test 3</Select.Item>
+          <Select.Item value="test4">test 4</Select.Item>
+        </Select>
+        <Select
+          kind="bare"
+          hideChevron
+          hideLabel
+          defaultValue="test"
+          label="Label"
+          id="t1"
+        >
+          <Select.Item value="test">test</Select.Item>
+          <Select.Item value="test2">test 2</Select.Item>
+          <Select.Item value="test3">test 3</Select.Item>
+          <Select.Item value="test4">test 4</Select.Item>
+        </Select>
+        <Select
+          kind="bare"
+          hideChevron
+          hideLabel
+          defaultValue="test"
+          label="Label"
+          id="t2"
+          size="lg"
+        >
+          <Select.Item value="test">test</Select.Item>
+          <Select.Item value="test2">test 2</Select.Item>
+          <Select.Item value="test3">test 3</Select.Item>
+          <Select.Item value="test4">test 4</Select.Item>
+        </Select>
+      </div>
+    );
+  });
+
   add('Error', () => {
     return (
       <div className={css({ display: 'flex', flexDir: 'column', gap: '4' })}>

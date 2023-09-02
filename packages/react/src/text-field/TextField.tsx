@@ -43,10 +43,11 @@ const inputStyles = cva({
     transition: '0.15s',
     outline: 'none',
     '&:hover:not(:focus)': {
-      borderColor: 'gray9'
+      borderColor: 'gray8'
     },
     _focus: {
-      borderColor: 'gray12'
+      borderColor: 'blue9',
+      background: 'blue2'
     }
   },
   variants: {
