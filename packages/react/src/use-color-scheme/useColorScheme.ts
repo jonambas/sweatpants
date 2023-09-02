@@ -5,9 +5,10 @@ export type UseColorScheme = {
   setPreference: (scheme: UseColorScheme['prefers']) => void;
 };
 
-const useColorScheme = ({
-  setHtmlAttribute = false
-} = {}): UseColorScheme['prefers'] => {
+const useColorScheme = ({ setHtmlAttribute = false } = {}): [
+  UseColorScheme['prefers'],
+  UseColorScheme['setPreference']
+] => {
   const [prefers, setPrefers] = useState<UseColorScheme['prefers']>('light');
   const mql = useRef<MediaQueryList>();
 
@@ -39,7 +40,7 @@ const useColorScheme = ({
     };
   }, []);
 
-  return prefers;
+  return [prefers, setPrefers];
 };
 
 export { useColorScheme };
