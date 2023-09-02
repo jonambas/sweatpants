@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.4.1
+
+### Patch Changes
+
+- 4d071d1: Add option to manually set scheme preference
+
 ## 0.4.0
 
 ### Minor Changes
