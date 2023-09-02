@@ -13,12 +13,13 @@ import { Label } from '../label/Label';
 
 export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
   ComponentPropsWithoutRef<typeof RadixSelect.Root> & {
-    label?: string;
-    id: string;
-    size?: 'sm' | 'md' | 'lg';
+    kind?: 'neutral' | 'bare';
     hideChevron?: boolean;
     hideLabel?: boolean;
     hasError?: boolean;
+    id: string;
+    label?: string;
+    size?: 'sm' | 'md' | 'lg';
   };
 
 const ChevronDown = forwardRef<SVGSVGElement, ComponentPropsWithRef<'svg'>>(
@@ -56,21 +57,13 @@ const triggerStyles = cva({
     gap: '3',
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderColor: 'gray7',
     borderRadius: 'sm',
     background: 'white',
     fontSize: '3',
     paddingX: '3',
     transition: '0.15s',
     cursor: 'pointer',
-    outline: 'none',
-    '&:hover:not(:focus)': {
-      borderColor: 'gray8'
-    },
-    _focus: {
-      borderColor: 'blue9',
-      background: 'blue2'
-    }
+    outline: 'none'
   },
   variants: {
     size: {
@@ -81,6 +74,51 @@ const triggerStyles = cva({
       },
       md: { fontSize: '5', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
       sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' }
+    },
+    kind: {
+      neutral: {
+        borderColor: 'gray7',
+        '&:hover:not(:focus)': {
+          borderColor: 'gray8'
+        },
+        _focus: {
+          outline: 'none',
+          borderColor: 'blue9',
+          background: 'blue2'
+        }
+      },
+      bare: {
+        bg: 'transparent',
+        borderColor: 'transparent',
+        position: 'relative',
+        _before: {
+          content: '""',
+          position: 'absolute',
+          zIndex: '1',
+          top: '-1px',
+          bottom: '-1px',
+          left: '-1px',
+          right: '-1px',
+          bg: 'gray12',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'gray12',
+          borderRadius: 'inherit',
+          opacity: '0',
+          transition: 'opacity 0.15s'
+        },
+        _hover: {
+          color: 'black',
+          bg: 'transparent',
+          _before: {
+            opacity: '0.08'
+          }
+        },
+        _focus: {
+          outline: 'none',
+          boxShadow: 'focus'
+        }
+      }
     },
     hasError: {
       true: {
@@ -105,11 +143,12 @@ const cardStyles = css({
 const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
   const {
     children,
-    id,
-    label,
     hasError = false,
     hideChevron = false,
     hideLabel = false,
+    id,
+    kind = 'neutral',
+    label,
     placeholder = 'Select...',
     size = 'md',
     ...rest
@@ -123,7 +162,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
       <RadixSelect.Root {...rest}>
         <RadixSelect.Trigger
           id={id}
-          className={triggerStyles({ hasError, size })}
+          className={triggerStyles({ kind, hasError, size })}
           ref={userRef}
         >
           <RadixSelect.Value placeholder={placeholder} />
