@@ -40,20 +40,29 @@ const itemStyles = cva({
     gap: '4',
     paddingX: '4',
     lineHeight: 'calc(1.75rem - 2px)',
-    borderRadius: 'sm',
     cursor: 'pointer',
     outline: 'none',
+    color: 'gray12',
+    borderRadius: 'sm',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: 'transparent',
     '&:hover, &:focus': {
       boxShadow: 'none',
       outline: 'none',
-      bg: 'gray3'
+      bg: 'gray6'
     },
     '&[data-state=checked]': {
-      bg: 'blue3!',
-      color: 'blue11'
+      borderColor: 'blue8',
+      bg: 'blue8',
+      color: 'blue12',
+      '&:hover, &:focus': {
+        bg: 'blue8'
+      }
     }
   }
 });
+
 const SelectItem: FC<SelectItemProps> = (props) => {
   const { children, value } = props;
 

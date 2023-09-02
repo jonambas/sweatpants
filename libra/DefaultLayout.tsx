@@ -1,12 +1,29 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useEffect } from 'react';
 import './index.css';
 import { css } from '@styles/css';
-import { Link, Stack, Text } from '../packages/react/src';
+import { Link, Stack, Text, useColorScheme } from '../packages/react/src';
 
-const Layout: FC<PropsWithChildren> = ({ children }) => {
+const styles = css({
+  p: '8',
+  bg: 'appBg',
+  minH: '100vh'
+});
+
+const Layout: FC<PropsWithChildren<{ scheme?: 'light' | 'dark' }>> = ({
+  children,
+  scheme
+}) => {
+  const [, setPrefers] = useColorScheme({ setHtmlAttribute: true });
+
+  useEffect(() => {
+    if (scheme) {
+      setPrefers(scheme);
+    }
+  }, [scheme]);
+
   if (!children) {
     return (
-      <div>
+      <div className={styles}>
         <Stack>
           <Text element="h1" looksLike="h2">
             @sweatpants/react
@@ -27,15 +44,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
     );
   }
 
-  return (
-    <div
-      className={css({
-        padding: '4'
-      })}
-    >
-      {children}
-    </div>
-  );
+  return <div className={styles}>{children}</div>;
 };
 
 export default Layout;
