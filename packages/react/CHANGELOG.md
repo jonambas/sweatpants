@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.5.2
+
+### Patch Changes
+
+- 0d7030b: Fix incorrect module path
+
 ## 0.5.1
 
 ### Patch Changes
