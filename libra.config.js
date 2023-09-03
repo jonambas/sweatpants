@@ -17,7 +17,7 @@ export default {
         }
       },
       optimizeDeps: {
-        exclude: ['@sweatpants/react', '@sweatpants/preset', '@styles/css']
+        exclude: ['@styles/css']
       }
     };
   }

@@ -10,6 +10,7 @@ const dir = dirname(__filename);
 export default makeConfig({
   ...pkg,
   input: 'src/index.ts',
+  preserveModules: true,
   plugins: [
     alias({
       entries: {

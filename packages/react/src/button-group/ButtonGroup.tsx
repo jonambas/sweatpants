@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import { cva, cx } from '@styles/css';
 import { ButtonProps } from '../button/Button';

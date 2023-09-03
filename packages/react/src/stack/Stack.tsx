@@ -18,8 +18,8 @@ const styles = cva({
     },
     space: {
       tight: { gap: '2' },
-      normal: { gap: '6' },
-      loose: { gap: '8' },
+      normal: { gap: '5' },
+      loose: { gap: '7' },
       none: { gap: '0' }
     },
     align: {

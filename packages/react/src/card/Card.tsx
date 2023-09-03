@@ -1,3 +1,5 @@
+'use client';
+
 import { cva, cx } from '@styles/css';
 import {
   ComponentPropsWithRef,
