@@ -1,5 +1,6 @@
 import esbuild from 'rollup-plugin-esbuild';
 import size from 'rollup-plugin-bundle-size';
+import preserveDirectives from 'rollup-plugin-preserve-directives';
 import pkg from '../package.json' assert { type: 'json' };
 
 export const makeConfig = ({
@@ -7,17 +8,24 @@ export const makeConfig = ({
   main,
   dependencies,
   input = 'src/index.tsx',
-  plugins = []
+  plugins = [],
+  preserveModules = false
 }) => ({
   input,
   output: [
     {
-      file: module,
+      ...(preserveModules
+        ? { dir: 'dist/esm', preserveModulesRoot: 'src' }
+        : { file: module }),
+      preserveModules,
       format: 'esm',
       sourcemap: true
     },
     {
-      file: main,
+      ...(preserveModules
+        ? { dir: 'dist/cjs', preserveModulesRoot: 'src' }
+        : { file: main }),
+      preserveModules,
       format: 'cjs',
       sourcemap: true
     }
@@ -35,6 +43,17 @@ export const makeConfig = ({
       include: /\.[jt]sx?$/,
       minify: true
     }),
-    size()
-  ]
+    ...(preserveModules ? [preserveDirectives()] : [size()])
+  ],
+  onwarn(warning, warn) {
+    if (
+      warning.message.includes(
+        'Module level directives cause errors when bundled'
+      ) &&
+      warning.message.includes('use client')
+    ) {
+      return;
+    }
+    warn(warning);
+  }
 });
