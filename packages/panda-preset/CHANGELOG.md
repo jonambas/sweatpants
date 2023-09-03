@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.4.1
+
+### Patch Changes
+
+- 36967d9: Preserve modules for use client directives
+
 ## 0.4.0
 
 ### Minor Changes

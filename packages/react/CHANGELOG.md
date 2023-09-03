@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.5.1
+
+### Patch Changes
+
+- 36967d9: Preserve modules for use client directives
+
 ## 0.5.0
 
 ### Minor Changes
