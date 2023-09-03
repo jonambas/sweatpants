@@ -1,6 +1,8 @@
-import { css, cva, cx } from '@styles/css';
+'use client';
+
+import { cva, cx } from '@styles/css';
 import { ComponentPropsWithRef, forwardRef } from 'react';
-import { CardContextValue, useCardContext } from './Card.context';
+import { useCardContext } from './Card.context';
 
 export type CardDividerProps = ComponentPropsWithRef<'div'> & {
   children?: never;
