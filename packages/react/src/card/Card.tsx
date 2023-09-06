@@ -28,7 +28,8 @@ const styles = cva({
     },
     kind: {
       elevated: {
-        boxShadow: '0 4px 8px 0px rgba(0,0,0,0.04)'
+        boxShadow:
+          '0 1px 4px 0px rgba(0,0,0,0.12), 0 4px 12px 0px rgba(0,0,0,0.05)'
       },
       neutral: {
         borderWidth: '1px',

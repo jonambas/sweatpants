@@ -147,10 +147,6 @@ const triggerStyles = cva({
   }
 });
 
-const cardStyles = css({
-  boxShadow: '0 1px 4px 0px rgba(0,0,0,0.12), 0 4px 12px 0px rgba(0,0,0,0.06)'
-});
-
 const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
   const {
     children,
@@ -187,7 +183,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
         <RadixSelect.Portal>
           <RadixSelect.Content>
             <RadixSelect.Viewport asChild>
-              <Card kind="elevated" space="tight" className={cardStyles}>
+              <Card kind="elevated" space="tight">
                 <Stack space="tight">{children}</Stack>
               </Card>
             </RadixSelect.Viewport>
