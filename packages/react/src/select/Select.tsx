@@ -8,7 +8,7 @@ import {
 } from 'react';
 import * as RadixSelect from '@radix-ui/react-select';
 import { SelectItem } from './SelectItem';
-import { css, cva } from '@styles/css';
+import { css, cva, cx } from '@styles/css';
 import { Card } from '../card/Card';
 import { Stack } from '../stack/Stack';
 import { Label } from '../label/Label';
@@ -56,7 +56,6 @@ const triggerStyles = cva({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    gap: '3',
     borderWidth: '1px',
     borderStyle: 'solid',
     borderRadius: 'sm',
@@ -66,16 +65,23 @@ const triggerStyles = cva({
     transition: '0.15s',
     cursor: 'pointer',
     outline: 'none',
-    color: 'gray12'
+    color: 'gray12',
+    whiteSpace: 'nowrap'
   },
   variants: {
+    hideChevron: {
+      true: {
+        gap: '3'
+      },
+      false: {}
+    },
     size: {
       lg: {
-        fontSize: '6',
+        fontSize: '5',
         paddingX: '5',
         lineHeight: 'calc(2.5rem - 2px)'
       },
-      md: { fontSize: '5', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
+      md: { fontSize: '4', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
       sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' }
     },
     kind: {
@@ -148,6 +154,7 @@ const cardStyles = css({
 const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
   const {
     children,
+    className,
     hasError = false,
     hideChevron = false,
     hideLabel = false,
@@ -160,14 +167,14 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
   } = props;
 
   return (
-    <div className={containerStyles}>
+    <div className={cx(containerStyles, className)}>
       <Label hide={hideLabel} id={id}>
         {label}
       </Label>
       <RadixSelect.Root {...rest}>
         <RadixSelect.Trigger
           id={id}
-          className={triggerStyles({ kind, hasError, size })}
+          className={triggerStyles({ kind, hideChevron, hasError, size })}
           ref={userRef}
         >
           <RadixSelect.Value placeholder={placeholder} />

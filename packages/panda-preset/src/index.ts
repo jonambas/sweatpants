@@ -55,8 +55,9 @@ export default definePreset({
     },
     semanticTokens: {
       colors: {
-        appBg: { value: { _lightScheme: '#fcfcfd', _darkScheme: '#18181a' } },
-        contentBg: { value: { _lightScheme: 'white', _darkScheme: '#27282d' } },
+        baseBg: {
+          value: { _lightScheme: '#f9f9fb', _darkScheme: '#18181a' }
+        },
         gray1: { value: { _lightScheme: '#fcfcfd', _darkScheme: '#18181a' } },
         gray2: { value: { _lightScheme: '#f9f9fb', _darkScheme: '#1b1b1f' } },
         gray3: { value: { _lightScheme: '#f2f2f5', _darkScheme: '#27282d' } },
@@ -160,14 +161,8 @@ export default definePreset({
       },
       shadows: {
         focus: {
-          value: {
-            _lightScheme:
-              '0 0 0 1px {colors.contentBg}, 0 0 0 3px {colors.blue9}',
-            _darkScheme:
-              '0 0 0 1px {colors.contentBg}, 0 0 0 3px {colors.blue9}'
-          }
-        },
-        focusInset: { value: 'inset 0 0 0 2px #0880ea' }
+          value: '0 0 0 1px {colors.baseBg}, 0 0 0 3px {colors.blue9}'
+        }
       }
     }
   },

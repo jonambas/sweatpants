@@ -2,13 +2,13 @@ import { cva, cx } from '@styles/css';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 export type StackProps = ComponentPropsWithRef<'div'> & {
-  align?: 'start' | 'center' | 'end';
+  align?: 'start' | 'center' | 'end' | 'baseline';
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   space?: 'none' | 'tight' | 'normal' | 'loose';
 };
 
 const styles = cva({
-  base: { display: 'flex' },
+  base: { display: 'flex', w: '100%' },
   variants: {
     direction: {
       row: { flexDir: 'row' },
@@ -25,7 +25,8 @@ const styles = cva({
     align: {
       start: { alignItems: 'flex-start' },
       end: { alignItems: 'flex-end' },
-      center: { alignItems: 'center' }
+      center: { alignItems: 'center' },
+      baseline: { alignItems: 'baseline' }
     }
   }
 });

@@ -17,7 +17,7 @@ export type CardProps = ComponentPropsWithRef<'div'> & {
 const styles = cva({
   base: {
     borderRadius: 'md',
-    bg: 'contentBg'
+    bg: 'baseBg'
   },
   variants: {
     space: {
@@ -33,8 +33,8 @@ const styles = cva({
       neutral: {
         borderWidth: '1px',
         borderStyle: 'solid',
-        _lightScheme: { borderColor: 'gray4' },
-        _darkScheme: { borderColor: 'gray6' }
+        _lightScheme: { borderColor: 'gray5' },
+        _darkScheme: { borderColor: 'gray3' }
       }
     }
   }

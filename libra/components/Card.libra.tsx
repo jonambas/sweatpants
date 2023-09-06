@@ -33,7 +33,7 @@ directory('Card', () => {
 
   add('Elevated Variant', () => {
     return (
-      <div className={css({ bg: 'appBg', padding: '8' })}>
+      <div className={css({ bg: 'baseBg', padding: '8' })}>
         <Card space="tight" kind="elevated">
           <ButtonGroup size="md" kind="bare" space="tight">
             <Button selected>3m</Button>

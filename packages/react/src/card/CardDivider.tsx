@@ -17,8 +17,8 @@ const styles = cva({
         _darkScheme: { bg: 'gray1' }
       },
       neutral: {
-        _lightScheme: { bg: 'gray4' },
-        _darkScheme: { bg: 'gray6' }
+        _lightScheme: { bg: 'gray5' },
+        _darkScheme: { bg: 'gray3' }
       }
     },
     space: {
@@ -26,7 +26,7 @@ const styles = cva({
       tight: {
         marginY: '2',
         marginLeft: 'calc(token(spacing.2) * -1)',
-        width: 'calc(100% + token(spacing.4) * 2)'
+        width: 'calc(100% + token(spacing.2) * 2)'
       },
       normal: {
         marginY: '5',
@@ -36,7 +36,7 @@ const styles = cva({
       loose: {
         marginY: '7',
         left: 'calc(token(spacing.7) * -1)',
-        width: 'calc(100% + token(spacing.9) * 2)'
+        width: 'calc(100% + token(spacing.7) * 2)'
       }
     }
   }
