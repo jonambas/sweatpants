@@ -12,4 +12,5 @@ export * from './tab/Tab';
 export * from './tabs/Tabs';
 export * from './text/Text';
 export * from './text-field/TextField';
+export * from './toast/Toast';
 export * from './use-color-scheme/useColorScheme';
