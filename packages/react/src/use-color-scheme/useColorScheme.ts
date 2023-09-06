@@ -1,31 +1,35 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 export type UseColorScheme = {
-  prefers: 'light' | 'dark';
-  setPreference: (scheme: UseColorScheme['prefers']) => void;
+  scheme: 'light' | 'dark';
+  setScheme: (scheme: UseColorScheme['scheme']) => void;
 };
 
 const useColorScheme = ({ setHtmlAttribute = false } = {}): [
-  UseColorScheme['prefers'],
-  UseColorScheme['setPreference']
+  UseColorScheme['scheme'],
+  UseColorScheme['setScheme']
 ] => {
-  const [prefers, setPrefers] = useState<UseColorScheme['prefers']>('light');
+  const [scheme, setScheme] = useState<UseColorScheme['scheme']>('light');
   const mql = useRef<MediaQueryList>();
 
-  const handleScheme = useCallback((event: MediaQueryListEvent) => {
-    setPrefers(event.matches ? 'dark' : 'light');
-  }, []);
-
-  useEffect(() => {
+  const setHtml = (v: UseColorScheme['scheme']) => {
     if (typeof window !== 'undefined' && setHtmlAttribute) {
-      document
-        .querySelector('html')
-        ?.setAttribute('data-color-scheme', prefers);
+      document.querySelector('html')?.setAttribute('data-color-scheme', v);
     }
-  }, [prefers, setHtmlAttribute]);
+  };
 
+  // Initial mount
   useEffect(() => {
     mql.current = window.matchMedia('(prefers-color-scheme: dark)');
+    setScheme(mql.current.matches ? 'dark' : 'light');
+    setHtml(mql.current.matches ? 'dark' : 'light');
+  }, []);
+
+  // When media query changes
+  const handleScheme = useCallback((event: MediaQueryListEvent) => {
+    const newOs = event.matches ? 'dark' : 'light';
+    setScheme(newOs);
+    setHtml(newOs);
   }, []);
 
   useEffect(() => {
@@ -40,7 +44,14 @@ const useColorScheme = ({ setHtmlAttribute = false } = {}): [
     };
   }, []);
 
-  return [prefers, setPrefers];
+  const userSetScheme = useCallback(
+    (v: UseColorScheme['scheme']) => {
+      setScheme(v);
+      setHtml(v);
+    },
+    [setHtmlAttribute]
+  );
+  return [scheme, userSetScheme];
 };
 
 export { useColorScheme };

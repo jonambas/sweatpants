@@ -10,6 +10,7 @@ type BaseProps = ComponentPropsWithRef<'button'> & {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   kind?: 'primary' | 'destructive' | 'neutral' | 'bare';
   disabled?: boolean;
+  fullWidth?: boolean;
 };
 
 export type ButtonProps =
@@ -42,6 +43,7 @@ const styles = cva({
     }
   },
   variants: {
+    fullWidth: { true: { w: '100%' }, false: {} },
     size: {
       lg: {
         fontSize: '5',
@@ -58,18 +60,7 @@ const styles = cva({
     },
     selected: {
       true: {
-        zIndex: '1',
-        borderColor: 'blue9',
-        _lightScheme: { bg: 'blue3', color: 'blue11' },
-        _darkScheme: { bg: 'blue6', color: 'blue12' },
-        '&:hover:not(:disabled)': {
-          borderColor: 'blue9',
-          _lightScheme: { bg: 'blue3', color: 'blue11' },
-          _darkScheme: { bg: 'blue6', color: 'blue12' },
-          _before: {
-            opacity: '0.05'
-          }
-        }
+        zIndex: '1'
       },
       false: {}
     },
@@ -84,11 +75,11 @@ const styles = cva({
         }
       },
       destructive: {
-        bg: 'red5',
-        borderColor: 'red8',
+        bg: 'red3',
+        borderColor: 'red7',
         color: 'red11',
         '&:hover:not(:disabled)': {
-          bg: 'red6'
+          bg: 'red4'
         }
       },
       neutral: {
@@ -128,17 +119,50 @@ const styles = cva({
         }
       }
     }
-  }
+  },
+  compoundVariants: [
+    {
+      kind: 'neutral',
+      selected: true,
+      css: {
+        _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue8' },
+        _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue9' },
+        '&:hover:not(:disabled)': {
+          _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue8' },
+          _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue9' },
+          _before: {
+            opacity: '0.05'
+          }
+        }
+      }
+    },
+    {
+      kind: 'bare',
+      selected: true,
+      css: {
+        _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue3' },
+        _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue6' },
+        '&:hover:not(:disabled)': {
+          _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue3' },
+          _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue6' },
+          _before: {
+            opacity: '0.05'
+          }
+        }
+      }
+    }
+  ]
 });
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
   const {
     asChild,
-    type = 'button',
-    kind = 'neutral',
-    size = 'md',
     className,
     disabled = false,
+    fullWidth = false,
+    kind = 'neutral',
+    size = 'md',
+    type = 'button',
     selected,
     ...rest
   } = props;
@@ -157,7 +181,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
     <Element
       ref={userRef}
       type={type}
-      className={cx(styles({ ...finalStyles, disabled, selected }), className)}
+      className={cx(
+        styles({ ...finalStyles, disabled, selected, fullWidth }),
+        className
+      )}
       disabled={disabled}
       {...pressedProps}
       {...rest}

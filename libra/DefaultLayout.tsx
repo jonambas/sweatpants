@@ -5,7 +5,7 @@ import { Link, Stack, Text, useColorScheme } from '../packages/react/src';
 
 const styles = css({
   p: '8',
-  bg: 'appBg',
+  bg: 'baseBg',
   minH: '100vh'
 });
 
