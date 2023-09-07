@@ -9,10 +9,8 @@ directory('Toast', () => {
   add('Tone', () => {
     return (
       <Stack>
-        <Toast tone="positive">Positive</Toast>
         <Toast tone="negative">Negative</Toast>
         <Toast tone="neutral">Neutral</Toast>
-        <Toast tone="caution">Caution</Toast>
       </Stack>
     );
   });

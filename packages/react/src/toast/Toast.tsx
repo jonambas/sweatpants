@@ -1,51 +1,49 @@
-import { cva, cx } from '@styles/css';
+import { css, cva, cx } from '@styles/css';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import { Card } from '../card/Card';
+import { Button } from '../button/Button';
+import { Cross } from '../icons/icons';
 
 export type ToastProps = ComponentPropsWithRef<'div'> & {
-  tone?: 'positive' | 'negative' | 'neutral' | 'caution';
+  tone?: 'negative' | 'neutral';
+  onClose?: ComponentPropsWithRef<'button'>['onClick'];
 };
 
 const styles = cva({
   base: {
-    px: '4!',
-    py: '3!',
+    pl: '4',
+    pr: '3',
+    py: '3',
     fontSize: '4',
     borderWidth: '1px',
     borderStyle: 'solid'
   },
   variants: {
     tone: {
-      positive: {
-        bg: 'green3',
-        color: 'green11',
-        borderColor: 'green7',
-        boxShadow: '0 3px 5px 0px rgba(0,255,0,0.1)'
-      },
       negative: {
-        bg: 'red3',
-        color: 'red11',
-        borderColor: 'red7',
-        boxShadow: '0 3px 5px 0px rgba(255,0,0,0.1)'
+        bg: 'red9',
+        color: 'red2',
+        borderColor: 'red11',
+        boxShadow: '0 3px 5px 0px rgba(255,0,0,0.1)',
+        '& button': {
+          color: 'red5'
+        }
       },
       neutral: {
-        bg: 'gray3',
-        color: 'gray11',
-        borderColor: 'gray7',
-        boxShadow: '0 3px 5px 0px rgba(0,0,0,0.05)'
-      },
-      caution: {
-        bg: 'orange3',
-        color: 'orange11',
-        borderColor: 'orange7',
-        boxShadow: '0 3px 5px 0px rgba(200,120,0,0.15)'
+        bg: 'gray12',
+        color: 'gray1',
+        borderColor: 'gray12',
+        boxShadow: '0 3px 5px 0px rgba(0,0,0,0.05)',
+        '& button': {
+          color: 'gray6'
+        }
       }
     }
   }
 });
 
 const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
-  const { children, className, tone = 'neutral', ...rest } = props;
+  const { children, className, tone = 'neutral', onClose, ...rest } = props;
   return (
     <Card
       kind="elevated"
@@ -53,7 +51,18 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
       ref={userRef}
       {...rest}
     >
-      <span>{children}</span>
+      <div
+        className={css({
+          display: 'flex',
+          gap: '5',
+          justifyContent: 'space-between'
+        })}
+      >
+        <div>{children}</div>
+        <Button kind="bare" size="xs" onClick={onClose}>
+          <Cross width="12" height="12" />
+        </Button>
+      </div>
     </Card>
   );
 });
