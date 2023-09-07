@@ -2,6 +2,30 @@ import { definePreset } from '@pandacss/dev';
 
 export default definePreset({
   theme: {
+    keyframes: {
+      fadein: {
+        from: { opacity: '0' },
+        to: { opacity: '1' }
+      },
+      fadeout: {
+        to: { opacity: '0' },
+        from: { opacity: '1' }
+      },
+      slideinright: {
+        from: { transform: 'translateX(100%)' },
+        to: { transform: 'translateX(0)' }
+      },
+      slideinbottom: {
+        from: { transform: 'translateY(100%)' },
+        to: { transform: 'translateY(0)' }
+      }
+    },
+    breakpoints: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
+    },
     tokens: {
       spacing: {
         1: { value: '1px' },
@@ -36,7 +60,8 @@ export default definePreset({
       },
       radii: {
         sm: { value: '3px' },
-        md: { value: '5px' }
+        md: { value: '5px' },
+        xl: { value: '12px' }
       },
       fontWeights: {
         normal: { value: '400' },

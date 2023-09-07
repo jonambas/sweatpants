@@ -2,6 +2,7 @@ export * from './button/Button';
 export * from './button-group/ButtonGroup';
 export * from './card/Card';
 export * from './card/CardDivider';
+export * from './drawer/Drawer';
 export * from './icons/icons';
 export * from './label/Label';
 export * from './link/Link';
