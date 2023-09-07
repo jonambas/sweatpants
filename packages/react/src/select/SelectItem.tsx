@@ -1,35 +1,9 @@
 import * as RadixSelect from '@radix-ui/react-select';
 import { css, cva } from '@styles/css';
-import {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  FC,
-  forwardRef
-} from 'react';
+import { ComponentPropsWithoutRef, FC } from 'react';
+import { Check } from '../icons/icons';
 
 export type SelectItemProps = ComponentPropsWithoutRef<typeof RadixSelect.Item>;
-
-const Tick = forwardRef<SVGSVGElement, ComponentPropsWithRef<'svg'>>(
-  function Tick(props, ref) {
-    return (
-      <svg
-        viewBox="0 0 15 15"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        width="15"
-        height="15"
-        ref={ref}
-        {...props}
-      >
-        <path
-          d="M1 7l4.5 4.5L14 3"
-          stroke="currentColor"
-          strokeLinecap="square"
-        ></path>
-      </svg>
-    );
-  }
-);
 
 const itemStyles = cva({
   base: {
@@ -81,7 +55,7 @@ const SelectItem: FC<SelectItemProps> = (props) => {
       <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
       <span>
         <RadixSelect.ItemIndicator>
-          <Tick width="11" height="11" />
+          <Check width="14" height="14" />
         </RadixSelect.ItemIndicator>
       </span>
     </RadixSelect.Item>

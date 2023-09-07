@@ -12,6 +12,7 @@ import { css, cva, cx } from '@styles/css';
 import { Card } from '../card/Card';
 import { Stack } from '../stack/Stack';
 import { Label } from '../label/Label';
+import { ChevronDown } from '../icons/icons';
 
 export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
   ComponentPropsWithoutRef<typeof RadixSelect.Root> & {
@@ -23,28 +24,6 @@ export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
     label?: string;
     size?: 'sm' | 'md' | 'lg';
   };
-
-const ChevronDown = forwardRef<SVGSVGElement, ComponentPropsWithRef<'svg'>>(
-  function ChevronDown(props, ref) {
-    return (
-      <svg
-        viewBox="0 0 15 15"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        width="15"
-        height="15"
-        ref={ref}
-        {...props}
-      >
-        <path
-          d="M14 5l-6.5 7L1 5"
-          stroke="currentColor"
-          strokeLinecap="square"
-        ></path>
-      </svg>
-    );
-  }
-);
 
 const containerStyles = css({
   w: '100%'
@@ -176,7 +155,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
           <RadixSelect.Value placeholder={placeholder} />
           {!hideChevron && (
             <RadixSelect.Icon>
-              <ChevronDown width="11" height="11" />
+              <ChevronDown width="14" height="14" />
             </RadixSelect.Icon>
           )}
         </RadixSelect.Trigger>
