@@ -1,5 +1,14 @@
 # @sweatpants/react
 
+## 0.6.0
+
+### Minor Changes
+
+- 8d27c65: Various styling updates and bug fixes
+- af2e2d2: Add Toast component
+- af2e2d2: Add icons
+- 143d935: Add Drawer component, breakpoints, supporting keyframes
+
 ## 0.5.2
 
 ### Patch Changes

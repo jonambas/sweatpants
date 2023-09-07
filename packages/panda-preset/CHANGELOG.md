@@ -1,5 +1,12 @@
 # @sweatpants/panda-preset
 
+## 0.5.0
+
+### Minor Changes
+
+- 8d27c65: Various styling updates and bug fixes
+- 143d935: Add Drawer component, breakpoints, supporting keyframes
+
 ## 0.4.1
 
 ### Patch Changes
