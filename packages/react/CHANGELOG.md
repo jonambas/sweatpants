@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.1
+
+### Patch Changes
+
+- 9555bf4: Fix Select overlay zindex within drawers
+
 ## 0.7.0
 
 ### Minor Changes
