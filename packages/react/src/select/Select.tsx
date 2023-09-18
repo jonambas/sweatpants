@@ -160,7 +160,9 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
           )}
         </RadixSelect.Trigger>
         <RadixSelect.Portal>
-          <RadixSelect.Content>
+          <RadixSelect.Content
+            className={css({ position: 'relative', zIndex: '2' })}
+          >
             <RadixSelect.Viewport asChild>
               <Card kind="elevated" space="tight">
                 <Stack space="tight">{children}</Stack>
