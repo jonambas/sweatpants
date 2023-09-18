@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { css } from '@styles/css';
@@ -12,6 +14,7 @@ export type DrawerProps = ComponentPropsWithRef<'div'> &
 
 const overlay = css({
   position: 'fixed',
+  zIndex: '2',
   inset: 0,
   background: '#b9bbc650', // gray8
   transition: '0.15s',
@@ -20,6 +23,7 @@ const overlay = css({
 
 const content = css({
   position: 'fixed',
+  zIndex: '2',
   insetY: '0',
   right: '0',
   background: 'baseBg',

@@ -182,8 +182,99 @@ export default definePreset({
         yellow11: {
           value: { _lightScheme: '#775f28', _darkScheme: '#ffee33' }
         },
-        yellow12: { value: { _lightScheme: '#473b1f', _darkScheme: '#fff5ad' } }
+        yellow12: {
+          value: { _lightScheme: '#473b1f', _darkScheme: '#fff5ad' }
+        },
+        amber1: { value: { _lightScheme: '#fefdfb', _darkScheme: '#1f1300' } },
+        amber2: { value: { _lightScheme: '#fff9ed', _darkScheme: '#251804' } },
+        amber3: { value: { _lightScheme: '#fff3d0', _darkScheme: '#30200b' } },
+        amber4: { value: { _lightScheme: '#ffecb7', _darkScheme: '#39270f' } },
+        amber5: { value: { _lightScheme: '#ffe0a1', _darkScheme: '#432e12' } },
+        amber6: { value: { _lightScheme: '#f5d08c', _darkScheme: '#533916' } },
+        amber7: { value: { _lightScheme: '#e4bb78', _darkScheme: '#6f4d1d' } },
+        amber8: { value: { _lightScheme: '#d6a35c', _darkScheme: '#a9762a' } },
+        amber9: { value: { _lightScheme: '#ffc53d', _darkScheme: '#ffc53d' } },
+        amber10: { value: { _lightScheme: '#ffba1a', _darkScheme: '#ffcb47' } },
+        amber11: { value: { _lightScheme: '#915930', _darkScheme: '#ffcc4d' } },
+        amber12: { value: { _lightScheme: '#4f3422', _darkScheme: '#ffe7b3' } },
+        crimson1: {
+          value: { _lightScheme: '#fffcfd', _darkScheme: '#1d1418' }
+        },
+        crimson2: {
+          value: { _lightScheme: '#fff7fb', _darkScheme: '#29151d' }
+        },
+        crimson3: {
+          value: { _lightScheme: '#feeff6', _darkScheme: '#391826' }
+        },
+        crimson4: {
+          value: { _lightScheme: '#fce5f0', _darkScheme: '#441a2b' }
+        },
+        crimson5: {
+          value: { _lightScheme: '#f9d8e7', _darkScheme: '#511c31' }
+        },
+        crimson6: {
+          value: { _lightScheme: '#f4c6db', _darkScheme: '#641e3a' }
+        },
+        crimson7: {
+          value: { _lightScheme: '#edadc8', _darkScheme: '#881f49' }
+        },
+        crimson8: {
+          value: { _lightScheme: '#e58fb1', _darkScheme: '#cf1761' }
+        },
+        crimson9: {
+          value: { _lightScheme: '#e93d82', _darkScheme: '#e93d82' }
+        },
+        crimson10: {
+          value: { _lightScheme: '#dc3175', _darkScheme: '#f46396' }
+        },
+        crimson11: {
+          value: { _lightScheme: '#cb1d63', _darkScheme: '#ff85ab' }
+        },
+        crimson12: {
+          value: { _lightScheme: '#621639', _darkScheme: '#fdd3e8' }
+        },
+        jade1: { value: { _lightScheme: '#fbfefd', _darkScheme: '#081911' } },
+        jade2: { value: { _lightScheme: '#effdf6', _darkScheme: '#0b1f16' } },
+        jade3: { value: { _lightScheme: '#e4faef', _darkScheme: '#0f291e' } },
+        jade4: { value: { _lightScheme: '#d7f4e6', _darkScheme: '#123124' } },
+        jade5: { value: { _lightScheme: '#c6ecdb', _darkScheme: '#143a2b' } },
+        jade6: { value: { _lightScheme: '#b0e0cc', _darkScheme: '#184635' } },
+        jade7: { value: { _lightScheme: '#8fcfb9', _darkScheme: '#1e5e48' } },
+        jade8: { value: { _lightScheme: '#56ba9f', _darkScheme: '#238b6f' } },
+        jade9: { value: { _lightScheme: '#29a383', _darkScheme: '#29a383' } },
+        jade10: { value: { _lightScheme: '#259678', _darkScheme: '#25ba92' } },
+        jade11: { value: { _lightScheme: '#1a7a5e', _darkScheme: '#1fd8a4' } },
+        jade12: { value: { _lightScheme: '#1d3b31', _darkScheme: '#adf0d4' } },
+        mint1: { value: { _lightScheme: '#f9fefd', _darkScheme: '#081917' } },
+        mint2: { value: { _lightScheme: '#effefa', _darkScheme: '#0a1f1d' } },
+        mint3: { value: { _lightScheme: '#ddfbf3', _darkScheme: '#0d2927' } },
+        mint4: { value: { _lightScheme: '#ccf7ec', _darkScheme: '#0e322e' } },
+        mint5: { value: { _lightScheme: '#bbeee2', _darkScheme: '#103b36' } },
+        mint6: { value: { _lightScheme: '#a6e1d3', _darkScheme: '#134842' } },
+        mint7: { value: { _lightScheme: '#87d0bf', _darkScheme: '#186057' } },
+        mint8: { value: { _lightScheme: '#51bda7', _darkScheme: '#248f7d' } },
+        mint9: { value: { _lightScheme: '#86ead4', _darkScheme: '#86ead4' } },
+        mint10: { value: { _lightScheme: '#7fe1cc', _darkScheme: '#95f3d9' } },
+        mint11: { value: { _lightScheme: '#27756a', _darkScheme: '#49dfbe' } },
+        mint12: { value: { _lightScheme: '#16433c', _darkScheme: '#c4f5e1' } },
+        indigo1: { value: { _lightScheme: '#fdfdfe', _darkScheme: '#131620' } },
+        indigo2: { value: { _lightScheme: '#f8faff', _darkScheme: '#15192d' } },
+        indigo3: { value: { _lightScheme: '#f0f4ff', _darkScheme: '#1a2242' } },
+        indigo4: { value: { _lightScheme: '#e6edfe', _darkScheme: '#1e284f' } },
+        indigo5: { value: { _lightScheme: '#d9e2fc', _darkScheme: '#202d5c' } },
+        indigo6: { value: { _lightScheme: '#c6d4f9', _darkScheme: '#24366e' } },
+        indigo7: { value: { _lightScheme: '#aec0f5', _darkScheme: '#2c438f' } },
+        indigo8: { value: { _lightScheme: '#8da4ef', _darkScheme: '#3b5dce' } },
+        indigo9: { value: { _lightScheme: '#3e63dd', _darkScheme: '#3e63dd' } },
+        indigo10: {
+          value: { _lightScheme: '#3a5ccc', _darkScheme: '#5c73e7' }
+        },
+        indigo11: {
+          value: { _lightScheme: '#3451b2', _darkScheme: '#99a2ff' }
+        },
+        indigo12: { value: { _lightScheme: '#1f2d5c', _darkScheme: '#dddffe' } }
       },
+
       shadows: {
         focus: {
           value: '0 0 0 1px {colors.baseBg}, 0 0 0 3px {colors.blue9}'
