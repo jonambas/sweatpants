@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.6.0
+
+### Minor Changes
+
+- 1b5d0ed: Add additional color scales, fix some components
+
 ## 0.5.0
 
 ### Minor Changes
