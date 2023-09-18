@@ -9,7 +9,7 @@ import {
   useRef,
   useState
 } from 'react';
-import { css, cva } from '@styles/css';
+import { css, cva, cx } from '@styles/css';
 import { Label } from '../label/Label';
 
 export type TextFieldProps = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
@@ -28,7 +28,8 @@ const containerStyles = css({
 });
 
 const inputContainerStyles = css({
-  position: 'relative'
+  position: 'relative',
+  zIndex: '1'
 });
 
 const inputStyles = cva({
@@ -99,6 +100,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   (props, userRef) => {
     const {
       align = 'left',
+      className,
       label,
       id,
       size = 'md',
@@ -138,7 +140,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           <input
             id={id}
             type="text"
-            className={inputStyles({ align, size, hasError })}
+            className={cx(inputStyles({ align, size, hasError }), className)}
             ref={userRef}
             style={{ ...padding }}
             {...rest}
