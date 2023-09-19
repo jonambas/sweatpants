@@ -30,7 +30,7 @@
     "@pandacss/dev": "0.15.0",
     "@rollup/plugin-alias": "5.0.0",
     "@sweatpants/libra": "^0.0.28",
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "prettier": "3.0.3",
     "react": "18.2.0",
