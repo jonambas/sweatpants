@@ -43,7 +43,8 @@ const inputStyles = cva({
     background: 'transparent',
     fontSize: '3',
     paddingX: '3',
-    transition: '0.15s',
+    transitionDuration: '0.15s',
+    transitionProperty: 'background, border',
     outline: 'none',
     color: 'gray12',
     '&:hover:not(:focus)': {
@@ -116,8 +117,8 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
     useEffect(() => {
       const styles: HTMLAttributes<'input'>['style'] = {
-        paddingLeft: undefined,
-        paddingRight: undefined
+        paddingLeft: prefix ? `calc(1rem + 1ch)` : undefined,
+        paddingRight: suffix ? `calc(1rem + 1ch)` : undefined
       };
 
       if (prefixRef.current) {
@@ -129,7 +130,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       }
 
       setPadding(styles);
-    }, [prefixRef, suffixRef]);
+    }, [prefix, suffix, prefixRef, suffixRef]);
 
     return (
       <div className={containerStyles}>
