@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.2
+
+### Patch Changes
+
+- 46162fa: Fix TextField first render transition
+
 ## 0.7.1
 
 ### Patch Changes
