@@ -51,8 +51,8 @@ const styles = cva({
         lineHeight: 'calc(2.5rem - 2px)'
       },
       md: { fontSize: '4', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
-      sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
-      xs: { fontSize: '3', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
+      sm: { fontSize: '2', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
+      xs: { fontSize: '2', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
     },
     disabled: {
       true: { cursor: 'not-allowed', opacity: '0.7' },
@@ -94,7 +94,7 @@ const styles = cva({
         bg: 'transparent',
         borderColor: 'transparent',
         position: 'relative',
-        color: 'gray12',
+        color: 'gray10',
         _before: {
           content: '""',
           position: 'absolute',
@@ -113,6 +113,7 @@ const styles = cva({
         },
         '&:hover:not(:disabled)': {
           bg: 'transparent',
+          color: 'gray12',
           _before: {
             opacity: '0.08'
           }

@@ -10,7 +10,6 @@ export type TabProps = ComponentPropsWithRef<'button'> & {
 const styles = cva({
   base: {
     position: 'relative',
-    color: 'gray10!',
     _after: {
       content: "''",
       display: 'block',
@@ -22,7 +21,8 @@ const styles = cva({
       bg: 'gray12',
       borderRadius: 'sm',
       transition: '0.15s'
-    }
+    },
+    _hover: {}
   },
   variants: {
     selected: {

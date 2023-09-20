@@ -1,7 +1,18 @@
 'use client';
 
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import {
+  ComponentPropsWithRef,
+  MutableRefObject,
+  ReactNode,
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
+import { motion, AnimatePresence } from 'framer-motion';
+import useResizeObserver from '@react-hook/resize-observer';
 import { css } from '@styles/css';
 import { Button } from '../button/Button';
 import { Cross } from '../icons/icons';
@@ -16,9 +27,7 @@ const overlay = css({
   position: 'fixed',
   zIndex: '2',
   inset: 0,
-  background: '#b9bbc650', // gray8
-  transition: '0.15s',
-  animation: ['fadein 150ms linear']
+  background: '#b9bbc650' // gray8
 });
 
 const content = css({
@@ -28,20 +37,21 @@ const content = css({
   right: '0',
   background: 'baseBg',
   borderTopLeftRadius: 'xl',
-  borderBottomLeftRadius: 'xl',
+  borderBottomLeftRadius: '0',
+  borderTopRightRadius: 'xl',
   boxShadow: '0 0 24px 0px rgba(0,0,0,0.1)',
   p: '6',
   maxWidth: '100%',
   width: '100%',
   height: '95%',
   top: 'auto',
-  animation: ['slideinbottom .25s cubic-bezier(0.33, 1, 0.68, 1)'],
   sm: {
     maxWidth: '90%',
     width: '350px',
     height: '100%',
     top: '0',
-    animation: ['slideinright .25s cubic-bezier(0.33, 1, 0.68, 1)']
+    borderBottomLeftRadius: 'xl',
+    borderTopRightRadius: '0'
   }
 });
 
@@ -53,22 +63,80 @@ const close = css({
 });
 
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
-  const { children, trigger, ...rest } = props;
+  const { children, trigger, defaultOpen, open, onOpenChange, ...rest } = props;
+  const [internalOpen, setInternalOpen] = useState<boolean>(
+    defaultOpen ?? open ?? false
+  );
+  const [isSmall, setIsSmall] = useState<boolean>(false);
+  const ref = useRef(null) as MutableRefObject<HTMLElement | null>;
+
+  useEffect(() => {
+    if (typeof document !== 'undefined' && document.body) {
+      ref.current = document.body;
+    }
+  }, []);
+
+  useResizeObserver(ref.current, (entry) => {
+    setIsSmall(entry.contentRect.width < 640);
+  });
+
+  useLayoutEffect(() => {
+    setIsSmall((ref.current?.getBoundingClientRect()?.width ?? 0) < 640);
+  }, [ref]);
+
+  const handleOpenChange = (value: boolean) => {
+    setInternalOpen(value);
+    onOpenChange?.(value);
+  };
+
+  const finalOpen = defaultOpen ?? open ?? internalOpen;
+
   return (
-    <Dialog.Root ref={userRef} {...rest}>
+    <Dialog.Root
+      ref={userRef}
+      onOpenChange={handleOpenChange}
+      open={finalOpen}
+      {...rest}
+    >
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
-      <Dialog.Portal>
-        <Dialog.Overlay className={overlay} />
-        <Dialog.Content className={content}>
-          {children}
-          <Dialog.Close asChild>
-            <Button className={close} kind="bare" size="md">
-              <ScreenReaderOnly>Close</ScreenReaderOnly>
-              <Cross />
-            </Button>
-          </Dialog.Close>
-        </Dialog.Content>
-      </Dialog.Portal>
+      <AnimatePresence>
+        {finalOpen ? (
+          <Dialog.Portal forceMount>
+            <Dialog.Overlay asChild className={overlay}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              />
+            </Dialog.Overlay>
+
+            <Dialog.Content className={content} asChild>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                }}
+                animate={{
+                  opacity: 1,
+                  transform: isSmall ? 'translateY(0)' : 'translateX(0)'
+                }}
+                exit={{
+                  opacity: 0,
+                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                }}
+              >
+                {children}
+                <Dialog.Close asChild>
+                  <Button className={close} kind="bare" size="md">
+                    <ScreenReaderOnly>Close</ScreenReaderOnly>
+                    <Cross />
+                  </Button>
+                </Dialog.Close>
+              </motion.div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        ) : null}
+      </AnimatePresence>
     </Dialog.Root>
   );
 });
