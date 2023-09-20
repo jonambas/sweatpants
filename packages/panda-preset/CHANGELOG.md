@@ -1,5 +1,15 @@
 # @sweatpants/panda-preset
 
+## 0.7.0
+
+### Minor Changes
+
+- c52823d: Adjust Button styles, animate Drawer exit
+
+### Patch Changes
+
+- 43f8b83: Update dependencies
+
 ## 0.6.0
 
 ### Minor Changes

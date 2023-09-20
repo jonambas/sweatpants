@@ -1,5 +1,12 @@
 # @sweatpants/react
 
+## 0.7.3
+
+### Patch Changes
+
+- c52823d: Adjust Button styles, animate Drawer exit
+- 43f8b83: Update dependencies
+
 ## 0.7.2
 
 ### Patch Changes
