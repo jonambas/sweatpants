@@ -26,7 +26,10 @@ const styles = cva({
         borderColor: 'red11',
         boxShadow: '0 3px 5px 0px rgba(255,0,0,0.1)',
         '& button': {
-          color: 'red5'
+          color: 'red5!',
+          _hover: {
+            color: 'red2!'
+          }
         }
       },
       neutral: {
@@ -35,7 +38,10 @@ const styles = cva({
         borderColor: 'gray12',
         boxShadow: '0 3px 5px 0px rgba(0,0,0,0.05)',
         '& button': {
-          color: 'gray6'
+          color: 'gray8!',
+          _hover: {
+            color: 'gray1!'
+          }
         }
       }
     }
