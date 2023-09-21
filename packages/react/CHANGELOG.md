@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.5
+
+### Patch Changes
+
+- a6fe882: Align Select styles with Button styles
+
 ## 0.7.4
 
 ### Patch Changes
