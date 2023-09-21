@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.4
+
+### Patch Changes
+
+- 0c8dd01: Fix missing dependency
+
 ## 0.7.3
 
 ### Patch Changes
