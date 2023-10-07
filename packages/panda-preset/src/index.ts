@@ -47,6 +47,7 @@ export default definePreset({
       },
       fontWeights: {
         normal: { value: '400' },
+        medium: { value: '500' },
         bold: { value: '600' }
       },
       fonts: {
