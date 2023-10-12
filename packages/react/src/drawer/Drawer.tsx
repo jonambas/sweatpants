@@ -25,14 +25,14 @@ export type DrawerProps = ComponentPropsWithRef<'div'> &
 
 const overlay = css({
   position: 'fixed',
-  zIndex: '2',
+  zIndex: '10',
   inset: 0,
   background: '#b9bbc650' // gray8
 });
 
 const content = css({
   position: 'fixed',
-  zIndex: '2',
+  zIndex: '11',
   insetY: '0',
   right: '0',
   background: 'baseBg',
