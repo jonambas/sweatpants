@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.1
+
+### Patch Changes
+
+- e879878: Add 500 font weight
+
 ## 0.7.0
 
 ### Minor Changes

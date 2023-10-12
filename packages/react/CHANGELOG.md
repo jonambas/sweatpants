@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.6
+
+### Patch Changes
+
+- ae19f47: Increase drawer z-index
+
 ## 0.7.5
 
 ### Patch Changes
