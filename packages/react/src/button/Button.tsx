@@ -51,7 +51,7 @@ const styles = cva({
         lineHeight: 'calc(2.5rem - 2px)'
       },
       md: { fontSize: '4', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
-      sm: { fontSize: '2', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
+      sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
       xs: { fontSize: '2', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
     },
     disabled: {
