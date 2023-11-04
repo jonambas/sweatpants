@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.7
+
+### Patch Changes
+
+- da27422: Fix Select content zindex, adjust sm Button font size
+
 ## 0.7.6
 
 ### Patch Changes
