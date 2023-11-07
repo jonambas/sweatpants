@@ -81,7 +81,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
   });
 
   useLayoutEffect(() => {
-    setIsSmall((ref.current?.getBoundingClientRect()?.width ?? 0) < 640);
+    setIsSmall((ref.current?.getBoundingClientRect()?.width ?? 641) < 640);
   }, [ref]);
 
   const handleOpenChange = (value: boolean) => {
