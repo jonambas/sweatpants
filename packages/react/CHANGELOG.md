@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.9
+
+### Patch Changes
+
+- c706d78: Fix Select trigger sm font-size
+
 ## 0.7.8
 
 ### Patch Changes
