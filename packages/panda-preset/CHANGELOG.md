@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.3
+
+### Patch Changes
+
+- d29ffaf: Add ColorSchemeProvider, adjust dark mode colors
+
 ## 0.7.2
 
 ### Patch Changes

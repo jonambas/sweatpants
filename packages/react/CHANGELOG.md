@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.11
+
+### Patch Changes
+
+- d29ffaf: Add ColorSchemeProvider, adjust dark mode colors
+
 ## 0.7.10
 
 ### Patch Changes
