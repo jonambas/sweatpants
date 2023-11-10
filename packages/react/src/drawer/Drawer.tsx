@@ -27,7 +27,7 @@ const overlay = css({
   position: 'fixed',
   zIndex: '10',
   inset: 0,
-  background: '#b9bbc650' // gray8
+  background: { _lightScheme: '#b9bbc650', _darkScheme: '#35373c50' }
 });
 
 const content = css({
@@ -35,7 +35,7 @@ const content = css({
   zIndex: '11',
   insetY: '0',
   right: '0',
-  background: 'baseBg',
+  background: 'contentBg',
   borderTopLeftRadius: 'xl',
   borderBottomLeftRadius: '0',
   borderTopRightRadius: 'xl',
