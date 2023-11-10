@@ -9,18 +9,8 @@ export type CardDividerProps = ComponentPropsWithRef<'div'> & {
 };
 
 const styles = cva({
-  base: { position: 'relative', height: '1px' },
+  base: { position: 'relative', height: '1px', bg: 'borders' },
   variants: {
-    kind: {
-      elevated: {
-        _lightScheme: { bg: 'gray4' },
-        _darkScheme: { bg: 'gray1' }
-      },
-      neutral: {
-        _lightScheme: { bg: 'gray5' },
-        _darkScheme: { bg: 'gray3' }
-      }
-    },
     space: {
       none: { marginY: '0' },
       tight: {

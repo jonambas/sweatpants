@@ -21,10 +21,7 @@ const styles = cva({
     hideBorder: {
       true: {},
       false: {
-        _darkScheme: { borderBottom: '1px solid token(colors.gray3)' },
-        _lightScheme: {
-          borderBottom: '1px solid token(colors.gray5)'
-        }
+        borderBottom: '1px solid token(colors.borders)'
       }
     },
     size: {
