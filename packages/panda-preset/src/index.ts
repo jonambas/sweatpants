@@ -64,7 +64,10 @@ export default definePreset({
     semanticTokens: {
       colors: {
         baseBg: {
-          value: { _lightScheme: '#f9f9fb', _darkScheme: '#18181a' }
+          value: { _lightScheme: '#f2f2f5', _darkScheme: '#18181a' }
+        },
+        contentBg: {
+          value: { _lightScheme: '#fcfcfd', _darkScheme: '#1b1b1f' }
         },
         gray1: { value: { _lightScheme: '#fcfcfd', _darkScheme: '#18181a' } },
         gray2: { value: { _lightScheme: '#f9f9fb', _darkScheme: '#1b1b1f' } },
