@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.10
+
+### Patch Changes
+
+- e537edb: Add contentBg token, adjust baseBg token
+
 ## 0.7.9
 
 ### Patch Changes

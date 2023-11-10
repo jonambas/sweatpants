@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.2
+
+### Patch Changes
+
+- e537edb: Add contentBg token, adjust baseBg token
+
 ## 0.7.1
 
 ### Patch Changes
