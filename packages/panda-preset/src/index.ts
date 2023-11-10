@@ -21,10 +21,6 @@ export default definePreset({
         9: { value: '3rem' },
         10: { value: '4rem' }
       },
-      colors: {
-        black: { value: '#000' },
-        white: { value: '#fff' }
-      },
       fontSizes: {
         0: { value: '0.5rem', description: '8px' },
         1: { value: '0.625rem', description: '10px' },
@@ -67,7 +63,13 @@ export default definePreset({
           value: { _lightScheme: '#f2f2f5', _darkScheme: '#18181a' }
         },
         contentBg: {
-          value: { _lightScheme: '#fcfcfd', _darkScheme: '#1b1b1f' }
+          value: { _lightScheme: '#fcfcfd', _darkScheme: '#27282d' }
+        },
+        borders: {
+          value: {
+            _lightScheme: '#e4e4e9',
+            _darkScheme: '#35373c'
+          }
         },
         gray1: { value: { _lightScheme: '#fcfcfd', _darkScheme: '#18181a' } },
         gray2: { value: { _lightScheme: '#f9f9fb', _darkScheme: '#1b1b1f' } },

@@ -34,8 +34,7 @@ const styles = cva({
       neutral: {
         borderWidth: '1px',
         borderStyle: 'solid',
-        _lightScheme: { borderColor: 'gray5' },
-        _darkScheme: { borderColor: 'gray3' }
+        borderColor: 'borders'
       }
     }
   }
