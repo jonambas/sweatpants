@@ -3,4 +3,4 @@
 '@sweatpants/react': patch
 ---
 
-Add ColorSchemeProvider, adjust dark mode colors"
+Add ColorSchemeProvider, adjust dark mode colors
