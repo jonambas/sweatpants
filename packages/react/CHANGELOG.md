@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.14
+
+### Patch Changes
+
+- ff5117d: add use client directive to ColorSchemeProvider
+
 ## 0.7.13
 
 ### Patch Changes
