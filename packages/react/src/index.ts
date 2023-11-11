@@ -3,7 +3,6 @@ export * from './button-group/ButtonGroup';
 export * from './card/Card';
 export * from './card/CardDivider';
 export * from './color-scheme-provider/ColorSchemeProvider';
-export * from './color-scheme-provider/ColorSchemeProvider.context';
 export * from './drawer/Drawer';
 export * from './icons/icons';
 export * from './label/Label';

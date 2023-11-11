@@ -9,5 +9,3 @@ export const ColorSchemeContext = createContext<ColorSchemeContextValue>([
   'light',
   () => {}
 ]);
-
-export const useColorScheme = () => useContext(ColorSchemeContext);

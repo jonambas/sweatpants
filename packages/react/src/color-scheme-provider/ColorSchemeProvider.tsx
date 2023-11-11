@@ -4,6 +4,7 @@ import {
   FC,
   PropsWithChildren,
   useCallback,
+  useContext,
   useEffect,
   useRef,
   useState
@@ -19,6 +20,8 @@ type ColorSchemeProviderProps = PropsWithChildren<{
   scheme?: ColorSchemeContextValue[0];
   onSchemeChange?: ColorSchemeContextValue[1];
 }>;
+
+const useColorScheme = () => useContext(ColorSchemeContext);
 
 const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
   const {
@@ -101,4 +104,4 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
 
 ColorSchemeProvider.displayName = 'ColorSchemeProvider';
 
-export { ColorSchemeProvider };
+export { ColorSchemeProvider, useColorScheme };
