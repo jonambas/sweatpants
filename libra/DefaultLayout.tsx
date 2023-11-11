@@ -37,7 +37,7 @@ const Layout: FC<PropsWithChildren<{ scheme?: 'light' | 'dark' }>> = ({
   }
 
   return (
-    <ColorSchemeProvider controlScheme={scheme} setHtmlAttribute>
+    <ColorSchemeProvider defaultScheme={scheme} setHtmlAttribute>
       <div className={styles}>{children}</div>
     </ColorSchemeProvider>
   );

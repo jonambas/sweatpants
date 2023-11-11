@@ -126,11 +126,11 @@ const styles = cva({
       kind: 'neutral',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue8' },
-        _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue9' },
+        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+        _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue8' },
-          _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue9' },
+          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+          _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
           _before: {
             opacity: '0.05'
           }
@@ -141,11 +141,11 @@ const styles = cva({
       kind: 'bare',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue3' },
-        _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue6' },
+        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+        _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue3', color: 'blue11', borderColor: 'blue3' },
-          _darkScheme: { bg: 'blue6', color: 'blue12', borderColor: 'blue6' },
+          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+          _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
           _before: {
             opacity: '0.05'
           }
