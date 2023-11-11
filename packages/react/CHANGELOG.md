@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.13
+
+### Patch Changes
+
+- 57121ab: Add controlled scheme state to ColorSchemeProvider, and adjust elevated Card borders in dark mode
+
 ## 0.7.12
 
 ### Patch Changes
