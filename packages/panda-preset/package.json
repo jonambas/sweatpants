@@ -19,7 +19,7 @@
     "dist"
   ],
   "dependencies": {
-    "@pandacss/dev": "0.15.5"
+    "@pandacss/dev": "0.18.2"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
