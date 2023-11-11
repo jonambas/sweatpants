@@ -13,14 +13,16 @@ import {
 
 type ColorSchemeProviderProps = PropsWithChildren<{
   setHtmlAttribute?: boolean;
-  controlScheme?: ColorSchemeContextValue[0];
+  defaultScheme?: ColorSchemeContextValue[0];
+  onSchemeChange?: ColorSchemeContextValue[1];
 }>;
 
 const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
   const {
     children,
     setHtmlAttribute = false,
-    controlScheme: userScheme
+    defaultScheme,
+    onSchemeChange
   } = props;
 
   const [scheme, setScheme] = useState<ColorSchemeContextValue[0]>('light');
@@ -35,16 +37,25 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
   // Initial mount
   useEffect(() => {
     mql.current = window.matchMedia('(prefers-color-scheme: dark)');
-    setScheme(mql.current.matches ? 'dark' : 'light');
-    setHtml(mql.current.matches ? 'dark' : 'light');
+    if (defaultScheme) {
+      setScheme(defaultScheme);
+      setHtml(defaultScheme);
+    } else {
+      setScheme(mql.current.matches ? 'dark' : 'light');
+      setHtml(mql.current.matches ? 'dark' : 'light');
+    }
   }, []);
 
   // When media query changes
-  const handleScheme = useCallback((event: MediaQueryListEvent) => {
-    const newOs = event.matches ? 'dark' : 'light';
-    setScheme(newOs);
-    setHtml(newOs);
-  }, []);
+  const handleScheme = useCallback(
+    (event: MediaQueryListEvent) => {
+      const newOs = event.matches ? 'dark' : 'light';
+      setScheme(newOs);
+      setHtml(newOs);
+      onSchemeChange?.(newOs);
+    },
+    [onSchemeChange]
+  );
 
   useEffect(() => {
     if (typeof window !== 'undefined' && mql.current) {
@@ -56,22 +67,16 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
         mql.current.removeEventListener('change', handleScheme);
       }
     };
-  }, []);
+  }, [handleScheme]);
 
   const contextSetScheme = useCallback(
     (v: ColorSchemeContextValue[0]) => {
       setScheme(v);
       setHtml(v);
+      onSchemeChange?.(v);
     },
     [setHtmlAttribute]
   );
-
-  // Controlled scheme
-  useEffect(() => {
-    if (userScheme) {
-      contextSetScheme(userScheme);
-    }
-  }, [userScheme]);
 
   return (
     <ColorSchemeContext.Provider value={[scheme, contextSetScheme]}>
