@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.15
+
+### Patch Changes
+
+- 21c5ffb: Fix 'use client' context error
+
 ## 0.7.14
 
 ### Patch Changes
