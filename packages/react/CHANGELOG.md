@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.12
+
+### Patch Changes
+
+- 4c2ad7b: Replace controlScheme with defaultScheme, add onSchemeChange
+
 ## 0.7.11
 
 ### Patch Changes
