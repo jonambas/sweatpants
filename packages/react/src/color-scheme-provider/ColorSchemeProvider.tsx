@@ -14,17 +14,18 @@ import {
 type ColorSchemeProviderProps = PropsWithChildren<{
   setHtmlAttribute?: boolean;
   defaultScheme?: ColorSchemeContextValue[0];
+  scheme?: ColorSchemeContextValue[0];
   onSchemeChange?: ColorSchemeContextValue[1];
 }>;
 
 const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
   const {
     children,
-    setHtmlAttribute = false,
     defaultScheme,
-    onSchemeChange
+    onSchemeChange,
+    scheme: controlledScheme,
+    setHtmlAttribute = false
   } = props;
-
   const [scheme, setScheme] = useState<ColorSchemeContextValue[0]>('light');
   const mql = useRef<MediaQueryList>();
 
@@ -33,6 +34,8 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
       document.querySelector('html')?.setAttribute('data-color-scheme', v);
     }
   };
+
+  const isControlled = !!controlledScheme;
 
   // Initial mount
   useEffect(() => {
@@ -57,13 +60,22 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
     [onSchemeChange]
   );
 
+  // When controlled value changes
   useEffect(() => {
-    if (typeof window !== 'undefined' && mql.current) {
+    if (controlledScheme) {
+      setScheme(controlledScheme);
+      setHtml(controlledScheme);
+      onSchemeChange?.(controlledScheme);
+    }
+  }, [controlledScheme]);
+
+  useEffect(() => {
+    if (!isControlled && typeof window !== 'undefined' && mql.current) {
       mql.current.addEventListener('change', handleScheme);
     }
 
     return () => {
-      if (typeof window !== 'undefined' && mql.current) {
+      if (!isControlled && typeof window !== 'undefined' && mql.current) {
         mql.current.removeEventListener('change', handleScheme);
       }
     };
