@@ -39,7 +39,7 @@
     "rimraf": "5.0.5",
     "rollup": "3.29.4",
     "rollup-plugin-bundle-size": "1.0.3",
-    "rollup-plugin-esbuild": "5.0.0",
+    "rollup-plugin-esbuild": "6.1.0",
     "rollup-plugin-preserve-directives": "^0.2.0",
     "typescript": "5.2.2"
   },
