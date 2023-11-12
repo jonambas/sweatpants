@@ -86,14 +86,11 @@ const ColorSchemeProvider: FC<ColorSchemeProviderProps> = (props) => {
     };
   }, [handleScheme]);
 
-  const contextSetScheme = useCallback(
-    (v: ColorSchemeContextValue[0]) => {
-      setScheme(v);
-      setHtml(v);
-      onSchemeChange?.(v);
-    },
-    [setHtmlAttribute]
-  );
+  const contextSetScheme = (v: ColorSchemeContextValue[0]) => {
+    setScheme(v);
+    setHtml(v);
+    onSchemeChange?.(v);
+  };
 
   return (
     <ColorSchemeContext.Provider value={[scheme, contextSetScheme]}>

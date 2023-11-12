@@ -1,4 +1,6 @@
-import { createContext, useContext } from 'react';
+'use client';
+
+import { createContext } from 'react';
 
 export type ColorSchemeContextValue = [
   scheme: 'light' | 'dark',
