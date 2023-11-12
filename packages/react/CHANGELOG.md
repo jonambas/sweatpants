@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.16
+
+### Patch Changes
+
+- e39dc7c: Fix color scheme context handler caching
+
 ## 0.7.15
 
 ### Patch Changes
