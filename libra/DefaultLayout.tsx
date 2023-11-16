@@ -1,4 +1,3 @@
-import { FC, PropsWithChildren } from 'react';
 import './index.css';
 import { css } from '@styles/css';
 import {
@@ -8,6 +7,7 @@ import {
   Stack,
   Text
 } from '../packages/react/src';
+import type { LibraLayout } from '@sweatpants/libra';
 
 const styles = css({
   p: '8',
@@ -15,10 +15,7 @@ const styles = css({
   minH: '100vh'
 });
 
-const Layout: FC<PropsWithChildren<{ scheme?: 'light' | 'dark' }>> = ({
-  children,
-  scheme
-}) => {
+const Layout: LibraLayout = ({ children, scheme }) => {
   if (!children) {
     return (
       <ColorSchemeProvider scheme={scheme} setHtmlAttribute>
