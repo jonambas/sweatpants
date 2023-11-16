@@ -48,11 +48,27 @@ const styles = cva({
       lg: {
         fontSize: '5',
         paddingX: '5',
+        height: 'calc(2.5rem)',
         lineHeight: 'calc(2.5rem - 2px)'
       },
-      md: { fontSize: '4', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
-      sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' },
-      xs: { fontSize: '2', paddingX: '3', lineHeight: 'calc(1.25rem - 2px)' }
+      md: {
+        fontSize: '4',
+        paddingX: '4',
+        height: 'calc(2rem)',
+        lineHeight: 'calc(2rem - 2px)'
+      },
+      sm: {
+        fontSize: '3',
+        paddingX: '4',
+        height: 'calc(1.75rem)',
+        lineHeight: 'calc(1.75rem - 2px)'
+      },
+      xs: {
+        fontSize: '2',
+        paddingX: '3',
+        height: 'calc(1.25rem)',
+        lineHeight: 'calc(1.25rem - 2px)'
+      }
     },
     disabled: {
       true: { cursor: 'not-allowed', opacity: '0.7' },
