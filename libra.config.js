@@ -1,9 +1,7 @@
 import { resolve } from 'path';
+import { defineConfig } from '@sweatpants/libra/config';
 
-/**
- * @type {import('@sweatpants/libra').Config}
- */
-export default {
+export default defineConfig({
   title: 'Sweatpants',
   port: 8080,
   inspect: true,
@@ -21,4 +19,4 @@ export default {
       }
     };
   }
-};
+});
