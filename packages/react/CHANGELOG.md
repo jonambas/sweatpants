@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.18
+
+### Patch Changes
+
+- 59e9b5e: Add use client directive to DateField
+
 ## 0.7.17
 
 ### Patch Changes
