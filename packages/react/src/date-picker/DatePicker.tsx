@@ -46,8 +46,7 @@ const dayStyles = css({
   },
   '&[aria-selected="true"]': {
     bg: 'blue9!',
-    //  'blue1!',
-    color: { _lightScheme: 'blue1', _darkScheme: 'white' },
+    color: { _lightScheme: 'blue1!', _darkScheme: 'white!' },
     fontWeight: 'bold'
   },
   _focusVisible: {
@@ -71,6 +70,12 @@ const tableStyles = css({
 
 const cellStyles = css({
   width: '30px'
+});
+
+const headCellStyles = css({
+  fontSize: '3',
+  color: 'gray9',
+  pb: '3'
 });
 
 const Caption = (): JSX.Element => {
@@ -189,14 +194,13 @@ const DatePicker: FC<DatePickerProps> = (props) => {
         mode="single"
         selected={selected}
         onDayClick={setSelected}
-        showOutsideDays
-        hideHead
         classNames={{
           day: dayStyles,
           day_outside: dayOutsideStyles,
           day_disabled: dayDisabledStyles,
           table: tableStyles,
-          cell: cellStyles
+          cell: cellStyles,
+          head_cell: headCellStyles
         }}
         components={{
           Caption
