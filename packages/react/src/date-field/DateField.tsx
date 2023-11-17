@@ -27,12 +27,14 @@ export type DateFieldProps = Omit<
   onValueChange?: (value: Date) => void;
   fromDate?: Date;
   toDate?: Date;
+  className?: string;
 };
 
 const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
   (props, userRef) => {
     const {
       align = 'left',
+      className,
       id,
       defaultValue,
       value,
@@ -44,6 +46,8 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
       fromDate = subYears(new Date(), 20),
       toDate = addYears(new Date(), 20)
     } = props;
+
+    const [open, setOpen] = useState(false);
 
     const dayToString = (day: Date) => {
       return format(day, 'MM/dd/yyyy');
@@ -106,11 +110,12 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     };
 
     return (
-      <Popover.Root>
-        <Popover.Trigger>
+      <Popover.Root open={open} onOpenChange={setOpen}>
+        <Popover.Trigger asChild>
           <TextField
             align={align}
             autoComplete="off"
+            className={className}
             size={size}
             id={id}
             type="text"
@@ -119,26 +124,32 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             hideLabel={hideLabel}
             placeholder="MM/DD/YYYY"
             value={internalValue}
-            onChange={handleFieldOnChange}
+            onChange={(e) => {
+              if (!open) {
+                setOpen(true);
+              }
+              handleFieldOnChange(e);
+            }}
             ref={userRef}
           />
         </Popover.Trigger>
-        <Popover.Portal>
-          <Popover.Content asChild onOpenAutoFocus={(e) => e.preventDefault()}>
-            <Card kind="elevated" className={css({ m: '3' })}>
-              <DatePicker
-                onMonthChange={(d) => {
-                  setDisplayMonth(d);
-                }}
-                month={displayMonth}
-                selected={datePickerValue}
-                onSelect={onDatePickerSelect}
-                fromDate={fromDate}
-                toDate={toDate}
-              />
-            </Card>
-          </Popover.Content>
-        </Popover.Portal>
+        <Popover.Content asChild onOpenAutoFocus={(e) => e.preventDefault()}>
+          <Card
+            kind="elevated"
+            className={css({ position: 'relative', m: '3', zIndex: '20' })}
+          >
+            <DatePicker
+              onMonthChange={(d) => {
+                setDisplayMonth(d);
+              }}
+              month={displayMonth}
+              selected={datePickerValue}
+              onSelect={onDatePickerSelect}
+              fromDate={fromDate}
+              toDate={toDate}
+            />
+          </Card>
+        </Popover.Content>
       </Popover.Root>
     );
   }

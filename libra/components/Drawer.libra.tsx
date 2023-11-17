@@ -1,4 +1,11 @@
-import { Button, Text, Drawer, Stack } from '../../packages/react/src';
+import {
+  Button,
+  Text,
+  Drawer,
+  Stack,
+  DateField,
+  Select
+} from '../../packages/react/src';
 
 directory('Drawer', () => {
   add('Default', () => {
@@ -8,6 +15,11 @@ directory('Drawer', () => {
           <Text looksLike="h4" element="h2">
             Drawer
           </Text>
+          <DateField id="date" />
+          <Select id="select">
+            <Select.Item value="foo">Foo</Select.Item>
+            <Select.Item value="bar">Bar</Select.Item>
+          </Select>
           <Button>Button</Button>
         </Stack>
       </Drawer>
