@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.19
+
+### Patch Changes
+
+- 02ab2d2: Fix DateField z-index when rendered inside a Drawer
+
 ## 0.7.18
 
 ### Patch Changes
