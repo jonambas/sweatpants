@@ -1,3 +1,5 @@
+'use client';
+
 import { ChangeEventHandler, forwardRef, useEffect, useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 
