@@ -37,9 +37,10 @@ export default definePreset({
         12: { value: '3rem', description: '48px' }
       },
       radii: {
-        sm: { value: '3px' },
-        md: { value: '5px' },
-        xl: { value: '12px' }
+        xs: { value: '3px' },
+        sm: { value: '5px' },
+        md: { value: '7px' },
+        xl: { value: '15px' }
       },
       fontWeights: {
         normal: { value: '400' },
@@ -262,7 +263,6 @@ export default definePreset({
         },
         indigo12: { value: { _lightScheme: '#1f2d5c', _darkScheme: '#dddffe' } }
       },
-
       shadows: {
         focus: {
           value: '0 0 0 1px {colors.baseBg}, 0 0 0 3px {colors.blue9}'
