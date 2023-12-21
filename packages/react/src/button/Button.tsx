@@ -67,7 +67,8 @@ const styles = cva({
         fontSize: '2',
         paddingX: '3',
         height: 'calc(1.25rem)',
-        lineHeight: 'calc(1.25rem - 2px)'
+        lineHeight: 'calc(1.25rem - 2px)',
+        borderRadius: 'xs'
       }
     },
     disabled: {
