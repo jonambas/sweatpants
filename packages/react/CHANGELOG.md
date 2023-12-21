@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.20
+
+### Patch Changes
+
+- 0be195d: update border radius tokens
+
 ## 0.7.19
 
 ### Patch Changes

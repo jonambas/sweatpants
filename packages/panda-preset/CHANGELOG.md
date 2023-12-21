@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.4
+
+### Patch Changes
+
+- 0be195d: update border radius tokens
+
 ## 0.7.3
 
 ### Patch Changes
