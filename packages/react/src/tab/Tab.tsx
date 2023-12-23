@@ -48,7 +48,6 @@ const Tab = forwardRef<HTMLButtonElement, TabProps>((props, userRef) => {
       kind="bare"
       size={size}
       className={cx(styles({ selected, size }), className)}
-      // selected={selected}
       ref={userRef}
       type="button"
       {...rest}

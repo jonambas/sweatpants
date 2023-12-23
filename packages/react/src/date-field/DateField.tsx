@@ -5,7 +5,7 @@ import * as Popover from '@radix-ui/react-popover';
 
 import { TextField, TextFieldProps } from '../text-field/TextField';
 import { DatePicker } from '../date-picker/DatePicker';
-import { css } from '@styles/css';
+import { css, cx } from '@styles/css';
 import { Card } from '../card/Card';
 import {
   addYears,
@@ -16,6 +16,7 @@ import {
   parse,
   subYears
 } from 'date-fns';
+import { Calendar } from '../icons/icons';
 
 export type DateFieldProps = Omit<
   TextFieldProps,
@@ -131,6 +132,18 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
               handleFieldOnChange(e);
             }}
             ref={userRef}
+            suffix={
+              <Calendar
+                width={14}
+                height={14}
+                // className={css({
+                //   position: 'absolute',
+                //   top: '4',
+                //   right: '4',
+                //   zIndex: '1'
+                // })}
+              />
+            }
           />
         </Popover.Trigger>
         <Popover.Content asChild onOpenAutoFocus={(e) => e.preventDefault()}>

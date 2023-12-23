@@ -37,7 +37,7 @@ const styles = cva({
     whiteSpace: 'nowrap',
     _focusVisible: {
       position: 'relative',
-      zIndex: '1',
+      // zIndex: '1',
       outline: 'none',
       boxShadow: 'focus'
     }
@@ -117,7 +117,7 @@ const styles = cva({
         _before: {
           content: '""',
           position: 'absolute',
-          zIndex: '1',
+          // zIndex: '1',
           top: '-1px',
           bottom: '-1px',
           left: '-1px',
@@ -145,10 +145,10 @@ const styles = cva({
       kind: 'neutral',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+        _lightScheme: { bg: 'gray12', color: 'white', borderColor: 'gray12' },
         _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+          _lightScheme: { bg: 'gray12', color: 'white', borderColor: 'gray12' },
           _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
           _before: {
             opacity: '0.05'
@@ -160,10 +160,10 @@ const styles = cva({
       kind: 'bare',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+        _lightScheme: { bg: 'gray4', color: 'gray12', borderColor: 'gray4' },
         _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+          _lightScheme: { bg: 'gray4', color: 'gray12', borderColor: 'gray4' },
           _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
           _before: {
             opacity: '0.05'

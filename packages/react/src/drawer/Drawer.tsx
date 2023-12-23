@@ -27,7 +27,7 @@ const overlay = css({
   position: 'fixed',
   zIndex: '10',
   inset: 0,
-  background: { _lightScheme: '#b9bbc650', _darkScheme: '#35373c50' }
+  background: { _lightScheme: '#00000090', _darkScheme: '#00000090' }
 });
 
 const content = css({

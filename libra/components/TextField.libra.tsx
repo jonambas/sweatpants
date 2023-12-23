@@ -1,5 +1,5 @@
 import { css } from '@styles/css';
-import { TextField } from '../../packages/react/src';
+import { Card, Stack, TextField } from '../../packages/react/src';
 
 directory('TextField', () => {
   add('Default', () => {
@@ -12,35 +12,44 @@ directory('TextField', () => {
         className={css({
           display: 'flex',
           flexDir: 'column',
-          gap: '4',
-          alignItems: 'flex-start'
+          gap: '4'
         })}
       >
-        <TextField
-          placeholder="placeholder"
-          id="test"
-          hideLabel
-          label="Label"
-          size="sm"
-        />
-        <TextField id="test2" hideLabel label="Label" />
-        <TextField id="test3" hideLabel label="Label" size="lg" />
+        <Card>
+          <Stack>
+            <TextField
+              placeholder="placeholder"
+              id="test"
+              hideLabel
+              label="Label"
+              size="sm"
+            />
+            <TextField id="test2" hideLabel label="Label" />
+            <TextField id="test3" hideLabel label="Label" size="lg" />
+          </Stack>
+        </Card>
+        <div>
+          <Stack>
+            <TextField
+              placeholder="placeholder"
+              id="test"
+              hideLabel
+              label="Label"
+              size="sm"
+            />
+            <TextField id="test2" hideLabel label="Label" />
+            <TextField id="test3" hideLabel label="Label" size="lg" />
+          </Stack>
+        </div>
       </div>
     );
   });
 
   add('Error', () => {
     return (
-      <div
-        className={css({
-          display: 'flex',
-          flexDir: 'column',
-          gap: '4',
-          alignItems: 'flex-start'
-        })}
-      >
+      <Card>
         <TextField id="test2" label="Label" hasError />
-      </div>
+      </Card>
     );
   });
 

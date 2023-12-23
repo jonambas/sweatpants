@@ -41,13 +41,13 @@ directory('Button', () => {
 
   add('Bare on background', () => {
     return (
-      <div className={css({ display: 'flex', flexDir: 'column' })}>
-        <div className={css({ padding: '4', bg: 'green5' })}>
+      <div className={css({ display: 'flex', flexDir: 'column', gap: '4' })}>
+        <div className={css({ padding: '4', bg: 'green4' })}>
           <Button size="md" kind="bare">
             Click Me
           </Button>
         </div>
-        <div className={css({ padding: '4', bg: 'red5' })}>
+        <div className={css({ padding: '4', bg: 'red4' })}>
           <Button size="md" kind="bare">
             Click Me
           </Button>
@@ -68,28 +68,30 @@ directory('Button', () => {
 
   add('Disabled', () => {
     return (
-      <div className={css({ display: 'flex', gap: '4' })}>
-        <div>
-          <Button disabled kind="neutral">
-            Click Me
-          </Button>
+      <Card>
+        <div className={css({ display: 'flex', gap: '4' })}>
+          <div>
+            <Button disabled kind="neutral">
+              Click Me
+            </Button>
+          </div>
+          <div>
+            <Button disabled kind="primary">
+              Click Me
+            </Button>
+          </div>
+          <div>
+            <Button disabled kind="destructive">
+              Click Me
+            </Button>
+          </div>
+          <div>
+            <Button disabled kind="bare">
+              Click Me
+            </Button>
+          </div>
         </div>
-        <div>
-          <Button disabled kind="primary">
-            Click Me
-          </Button>
-        </div>
-        <div>
-          <Button disabled kind="destructive">
-            Click Me
-          </Button>
-        </div>
-        <div>
-          <Button disabled kind="bare">
-            Click Me
-          </Button>
-        </div>
-      </div>
+      </Card>
     );
   });
 
@@ -107,30 +109,42 @@ directory('Button', () => {
     const [selected, setSelected] = useState(0);
 
     return (
-      <div className={css({ display: 'flex', gap: '4' })}>
-        <ButtonGroup space="none">
-          <Button selected kind="neutral">
-            Click Me
-          </Button>
-          <Button kind="neutral">Click Me</Button>
-        </ButtonGroup>
-        <ButtonGroup space="tight">
-          <Button
-            selected={selected === 0}
-            onClick={() => setSelected(0)}
-            kind="bare"
-          >
-            Click Me
-          </Button>
-          <Button
-            selected={selected === 1}
-            onClick={() => setSelected(1)}
-            kind="bare"
-          >
-            Click Me
-          </Button>
-        </ButtonGroup>
-      </div>
+      <Card>
+        <div className={css({ display: 'flex', gap: '4' })}>
+          <ButtonGroup space="none">
+            <Button
+              kind="neutral"
+              selected={selected === 0}
+              onClick={() => setSelected(0)}
+            >
+              Click Me
+            </Button>
+            <Button
+              kind="neutral"
+              selected={selected === 1}
+              onClick={() => setSelected(1)}
+            >
+              Click Me
+            </Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button
+              selected={selected === 0}
+              onClick={() => setSelected(0)}
+              kind="bare"
+            >
+              Click Me
+            </Button>
+            <Button
+              selected={selected === 1}
+              onClick={() => setSelected(1)}
+              kind="bare"
+            >
+              Click Me
+            </Button>
+          </ButtonGroup>
+        </div>
+      </Card>
     );
   });
 });

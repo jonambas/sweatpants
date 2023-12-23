@@ -48,6 +48,10 @@ const inputStyles = cva({
     transitionProperty: 'background, border',
     outline: 'none',
     color: 'gray12',
+    bg: 'gray1',
+    '&::selection': {
+      bg: 'blue6'
+    },
     '&:hover:not(:focus)': {
       borderColor: 'gray8'
     },
@@ -65,10 +69,14 @@ const inputStyles = cva({
       lg: {
         fontSize: '6',
         paddingX: '5',
-        lineHeight: 'calc(2.5rem - 2px)'
+        height: '2.5rem'
       },
-      md: { fontSize: '5', paddingX: '4', lineHeight: 'calc(2rem - 2px)' },
-      sm: { fontSize: '3', paddingX: '4', lineHeight: 'calc(1.75rem - 2px)' }
+      md: {
+        fontSize: '5',
+        paddingX: '4',
+        height: '2rem'
+      },
+      sm: { fontSize: '3', paddingX: '4', height: '1.75rem' }
     },
     hasError: {
       true: {
@@ -95,7 +103,8 @@ const prefixOrSuffixStyles = css({
   top: 0,
   fontSize: '2',
   color: 'gray11',
-  paddingX: '4'
+  paddingX: '4',
+  pointerEvents: 'none'
 });
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
