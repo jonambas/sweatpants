@@ -41,7 +41,7 @@ const content = css({
   borderTopRightRadius: 'xl',
   borderTopWidth: '1px',
   borderTopColor: 'borders',
-  boxShadow: '0 0 24px 0px rgba(0,0,0,0.1)',
+  boxShadow: '0 0 12px 0px rgba(0,0,0,0.05)',
   p: '6',
   maxWidth: '100%',
   width: '100%',

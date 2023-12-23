@@ -83,12 +83,13 @@ const styles = cva({
     },
     kind: {
       primary: {
-        bg: 'gray12',
-        borderColor: 'gray12',
+        bg: { _lightScheme: 'gray12', _darkScheme: 'white' },
+        borderColor: { _lightScheme: 'gray12', _darkScheme: 'white' },
         color: 'gray1',
+        boxShadow: 'sm',
         '&:hover:not(:disabled)': {
-          bg: 'gray11',
-          borderColor: 'gray11'
+          bg: { _lightScheme: 'gray11', _darkScheme: 'gray12' },
+          borderColor: { _lightScheme: 'gray11', _darkScheme: 'gray12' }
         }
       },
       destructive: {
@@ -103,6 +104,7 @@ const styles = cva({
         bg: 'transparent',
         borderColor: 'gray7',
         color: 'gray12',
+        boxShadow: 'sm',
         '&:hover:not(:disabled)': {
           bg: 'gray4'
         }

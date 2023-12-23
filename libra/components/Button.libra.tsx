@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, ButtonGroup } from '../../packages/react/src';
+import { Button, ButtonGroup, Card } from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Button', () => {
@@ -9,41 +9,33 @@ directory('Button', () => {
 
   add('Sizes', () => {
     return (
-      <div
-        className={css({ display: 'flex', gap: '4', alignItems: 'flex-start' })}
-      >
-        <div>
+      <Card>
+        <div
+          className={css({
+            display: 'flex',
+            gap: '4',
+            alignItems: 'flex-start'
+          })}
+        >
           <Button size="xs">Click Me</Button>
-        </div>
-        <div>
           <Button size="sm">Click Me</Button>
-        </div>
-        <div>
           <Button size="md">Click Me</Button>
-        </div>
-        <div>
           <Button size="lg">Click Me</Button>
         </div>
-      </div>
+      </Card>
     );
   });
 
   add('kinds', () => {
     return (
-      <div className={css({ display: 'flex', gap: '4' })}>
-        <div>
+      <Card>
+        <div className={css({ display: 'flex', gap: '4' })}>
           <Button kind="neutral">Click Me</Button>
-        </div>
-        <div>
           <Button kind="primary">Click Me</Button>
-        </div>
-        <div>
           <Button kind="destructive">Click Me</Button>
-        </div>
-        <div>
           <Button kind="bare">Click Me</Button>
         </div>
-      </div>
+      </Card>
     );
   });
 

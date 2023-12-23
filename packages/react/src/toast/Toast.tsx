@@ -21,22 +21,22 @@ const styles = cva({
   variants: {
     tone: {
       negative: {
-        bg: 'red9',
-        color: 'red2',
-        borderColor: 'red11',
-        boxShadow: '0 3px 5px 0px rgba(255,0,0,0.1)',
+        bg: { _lightScheme: 'red11', _darkScheme: 'red7' },
+        color: { _lightScheme: 'red2', _darkScheme: 'white' },
+        borderColor: { _lightScheme: 'red11', _darkScheme: 'red8' },
+        boxShadow: 'md',
         '& button': {
-          color: 'red5!',
+          color: { _lightScheme: 'red5!', _darkScheme: 'red12!' },
           _hover: {
-            color: 'red2!'
+            color: { _lightScheme: 'red2!', _darkScheme: 'white!' }
           }
         }
       },
       neutral: {
-        bg: 'gray12',
+        bg: { _lightScheme: 'gray12', _darkScheme: 'white' },
         color: 'gray1',
-        borderColor: 'gray12',
-        boxShadow: '0 3px 5px 0px rgba(0,0,0,0.05)',
+        borderColor: { _lightScheme: 'gray12', _darkScheme: 'white' },
+        boxShadow: 'md',
         '& button': {
           color: 'gray8!',
           _hover: {

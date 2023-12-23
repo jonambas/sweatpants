@@ -24,15 +24,15 @@ const itemStyles = cva({
     '&:hover, &:focus': {
       boxShadow: 'none',
       outline: 'none',
-      bg: 'gray6'
+      bg: 'gray5'
     },
     '&[data-state=checked]': {
       _lightScheme: {
-        borderColor: 'blue8',
-        bg: 'blue4',
-        color: 'blue12',
+        borderColor: 'gray12',
+        bg: 'gray12',
+        color: 'gray1',
         '&:hover, &:focus': {
-          bg: 'blue4'
+          bg: 'gray12'
         }
       },
       _darkScheme: {
