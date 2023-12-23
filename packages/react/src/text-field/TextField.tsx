@@ -41,6 +41,7 @@ const inputStyles = cva({
     borderColor: 'gray7',
     borderRadius: 'sm',
     background: 'transparent',
+    boxShadow: 'sm',
     fontSize: '3',
     paddingX: '3',
     transitionDuration: '0.15s',

@@ -12,7 +12,7 @@ import { css, cva, cx } from '@styles/css';
 import { Card } from '../card/Card';
 import { Stack } from '../stack/Stack';
 import { Label } from '../label/Label';
-import { ChevronDown } from '../icons/icons';
+import { CaretVertical } from '../icons/icons';
 
 export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
   ComponentPropsWithoutRef<typeof RadixSelect.Root> & {
@@ -66,6 +66,7 @@ const triggerStyles = cva({
     kind: {
       neutral: {
         borderColor: 'gray7',
+        boxShadow: 'sm',
         '&:hover:not(:focus)': {
           borderColor: 'gray8'
         },
@@ -156,7 +157,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>((props, userRef) => {
           <RadixSelect.Value placeholder={placeholder} />
           {!hideChevron && (
             <RadixSelect.Icon>
-              <ChevronDown width="14" height="14" />
+              <CaretVertical width="14" height="14" />
             </RadixSelect.Icon>
           )}
         </RadixSelect.Trigger>

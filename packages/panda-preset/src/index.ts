@@ -9,6 +9,10 @@ export default definePreset({
       xl: '1280px'
     },
     tokens: {
+      colors: {
+        white: { value: '#ffffff' },
+        black: { value: '#000000' }
+      },
       spacing: {
         1: { value: '1px' },
         2: { value: '0.125rem' },
@@ -264,6 +268,12 @@ export default definePreset({
         indigo12: { value: { _lightScheme: '#1f2d5c', _darkScheme: '#dddffe' } }
       },
       shadows: {
+        sm: {
+          value: '0 1px 2px 0 rgba(0,0,0,0.05)'
+        },
+        md: {
+          value: '0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1)'
+        },
         focus: {
           value: '0 0 0 1px {colors.baseBg}, 0 0 0 3px {colors.blue9}'
         }
