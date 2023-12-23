@@ -1,5 +1,14 @@
 # @sweatpants/react
 
+## 0.7.21
+
+### Patch Changes
+
+- 0387be1: - Add white and black tokens
+  - Add box shadow tokens
+  - Adjust radius tokens
+  - Makes small visual adjustments to various components
+
 ## 0.7.20
 
 ### Patch Changes
