@@ -42,8 +42,8 @@ export default definePreset({
       },
       radii: {
         xs: { value: '3px' },
-        sm: { value: '5px' },
-        md: { value: '7px' },
+        sm: { value: '6px' },
+        md: { value: '8px' },
         xl: { value: '15px' }
       },
       fontWeights: {
