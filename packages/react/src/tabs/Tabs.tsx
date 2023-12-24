@@ -14,7 +14,6 @@ const styles = cva({
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
-    gap: '3',
     w: '100%'
   },
   variants: {
@@ -25,10 +24,10 @@ const styles = cva({
       }
     },
     size: {
-      xs: { py: '3', px: '3' },
-      sm: { py: '3', px: '3' },
-      md: { py: '4', px: '4' },
-      lg: { py: '4', px: '4' }
+      xs: { py: '3', px: '3', gap: '4' },
+      sm: { py: '3', px: '3', gap: '4' },
+      md: { py: '4', px: '4', gap: '5' },
+      lg: { py: '4', px: '4', gap: '5' }
     }
   }
 });
