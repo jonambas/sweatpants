@@ -7,6 +7,7 @@ import { TextField, TextFieldProps } from '../text-field/TextField';
 import { DatePicker } from '../date-picker/DatePicker';
 import { css } from '@styles/css';
 import { Card } from '../card/Card';
+import { Calendar } from '../icons/icons';
 import {
   addYears,
   format,
@@ -131,6 +132,7 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
               handleFieldOnChange(e);
             }}
             ref={userRef}
+            suffix={<Calendar width={14} height={14} />}
           />
         </Popover.Trigger>
         <Popover.Content asChild onOpenAutoFocus={(e) => e.preventDefault()}>

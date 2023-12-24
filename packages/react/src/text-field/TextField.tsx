@@ -95,7 +95,8 @@ const prefixOrSuffixStyles = css({
   top: 0,
   fontSize: '2',
   color: 'gray11',
-  paddingX: '4'
+  paddingX: '4',
+  pointerEvents: 'none'
 });
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
