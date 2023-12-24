@@ -67,6 +67,7 @@ const triggerStyles = cva({
       neutral: {
         borderColor: 'gray7',
         boxShadow: 'sm',
+        bg: 'gray1',
         '&:hover:not(:focus)': {
           borderColor: 'gray8'
         },
