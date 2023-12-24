@@ -5,6 +5,7 @@ export * from './card/CardDivider';
 export * from './color-scheme-provider/ColorSchemeProvider';
 export * from './date-field/DateField';
 export * from './date-picker/DatePicker';
+export * from './dialog/Dialog';
 export * from './drawer/Drawer';
 export * from './icons/icons';
 export * from './label/Label';

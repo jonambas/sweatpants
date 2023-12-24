@@ -6,20 +6,18 @@ import {
   ReactNode,
   forwardRef,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState
 } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+import * as RadixDialog from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from 'framer-motion';
-import useResizeObserver from '@react-hook/resize-observer';
 import { css } from '@styles/css';
 import { Button } from '../button/Button';
 import { Cross } from '../icons/icons';
 import { ScreenReaderOnly } from '../screen-reader-only/ScreenReaderOnly';
 
-export type DrawerProps = ComponentPropsWithRef<'div'> &
-  Dialog.DialogProps & {
+export type DialogProps = ComponentPropsWithRef<'div'> &
+  RadixDialog.DialogProps & {
     trigger?: ReactNode;
   };
 
@@ -33,31 +31,18 @@ const overlay = css({
 const content = css({
   position: 'fixed',
   zIndex: '11',
-  insetY: '0',
-  right: '0',
+  top: '50%',
+  left: '50%',
+  transform: 'scale(0.9) translate(-50%, -50%)',
+  transformOrigin: 'top left',
   background: 'contentBg',
-  borderTopLeftRadius: 'xl',
-  borderBottomLeftRadius: '0',
-  borderTopRightRadius: 'xl',
-  borderTopWidth: '1px',
-  borderTopColor: 'borders',
+  borderRadius: { sm: 'xl', base: '0' },
+  borderWidth: '1px',
+  borderColor: 'borders',
   boxShadow: '0 0 12px 0px rgba(0,0,0,0.05)',
   p: '6',
-  maxWidth: '100%',
-  width: '100%',
-  height: '95%',
-  top: 'auto',
-  sm: {
-    maxWidth: '90%',
-    width: '350px',
-    height: '100%',
-    top: '0',
-    borderBottomLeftRadius: 'xl',
-    borderTopRightRadius: '0',
-    borderTopWidth: '0px',
-    borderLeftWidth: '1px',
-    borderLeftColor: 'borders'
-  }
+  maxWidth: '30rem',
+  width: '100%'
 });
 
 const close = css({
@@ -67,12 +52,12 @@ const close = css({
   top: '4'
 });
 
-const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
+const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
   const { children, trigger, defaultOpen, open, onOpenChange, ...rest } = props;
   const [internalOpen, setInternalOpen] = useState<boolean>(
     defaultOpen ?? open ?? false
   );
-  const [isSmall, setIsSmall] = useState<boolean>(false);
+
   const ref = useRef(null) as MutableRefObject<HTMLElement | null>;
 
   useEffect(() => {
@@ -80,14 +65,6 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
       ref.current = document.body;
     }
   }, []);
-
-  useResizeObserver(ref.current, (entry) => {
-    setIsSmall(entry.contentRect.width < 640);
-  });
-
-  useLayoutEffect(() => {
-    setIsSmall((ref.current?.getBoundingClientRect()?.width ?? 641) < 640);
-  }, [ref]);
 
   const handleOpenChange = (value: boolean) => {
     setInternalOpen(value);
@@ -97,55 +74,55 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
   const finalOpen = defaultOpen ?? open ?? internalOpen;
 
   return (
-    <Dialog.Root
+    <RadixDialog.Root
       ref={userRef}
       onOpenChange={handleOpenChange}
       open={finalOpen}
       {...rest}
     >
-      <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
+      <RadixDialog.Trigger asChild>{trigger}</RadixDialog.Trigger>
       <AnimatePresence>
         {finalOpen ? (
-          <Dialog.Portal forceMount>
-            <Dialog.Overlay asChild className={overlay}>
+          <RadixDialog.Portal forceMount>
+            <RadixDialog.Overlay asChild className={overlay}>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               />
-            </Dialog.Overlay>
-
-            <Dialog.Content className={content} asChild>
+            </RadixDialog.Overlay>
+            <RadixDialog.Content className={content} asChild>
               <motion.div
+                transition={{ duration: 0.25, ease: 'easeInOut' }}
                 initial={{
                   opacity: 0,
-                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                  transform: 'scale(0.98) translate(-50%, -50%)'
                 }}
                 animate={{
                   opacity: 1,
-                  transform: isSmall ? 'translateY(0)' : 'translateX(0)'
+                  transform: 'scale(1) translate(-50%, -50%)'
                 }}
                 exit={{
                   opacity: 0,
-                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                  transform: 'scale(0.98) translate(-50%, -50%)'
                 }}
               >
                 {children}
-                <Dialog.Close asChild>
+                <RadixDialog.Close asChild>
                   <Button className={close} kind="bare" size="md">
                     <ScreenReaderOnly>Close</ScreenReaderOnly>
                     <Cross />
                   </Button>
-                </Dialog.Close>
+                </RadixDialog.Close>
               </motion.div>
-            </Dialog.Content>
-          </Dialog.Portal>
+            </RadixDialog.Content>
+          </RadixDialog.Portal>
         ) : null}
       </AnimatePresence>
-    </Dialog.Root>
+    </RadixDialog.Root>
   );
 });
 
-Drawer.displayName = 'Drawer';
+Dialog.displayName = 'Dialog';
 
-export { Drawer };
+export { Dialog };
