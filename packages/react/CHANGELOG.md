@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.23
+
+### Patch Changes
+
+- 96f1b0e: Fix incorrect field background colors
+
 ## 0.7.22
 
 ### Patch Changes
