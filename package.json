@@ -49,6 +49,9 @@
   ],
   "overrides": {
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "rollup-plugin-preserve-directives": {
+      "rollup": "^4.0.0"
+    }
   }
 }
