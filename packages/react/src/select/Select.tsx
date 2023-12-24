@@ -23,6 +23,7 @@ export type SelectProps = Omit<ComponentPropsWithRef<'select'>, 'size'> &
     id: string;
     label?: string;
     size?: 'sm' | 'md' | 'lg';
+    placeholder?: string;
   };
 
 const containerStyles = css({
