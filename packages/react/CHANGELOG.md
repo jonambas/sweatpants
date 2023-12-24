@@ -1,5 +1,13 @@
 # @sweatpants/react
 
+## 0.7.22
+
+### Patch Changes
+
+- 22ee5d2: Add calendar icon to DateField
+- 6fd1eae: Darken Drawer overlay
+- 258957a: Increase Tab gap, fix TextField lineheight, add background color to input components
+
 ## 0.7.21
 
 ### Patch Changes
