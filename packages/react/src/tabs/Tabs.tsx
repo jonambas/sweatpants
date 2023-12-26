@@ -14,22 +14,22 @@ const styles = cva({
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
-    w: '100%'
+    w: '100%',
   },
   variants: {
     hideBorder: {
       true: {},
       false: {
-        borderBottom: '1px solid token(colors.borders)'
-      }
+        borderBottom: '1px solid token(colors.borders)',
+      },
     },
     size: {
-      xs: { py: '3', px: '3', gap: '4' },
-      sm: { py: '3', px: '3', gap: '4' },
-      md: { py: '4', px: '4', gap: '5' },
-      lg: { py: '4', px: '4', gap: '5' }
-    }
-  }
+      xs: { py: '3', px: '3', gap: '2' },
+      sm: { py: '3', px: '3', gap: '2' },
+      md: { py: '4', px: '4', gap: '4' },
+      lg: { py: '4', px: '4', gap: '4' },
+    },
+  },
 });
 
 const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, userRef) => {
