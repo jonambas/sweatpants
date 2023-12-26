@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.24
+
+### Patch Changes
+
+- 05081df: Add Tabs keyboard interactions
+
 ## 0.7.23
 
 ### Patch Changes
