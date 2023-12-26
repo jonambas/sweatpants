@@ -81,6 +81,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
   useEffect(() => {
     if (typeof document !== 'undefined' && document.body) {
       ref.current = document.body;
+      setIsSmall((document.body.getBoundingClientRect()?.width ?? 641) < 640);
     }
   }, []);
 
