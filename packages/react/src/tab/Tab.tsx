@@ -77,6 +77,7 @@ const Tab = forwardRef<HTMLButtonElement, TabProps>((props, userRef) => {
       type="button"
       tabIndex={isSelected ? 1 : -1}
       {...rest}
+      aria-selected={isSelected}
       data-sweatpants-tab
     >
       {children}

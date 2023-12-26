@@ -81,7 +81,15 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, userRef) => {
     e: KeyboardEvent<HTMLButtonElement>,
     tabValue: string,
   ) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    const thisIndex = tabRefs.current.findIndex(
+      (node) => document.activeElement === node,
+    );
+
+    if (
+      thisIndex > -1 &&
+      value !== tabValue &&
+      (e.key === 'Enter' || e.key === ' ')
+    ) {
       e.preventDefault();
       if (!value) {
         setInternalValue(tabValue);
@@ -89,10 +97,6 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, userRef) => {
       onValueChange?.(tabValue);
       return;
     }
-
-    const thisIndex = tabRefs.current.findIndex(
-      (node) => document.activeElement === node,
-    );
 
     const length = tabRefs.current.length;
 
