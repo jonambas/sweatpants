@@ -1,16 +1,16 @@
 import {
   Button,
   Text,
-  Drawer,
+  Dialog,
   Stack,
   DateField,
   Select
 } from '../../packages/react/src';
 
-directory('Drawer', () => {
+directory('Dialog', () => {
   add('Default', () => {
     return (
-      <Drawer trigger={<Button>Open</Button>} title="Drawer">
+      <Dialog trigger={<Button>Open</Button>} title="Dialog">
         <Stack>
           <DateField id="date" />
           <Select id="select">
@@ -19,7 +19,7 @@ directory('Drawer', () => {
           </Select>
           <Button>Button</Button>
         </Stack>
-      </Drawer>
+      </Dialog>
     );
   });
 });
