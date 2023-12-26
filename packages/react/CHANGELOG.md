@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.25
+
+### Patch Changes
+
+- 69cf9e4: Fix Tab tabIndex
+
 ## 0.7.24
 
 ### Patch Changes
