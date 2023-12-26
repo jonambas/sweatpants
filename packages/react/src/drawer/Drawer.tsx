@@ -16,11 +16,13 @@ import useResizeObserver from '@react-hook/resize-observer';
 import { css } from '@styles/css';
 import { Button } from '../button/Button';
 import { Cross } from '../icons/icons';
+import { Text } from '../text/Text';
 import { ScreenReaderOnly } from '../screen-reader-only/ScreenReaderOnly';
 
 export type DrawerProps = ComponentPropsWithRef<'div'> &
   Dialog.DialogProps & {
     trigger?: ReactNode;
+    title?: ReactNode;
   };
 
 const overlay = css({
@@ -68,7 +70,8 @@ const close = css({
 });
 
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
-  const { children, trigger, defaultOpen, open, onOpenChange, ...rest } = props;
+  const { children, title, trigger, defaultOpen, open, onOpenChange, ...rest } =
+    props;
   const [internalOpen, setInternalOpen] = useState<boolean>(
     defaultOpen ?? open ?? false
   );
@@ -130,6 +133,17 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
                   transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
                 }}
               >
+                {title ? (
+                  <Dialog.Title asChild>
+                    <Text
+                      element="h2"
+                      looksLike="h4"
+                      className={css({ mb: '5' })}
+                    >
+                      {title}
+                    </Text>
+                  </Dialog.Title>
+                ) : null}
                 {children}
                 <Dialog.Close asChild>
                   <Button className={close} kind="bare" size="md">

@@ -14,11 +14,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { css } from '@styles/css';
 import { Button } from '../button/Button';
 import { Cross } from '../icons/icons';
+import { Text } from '../text/Text';
 import { ScreenReaderOnly } from '../screen-reader-only/ScreenReaderOnly';
 
 export type DialogProps = ComponentPropsWithRef<'div'> &
   RadixDialog.DialogProps & {
     trigger?: ReactNode;
+    title?: ReactNode;
   };
 
 const overlay = css({
@@ -53,7 +55,8 @@ const close = css({
 });
 
 const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
-  const { children, trigger, defaultOpen, open, onOpenChange, ...rest } = props;
+  const { children, title, trigger, defaultOpen, open, onOpenChange, ...rest } =
+    props;
   const [internalOpen, setInternalOpen] = useState<boolean>(
     defaultOpen ?? open ?? false
   );
@@ -107,6 +110,17 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
                   transform: 'scale(0.98) translate(-50%, -50%)'
                 }}
               >
+                {title ? (
+                  <RadixDialog.Title asChild>
+                    <Text
+                      element="h2"
+                      looksLike="h4"
+                      className={css({ mb: '5' })}
+                    >
+                      {title}
+                    </Text>
+                  </RadixDialog.Title>
+                ) : null}
                 {children}
                 <RadixDialog.Close asChild>
                   <Button className={close} kind="bare" size="md">

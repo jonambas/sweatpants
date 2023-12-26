@@ -10,11 +10,8 @@ import {
 directory('Dialog', () => {
   add('Default', () => {
     return (
-      <Dialog trigger={<Button>Open</Button>}>
+      <Dialog trigger={<Button>Open</Button>} title="Dialog">
         <Stack>
-          <Text looksLike="h4" element="h2">
-            Dialog
-          </Text>
           <DateField id="date" />
           <Select id="select">
             <Select.Item value="foo">Foo</Select.Item>

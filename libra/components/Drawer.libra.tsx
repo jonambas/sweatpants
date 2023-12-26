@@ -10,11 +10,8 @@ import {
 directory('Drawer', () => {
   add('Default', () => {
     return (
-      <Drawer trigger={<Button>Open</Button>}>
+      <Drawer trigger={<Button>Open</Button>} title="Drawer">
         <Stack>
-          <Text looksLike="h4" element="h2">
-            Drawer
-          </Text>
           <DateField id="date" />
           <Select id="select">
             <Select.Item value="foo">Foo</Select.Item>
