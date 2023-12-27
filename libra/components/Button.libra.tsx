@@ -114,6 +114,7 @@ directory('Button', () => {
               Click Me
             </Button>
             <Button kind="neutral">Click Me</Button>
+            <Button kind="neutral">Click Me</Button>
           </ButtonGroup>
           <ButtonGroup space="tight">
             <Button
