@@ -7,7 +7,7 @@ import {
   forwardRef,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import * as RadixDialog from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -27,7 +27,7 @@ const overlay = css({
   position: 'fixed',
   zIndex: '10',
   inset: 0,
-  background: { _lightScheme: '#00000090', _darkScheme: '#00000090' }
+  background: { base: '#00000090', _dark: '#00000090' },
 });
 
 const content = css({
@@ -44,21 +44,21 @@ const content = css({
   boxShadow: '0 0 12px 0px rgba(0,0,0,0.05)',
   p: '6',
   maxWidth: '30rem',
-  width: '100%'
+  width: '100%',
 });
 
 const close = css({
   position: 'absolute!',
   py: '4',
   right: '4',
-  top: '4'
+  top: '4',
 });
 
 const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
   const { children, title, trigger, defaultOpen, open, onOpenChange, ...rest } =
     props;
   const [internalOpen, setInternalOpen] = useState<boolean>(
-    defaultOpen ?? open ?? false
+    defaultOpen ?? open ?? false,
   );
 
   const ref = useRef(null) as MutableRefObject<HTMLElement | null>;
@@ -85,7 +85,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
     >
       <RadixDialog.Trigger asChild>{trigger}</RadixDialog.Trigger>
       <AnimatePresence>
-        {finalOpen ? (
+        {finalOpen ?
           <RadixDialog.Portal forceMount>
             <RadixDialog.Overlay asChild className={overlay}>
               <motion.div
@@ -99,18 +99,18 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 initial={{
                   opacity: 0,
-                  transform: 'scale(0.98) translate(-50%, -50%)'
+                  transform: 'scale(0.98) translate(-50%, -50%)',
                 }}
                 animate={{
                   opacity: 1,
-                  transform: 'scale(1) translate(-50%, -50%)'
+                  transform: 'scale(1) translate(-50%, -50%)',
                 }}
                 exit={{
                   opacity: 0,
-                  transform: 'scale(0.98) translate(-50%, -50%)'
+                  transform: 'scale(0.98) translate(-50%, -50%)',
                 }}
               >
-                {title ? (
+                {title ?
                   <RadixDialog.Title asChild>
                     <Text
                       element="h2"
@@ -120,7 +120,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
                       {title}
                     </Text>
                   </RadixDialog.Title>
-                ) : null}
+                : null}
                 {children}
                 <RadixDialog.Close asChild>
                   <Button className={close} kind="bare" size="md">
@@ -131,7 +131,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
               </motion.div>
             </RadixDialog.Content>
           </RadixDialog.Portal>
-        ) : null}
+        : null}
       </AnimatePresence>
     </RadixDialog.Root>
   );

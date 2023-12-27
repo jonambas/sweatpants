@@ -8,7 +8,7 @@ import {
   useEffect,
   useLayoutEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -29,7 +29,7 @@ const overlay = css({
   position: 'fixed',
   zIndex: '10',
   inset: 0,
-  background: { _lightScheme: '#00000090', _darkScheme: '#00000090' }
+  background: { base: '#00000090', _dark: '#00000090' },
 });
 
 const content = css({
@@ -58,22 +58,22 @@ const content = css({
     borderTopRightRadius: '0',
     borderTopWidth: '0px',
     borderLeftWidth: '1px',
-    borderLeftColor: 'borders'
-  }
+    borderLeftColor: 'borders',
+  },
 });
 
 const close = css({
   position: 'absolute!',
   py: '4',
   right: '4',
-  top: '4'
+  top: '4',
 });
 
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
   const { children, title, trigger, defaultOpen, open, onOpenChange, ...rest } =
     props;
   const [internalOpen, setInternalOpen] = useState<boolean>(
-    defaultOpen ?? open ?? false
+    defaultOpen ?? open ?? false,
   );
   const [isSmall, setIsSmall] = useState<boolean>(false);
   const ref = useRef(null) as MutableRefObject<HTMLElement | null>;
@@ -109,7 +109,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
     >
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
       <AnimatePresence>
-        {finalOpen ? (
+        {finalOpen ?
           <Dialog.Portal forceMount>
             <Dialog.Overlay asChild className={overlay}>
               <motion.div
@@ -123,18 +123,18 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
               <motion.div
                 initial={{
                   opacity: 0,
-                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)',
                 }}
                 animate={{
                   opacity: 1,
-                  transform: isSmall ? 'translateY(0)' : 'translateX(0)'
+                  transform: isSmall ? 'translateY(0)' : 'translateX(0)',
                 }}
                 exit={{
                   opacity: 0,
-                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)'
+                  transform: isSmall ? 'translateY(100%)' : 'translateX(100%)',
                 }}
               >
-                {title ? (
+                {title ?
                   <Dialog.Title asChild>
                     <Text
                       element="h2"
@@ -144,7 +144,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
                       {title}
                     </Text>
                   </Dialog.Title>
-                ) : null}
+                : null}
                 {children}
                 <Dialog.Close asChild>
                   <Button className={close} kind="bare" size="md">
@@ -155,7 +155,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
               </motion.div>
             </Dialog.Content>
           </Dialog.Portal>
-        ) : null}
+        : null}
       </AnimatePresence>
     </Dialog.Root>
   );

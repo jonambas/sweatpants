@@ -30,14 +30,14 @@ directory('Panda Preset', () => {
                 looksLike="h3"
                 className={css({
                   mb: '6',
-                  textTransform: 'capitalize'
+                  textTransform: 'capitalize',
                 })}
               >
                 {category}
               </Text>
               <table
                 className={css({
-                  mb: '8'
+                  mb: '8',
                 })}
               >
                 <thead>
@@ -46,7 +46,7 @@ directory('Panda Preset', () => {
                       <Text looksLike="strong">Token</Text>
                     </th>
                     <th>
-                      <Text looksLike="strong">Light Value</Text>
+                      <Text looksLike="strong">Base Value</Text>
                     </th>
                     <th>
                       <Text looksLike="strong">Dark Value</Text>
@@ -56,10 +56,9 @@ directory('Panda Preset', () => {
                 </thead>
                 <tbody>
                   {Object.keys(theme?.semanticTokens[category]).map((key) => {
-                    const v =
-                      theme?.semanticTokens[category][key]?.value?._lightScheme;
+                    const v = theme?.semanticTokens[category][key]?.value?.base;
                     const dv =
-                      theme?.semanticTokens[category][key]?.value?._darkScheme;
+                      theme?.semanticTokens[category][key]?.value?._dark;
                     return (
                       <tr key={`${category}-${key}`}>
                         <td>
@@ -69,7 +68,7 @@ directory('Panda Preset', () => {
                           <Text>
                             {v || theme?.semanticTokens[category][key]?.value}
                           </Text>
-                          {category === 'colors' ? (
+                          {category === 'colors' ?
                             <span
                               style={{
                                 display: 'inline-flex',
@@ -77,14 +76,14 @@ directory('Panda Preset', () => {
                                 width: '4.5rem',
                                 height: '1.3rem',
                                 borderRadius: '2px',
-                                border: '1px solid #ddd'
+                                border: '1px solid #ddd',
                               }}
                             />
-                          ) : null}
+                          : null}
                         </td>
                         <td>
                           <Text>{dv}</Text>
-                          {category === 'colors' ? (
+                          {category === 'colors' ?
                             <span
                               style={{
                                 display: 'inline-flex',
@@ -92,10 +91,10 @@ directory('Panda Preset', () => {
                                 width: '4.5rem',
                                 height: '1.3rem',
                                 borderRadius: '2px',
-                                border: '1px solid #ddd'
+                                border: '1px solid #ddd',
                               }}
                             />
-                          ) : null}
+                          : null}
                         </td>
                       </tr>
                     );
@@ -113,14 +112,14 @@ directory('Panda Preset', () => {
                 looksLike="h3"
                 className={css({
                   mb: '6',
-                  textTransform: 'capitalize'
+                  textTransform: 'capitalize',
                 })}
               >
                 {category}
               </Text>
               <table
                 className={css({
-                  mb: '8'
+                  mb: '8',
                 })}
               >
                 <thead>
@@ -144,7 +143,7 @@ directory('Panda Preset', () => {
                         <td>
                           <Text>{theme?.tokens[category][key]?.value}</Text>
                         </td>
-                        {category === 'colors' ? (
+                        {category === 'colors' ?
                           <td>
                             <div
                               style={{
@@ -152,11 +151,11 @@ directory('Panda Preset', () => {
                                 width: '4.5rem',
                                 height: '1.3rem',
                                 borderRadius: '2px',
-                                border: '1px solid #ddd'
+                                border: '1px solid #ddd',
                               }}
                             />
                           </td>
-                        ) : null}
+                        : null}
                       </tr>
                     );
                   })}

@@ -39,8 +39,8 @@ const styles = cva({
       position: 'relative',
       zIndex: '1',
       outline: 'none',
-      boxShadow: 'focus'
-    }
+      boxShadow: 'focus',
+    },
   },
   variants: {
     fullWidth: { true: { w: '100%' }, false: {} },
@@ -49,56 +49,56 @@ const styles = cva({
         fontSize: '5',
         paddingX: '5',
         height: 'calc(2.5rem)',
-        lineHeight: 'calc(2.5rem - 2px)'
+        lineHeight: 'calc(2.5rem - 2px)',
       },
       md: {
         fontSize: '4',
         paddingX: '4',
         height: 'calc(2rem)',
-        lineHeight: 'calc(2rem - 2px)'
+        lineHeight: 'calc(2rem - 2px)',
       },
       sm: {
         fontSize: '3',
         paddingX: '4',
         height: 'calc(1.75rem)',
-        lineHeight: 'calc(1.75rem - 2px)'
+        lineHeight: 'calc(1.75rem - 2px)',
       },
       xs: {
         fontSize: '2',
         paddingX: '3',
         height: 'calc(1.25rem)',
         lineHeight: 'calc(1.25rem - 2px)',
-        borderRadius: 'xs'
-      }
+        borderRadius: 'xs',
+      },
     },
     disabled: {
       true: { cursor: 'not-allowed', opacity: '0.7' },
-      false: {}
+      false: {},
     },
     selected: {
       true: {
-        zIndex: '1'
+        zIndex: '1',
       },
-      false: {}
+      false: {},
     },
     kind: {
       primary: {
-        bg: { _lightScheme: 'gray12', _darkScheme: 'white' },
-        borderColor: { _lightScheme: 'gray12', _darkScheme: 'white' },
+        bg: { base: 'gray12', _dark: 'white' },
+        borderColor: { base: 'gray12', _dark: 'white' },
         color: 'gray1',
         boxShadow: 'sm',
         '&:hover:not(:disabled)': {
-          bg: { _lightScheme: 'gray11', _darkScheme: 'gray12' },
-          borderColor: { _lightScheme: 'gray11', _darkScheme: 'gray12' }
-        }
+          bg: { base: 'gray11', _dark: 'gray12' },
+          borderColor: { base: 'gray11', _dark: 'gray12' },
+        },
       },
       destructive: {
         bg: 'red3',
         borderColor: 'red7',
         color: 'red11',
         '&:hover:not(:disabled)': {
-          bg: 'red4'
-        }
+          bg: 'red4',
+        },
       },
       neutral: {
         bg: 'transparent',
@@ -106,8 +106,8 @@ const styles = cva({
         color: 'gray12',
         boxShadow: 'sm',
         '&:hover:not(:disabled)': {
-          bg: 'gray4'
-        }
+          bg: 'gray4',
+        },
       },
       bare: {
         bg: 'transparent',
@@ -128,50 +128,50 @@ const styles = cva({
           borderColor: 'gray12',
           borderRadius: 'inherit',
           opacity: '0',
-          transition: 'opacity 0.15s'
+          transition: 'opacity 0.15s',
         },
         '&:hover:not(:disabled)': {
           bg: 'transparent',
           color: 'gray12',
           _before: {
-            opacity: '0.08'
-          }
-        }
-      }
-    }
+            opacity: '0.08',
+          },
+        },
+      },
+    },
   },
   compoundVariants: [
     {
       kind: 'neutral',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
-        _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
+        base: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+        _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
-          _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
+          base: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
+          _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
           _before: {
-            opacity: '0.05'
-          }
-        }
-      }
+            opacity: '0.05',
+          },
+        },
+      },
     },
     {
       kind: 'bare',
       selected: true,
       css: {
-        _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
-        _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
+        base: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+        _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
         '&:hover:not(:disabled)': {
-          _lightScheme: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
-          _darkScheme: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
+          base: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
+          _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
           _before: {
-            opacity: '0.05'
-          }
-        }
-      }
-    }
-  ]
+            opacity: '0.05',
+          },
+        },
+      },
+    },
+  ],
 });
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
@@ -191,7 +191,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
 
   const finalStyles = {
     kind: group?.kind || kind,
-    size: group?.size || size
+    size: group?.size || size,
   };
 
   const Element = asChild ? Slot : 'button';
@@ -203,7 +203,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
       type={type}
       className={cx(
         styles({ ...finalStyles, disabled, selected, fullWidth }),
-        className
+        className,
       )}
       disabled={disabled}
       {...pressedProps}

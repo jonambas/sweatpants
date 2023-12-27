@@ -24,27 +24,27 @@ const itemStyles = cva({
     '&:hover, &:focus': {
       boxShadow: 'none',
       outline: 'none',
-      bg: 'gray5'
+      bg: 'gray5',
     },
     '&[data-state=checked]': {
-      _lightScheme: {
+      base: {
         borderColor: 'gray12',
         bg: 'gray12',
         color: 'gray1',
         '&:hover, &:focus': {
-          bg: 'gray12'
-        }
+          bg: 'gray12',
+        },
       },
-      _darkScheme: {
+      _dark: {
         borderColor: 'blue8',
         bg: 'blue8',
         color: 'blue12',
         '&:hover, &:focus': {
-          bg: 'blue8'
-        }
-      }
-    }
-  }
+          bg: 'blue8',
+        },
+      },
+    },
+  },
 });
 
 const SelectItem: FC<SelectItemProps> = (props) => {
