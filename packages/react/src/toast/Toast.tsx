@@ -16,36 +16,36 @@ const styles = cva({
     py: '3',
     fontSize: '4',
     borderWidth: '1px',
-    borderStyle: 'solid'
+    borderStyle: 'solid',
   },
   variants: {
     tone: {
       negative: {
-        bg: { _lightScheme: 'red11', _darkScheme: 'red7' },
-        color: { _lightScheme: 'red2', _darkScheme: 'white' },
-        borderColor: { _lightScheme: 'red11', _darkScheme: 'red8' },
+        bg: { base: 'red11', _dark: 'red7' },
+        color: { base: 'red2', _dark: 'white' },
+        borderColor: { base: 'red11', _dark: 'red8' },
         boxShadow: 'md',
         '& button': {
-          color: { _lightScheme: 'red5!', _darkScheme: 'red12!' },
+          color: { base: 'red5!', _dark: 'red12!' },
           _hover: {
-            color: { _lightScheme: 'red2!', _darkScheme: 'white!' }
-          }
-        }
+            color: { base: 'red2!', _dark: 'white!' },
+          },
+        },
       },
       neutral: {
-        bg: { _lightScheme: 'gray12', _darkScheme: 'white' },
+        bg: { base: 'gray12', _dark: 'white' },
         color: 'gray1',
-        borderColor: { _lightScheme: 'gray12', _darkScheme: 'white' },
+        borderColor: { base: 'gray12', _dark: 'white' },
         boxShadow: 'md',
         '& button': {
           color: 'gray8!',
           _hover: {
-            color: 'gray1!'
-          }
-        }
-      }
-    }
-  }
+            color: 'gray1!',
+          },
+        },
+      },
+    },
+  },
 });
 
 const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
@@ -61,7 +61,7 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
         className={css({
           display: 'flex',
           gap: '5',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         })}
       >
         <div>{children}</div>

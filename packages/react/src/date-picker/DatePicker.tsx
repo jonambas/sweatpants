@@ -5,7 +5,7 @@ import {
   DayPicker,
   DayPickerSingleProps,
   useDayPicker,
-  useNavigation
+  useNavigation,
 } from 'react-day-picker';
 import { css } from '@styles/css';
 import { Button } from '../button/Button';
@@ -15,7 +15,7 @@ import {
   isAfter,
   isBefore,
   setYear,
-  subYears
+  subYears,
 } from 'date-fns';
 import { Select } from '../select/Select';
 import { Text } from '../text/Text';
@@ -37,45 +37,45 @@ const dayStyles = css({
   transition: '0.15s',
   color: 'gray12',
   '&:not(:disabled)': {
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   '&:not([aria-selected="true"]):not(:disabled)': {
     _hover: {
-      bg: 'gray5'
-    }
+      bg: 'gray5',
+    },
   },
   '&[aria-selected="true"]': {
     bg: 'blue9!',
-    color: { _lightScheme: 'blue1!', _darkScheme: 'white!' },
-    fontWeight: 'bold'
+    color: { base: 'blue1!', _dark: 'white!' },
+    fontWeight: 'bold',
   },
   _focusVisible: {
     outline: 'none',
-    boxShadow: 'focus'
-  }
+    boxShadow: 'focus',
+  },
 });
 
 const dayOutsideStyles = css({
-  color: 'gray9!'
+  color: 'gray9!',
 });
 
 const dayDisabledStyles = css({
-  color: 'gray7!'
+  color: 'gray7!',
 });
 
 const tableStyles = css({
   width: 'fit-content',
-  mt: '5'
+  mt: '5',
 });
 
 const cellStyles = css({
-  width: '30px'
+  width: '30px',
 });
 
 const headCellStyles = css({
   fontSize: '3',
   color: 'gray9',
-  pb: '3'
+  pb: '3',
 });
 
 const Caption = (): JSX.Element => {
@@ -91,7 +91,7 @@ const Caption = (): JSX.Element => {
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%',
-        gap: '5'
+        gap: '5',
       })}
     >
       <Button
@@ -105,7 +105,7 @@ const Caption = (): JSX.Element => {
           w: '30px',
           h: '30px',
           p: '0!',
-          justifyContent: 'center'
+          justifyContent: 'center',
         })}
       >
         <ScreenReaderOnly>Previous Month</ScreenReaderOnly>
@@ -139,8 +139,8 @@ const Caption = (): JSX.Element => {
               textDecoration: 'underline',
               textDecorationStyle: 'dotted',
               textDecorationColor: 'gray9',
-              textUnderlineOffset: '4px'
-            }
+              textUnderlineOffset: '4px',
+            },
           })}
         >
           {yearItems.map((year) => {
@@ -164,7 +164,7 @@ const Caption = (): JSX.Element => {
           w: '30px',
           h: '30px',
           p: '0!',
-          justifyContent: 'center'
+          justifyContent: 'center',
         })}
       >
         <ScreenReaderOnly>Next Month</ScreenReaderOnly>
@@ -186,7 +186,7 @@ const DatePicker: FC<DatePickerProps> = (props) => {
   return (
     <div
       className={css({
-        width: 'fit-content'
+        width: 'fit-content',
       })}
     >
       <DayPicker
@@ -200,10 +200,10 @@ const DatePicker: FC<DatePickerProps> = (props) => {
           day_disabled: dayDisabledStyles,
           table: tableStyles,
           cell: cellStyles,
-          head_cell: headCellStyles
+          head_cell: headCellStyles,
         }}
         components={{
-          Caption
+          Caption,
         }}
         fromDate={fromDate}
         toDate={toDate}
