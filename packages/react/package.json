@@ -24,7 +24,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@pandacss/dev": "0.20.1",
+    "@pandacss/dev": "0.23.0",
     "@sweatpants/panda-preset": "0.7.5",
     "@types/date-fns": "2.6.0"
   },
