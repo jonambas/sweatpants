@@ -145,11 +145,13 @@ const styles = cva({
       kind: 'neutral',
       selected: true,
       css: {
-        base: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
-        _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
+        bg: { base: 'blue4', _dark: 'blue7' },
+        color: { base: 'blue11', _dark: 'blue12' },
+        borderColor: { base: 'blue8', _dark: 'blue9' },
         '&:hover:not(:disabled)': {
-          base: { bg: 'blue4', color: 'blue11', borderColor: 'blue8' },
-          _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue9' },
+          bg: { base: 'blue4', _dark: 'blue7' },
+          color: { base: 'blue11', _dark: 'blue12' },
+          borderColor: { base: 'blue8', _dark: 'blue9' },
           _before: {
             opacity: '0.05',
           },
@@ -160,11 +162,13 @@ const styles = cva({
       kind: 'bare',
       selected: true,
       css: {
-        base: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
-        _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
+        bg: { base: 'blue4', _dark: 'blue7' },
+        color: { base: 'blue11', _dark: 'blue12' },
+        borderColor: { base: 'blue4', _dark: 'blue7' },
         '&:hover:not(:disabled)': {
-          base: { bg: 'blue4', color: 'blue11', borderColor: 'blue4' },
-          _dark: { bg: 'blue7', color: 'blue12', borderColor: 'blue7' },
+          bg: { base: 'blue4', _dark: 'blue7' },
+          color: { base: 'blue11', _dark: 'blue12' },
+          borderColor: { base: 'blue4', _dark: 'blue7' },
           _before: {
             opacity: '0.05',
           },
