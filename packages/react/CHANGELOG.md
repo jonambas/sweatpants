@@ -1,5 +1,12 @@
 # @sweatpants/react
 
+## 0.7.26
+
+### Patch Changes
+
+- 89b7341: Fix selected Button styles
+- 650e59f: Refactor conditions to use base, \_light, and \_dark, to avoid flash of no theme
+
 ## 0.7.25
 
 ### Patch Changes

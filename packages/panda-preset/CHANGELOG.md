@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.6
+
+### Patch Changes
+
+- 650e59f: Refactor conditions to use base, \_light, and \_dark, to avoid flash of no theme
+
 ## 0.7.5
 
 ### Patch Changes
