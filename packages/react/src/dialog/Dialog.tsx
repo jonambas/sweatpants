@@ -123,7 +123,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
                 : null}
                 {children}
                 <RadixDialog.Close asChild>
-                  <Button className={close} kind="bare" size="md">
+                  <Button className={close} kind="bare" size="md" iconOnly>
                     <ScreenReaderOnly>Close</ScreenReaderOnly>
                     <Cross />
                   </Button>

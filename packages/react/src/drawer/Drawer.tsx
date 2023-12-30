@@ -147,7 +147,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
                 : null}
                 {children}
                 <Dialog.Close asChild>
-                  <Button className={close} kind="bare" size="md">
+                  <Button className={close} kind="bare" size="md" iconOnly>
                     <ScreenReaderOnly>Close</ScreenReaderOnly>
                     <Cross />
                   </Button>

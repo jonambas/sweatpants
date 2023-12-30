@@ -96,17 +96,12 @@ const Caption = (): JSX.Element => {
     >
       <Button
         kind="bare"
-        size="sm"
+        size="md"
         disabled={!previousMonth}
         onClick={() => {
           previousMonth && goToMonth(previousMonth);
         }}
-        className={css({
-          w: '30px',
-          h: '30px',
-          p: '0!',
-          justifyContent: 'center',
-        })}
+        iconOnly
       >
         <ScreenReaderOnly>Previous Month</ScreenReaderOnly>
         <ChevronDown className={css({ transform: 'rotate(90deg)' })} />
@@ -155,17 +150,12 @@ const Caption = (): JSX.Element => {
 
       <Button
         kind="bare"
-        size="sm"
+        size="md"
         disabled={!nextMonth}
         onClick={() => {
           nextMonth && goToMonth(nextMonth);
         }}
-        className={css({
-          w: '30px',
-          h: '30px',
-          p: '0!',
-          justifyContent: 'center',
-        })}
+        iconOnly
       >
         <ScreenReaderOnly>Next Month</ScreenReaderOnly>
         <ChevronDown className={css({ transform: 'rotate(-90deg)' })} />

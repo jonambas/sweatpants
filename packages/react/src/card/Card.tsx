@@ -4,7 +4,7 @@ import { cva, cx } from '@styles/css';
 import {
   ComponentPropsWithRef,
   ForwardRefExoticComponent,
-  forwardRef
+  forwardRef,
 } from 'react';
 import { Divider } from './CardDivider';
 import { CardContext, CardContextValue } from './Card.context';
@@ -17,29 +17,30 @@ export type CardProps = ComponentPropsWithRef<'div'> & {
 const styles = cva({
   base: {
     borderRadius: 'md',
-    bg: 'contentBg'
+    bg: 'contentBg',
+    w: '100%',
   },
   variants: {
     space: {
       none: { padding: '0' },
       tight: { padding: '2' },
       normal: { padding: '5' },
-      loose: { padding: '7' }
+      loose: { padding: '7' },
     },
     kind: {
       elevated: {
         boxShadow: 'md',
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: 'borders'
+        borderColor: 'borders',
       },
       neutral: {
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: 'borders'
-      }
-    }
-  }
+        borderColor: 'borders',
+      },
+    },
+  },
 });
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {

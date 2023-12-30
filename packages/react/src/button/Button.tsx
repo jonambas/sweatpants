@@ -9,6 +9,7 @@ type BaseProps = ComponentPropsWithRef<'button'> & {
   asChild?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg';
   kind?: 'primary' | 'destructive' | 'neutral' | 'bare';
+  iconOnly?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
 };
@@ -41,27 +42,54 @@ const styles = cva({
       outline: 'none',
       boxShadow: 'focus',
     },
+    '& > svg': {
+      width: 'auto',
+    },
   },
   variants: {
     fullWidth: { true: { w: '100%' }, false: {} },
+    iconOnly: {
+      true: {
+        aspectRatio: 'square',
+      },
+      false: {},
+    },
     size: {
       lg: {
         fontSize: '5',
         paddingX: '5',
         height: 'calc(2.5rem)',
         lineHeight: 'calc(2.5rem - 2px)',
+        '& > svg': {
+          height: 'token(fontSizes.5)',
+        },
+        '&:has(svg)': {
+          gap: '4',
+        },
       },
       md: {
         fontSize: '4',
         paddingX: '4',
         height: 'calc(2rem)',
         lineHeight: 'calc(2rem - 2px)',
+        '& > svg': {
+          height: 'token(fontSizes.4)',
+        },
+        '&:has(svg)': {
+          gap: '3',
+        },
       },
       sm: {
         fontSize: '3',
         paddingX: '4',
         height: 'calc(1.75rem)',
         lineHeight: 'calc(1.75rem - 2px)',
+        '& > svg': {
+          height: 'token(fontSizes.3)',
+        },
+        '&:has(svg)': {
+          gap: '3',
+        },
       },
       xs: {
         fontSize: '2',
@@ -69,6 +97,12 @@ const styles = cva({
         height: 'calc(1.25rem)',
         lineHeight: 'calc(1.25rem - 2px)',
         borderRadius: 'xs',
+        '& > svg': {
+          height: 'token(fontSizes.2)',
+        },
+        '&:has(svg)': {
+          gap: '2',
+        },
       },
     },
     disabled: {
@@ -188,6 +222,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
     size = 'md',
     type = 'button',
     selected,
+    iconOnly = false,
     ...rest
   } = props;
 
@@ -206,7 +241,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, userRef) => {
       ref={userRef}
       type={type}
       className={cx(
-        styles({ ...finalStyles, disabled, selected, fullWidth }),
+        styles({ ...finalStyles, disabled, selected, fullWidth, iconOnly }),
         className,
       )}
       disabled={disabled}

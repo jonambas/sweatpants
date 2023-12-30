@@ -65,8 +65,8 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
         })}
       >
         <div>{children}</div>
-        <Button kind="bare" size="xs" onClick={onClose}>
-          <Cross width="12" height="12" />
+        <Button kind="bare" size="xs" onClick={onClose} iconOnly>
+          <Cross />
         </Button>
       </div>
     </Card>
