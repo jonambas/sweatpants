@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { Button, ButtonGroup, Card } from '../../packages/react/src';
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  Download,
+  Plus,
+  Stack,
+} from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Button', () => {
@@ -26,7 +33,7 @@ directory('Button', () => {
     );
   });
 
-  add('kinds', () => {
+  add('Kinds', () => {
     return (
       <Card>
         <div className={css({ display: 'flex', gap: '4' })}>
@@ -36,6 +43,133 @@ directory('Button', () => {
           <Button kind="bare">Click Me</Button>
         </div>
       </Card>
+    );
+  });
+
+  add('Icons', () => {
+    return (
+      <Stack>
+        <Card>
+          <Stack>
+            <Stack direction="row">
+              <Button size="lg" kind="neutral" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="lg" kind="primary" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="lg" kind="destructive" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="lg" kind="bare" iconOnly>
+                <Plus />
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="md" kind="neutral" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="md" kind="primary" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="md" kind="destructive" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="md" kind="bare" iconOnly>
+                <Plus />
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="sm" kind="neutral" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="sm" kind="primary" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="sm" kind="destructive" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="sm" kind="bare" iconOnly>
+                <Plus />
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="xs" kind="neutral" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="xs" kind="primary" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="xs" kind="destructive" iconOnly>
+                <Plus />
+              </Button>
+              <Button size="xs" kind="bare" iconOnly>
+                <Plus />
+              </Button>
+            </Stack>
+          </Stack>
+        </Card>
+        <Card>
+          <Stack>
+            <Stack direction="row">
+              <Button size="lg" kind="neutral">
+                <Download /> With Text
+              </Button>
+              <Button size="lg" kind="primary">
+                <Download /> With Text
+              </Button>
+              <Button size="lg" kind="destructive">
+                <Download /> With Text
+              </Button>
+              <Button size="lg" kind="bare">
+                <Download /> With Text
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="md" kind="neutral">
+                <Download /> With Text
+              </Button>
+              <Button size="md" kind="primary">
+                <Download /> With Text
+              </Button>
+              <Button size="md" kind="destructive">
+                <Download /> With Text
+              </Button>
+              <Button size="md" kind="bare">
+                <Download /> With Text
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="sm" kind="neutral">
+                <Download /> With Text
+              </Button>
+              <Button size="sm" kind="primary">
+                <Download /> With Text
+              </Button>
+              <Button size="sm" kind="destructive">
+                <Download /> With Text
+              </Button>
+              <Button size="sm" kind="bare">
+                <Download /> With Text
+              </Button>
+            </Stack>
+            <Stack direction="row">
+              <Button size="xs" kind="neutral">
+                <Download /> With Text
+              </Button>
+              <Button size="xs" kind="primary">
+                <Download /> With Text
+              </Button>
+              <Button size="xs" kind="destructive">
+                <Download /> With Text
+              </Button>
+              <Button size="xs" kind="bare">
+                <Download /> With Text
+              </Button>
+            </Stack>
+          </Stack>
+        </Card>
+      </Stack>
     );
   });
 
