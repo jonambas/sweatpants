@@ -76,7 +76,7 @@ const styles = cva({
           height: 'token(fontSizes.4)',
         },
         '&:has(svg)': {
-          gap: '4',
+          gap: '3',
         },
       },
       sm: {
@@ -88,7 +88,7 @@ const styles = cva({
           height: 'token(fontSizes.3)',
         },
         '&:has(svg)': {
-          gap: '4',
+          gap: '3',
         },
       },
       xs: {
@@ -101,7 +101,7 @@ const styles = cva({
           height: 'token(fontSizes.2)',
         },
         '&:has(svg)': {
-          gap: '3',
+          gap: '2',
         },
       },
     },
