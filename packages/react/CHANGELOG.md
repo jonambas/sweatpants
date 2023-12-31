@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.7.27
+
+### Patch Changes
+
+- 6d5cf7c: Add Button iconOnly prop, and gap between button children
+
 ## 0.7.26
 
 ### Patch Changes

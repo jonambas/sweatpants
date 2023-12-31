@@ -1,6 +1,6 @@
 {
   "name": "@sweatpants/react",
-  "version": "0.7.26",
+  "version": "0.7.27",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
