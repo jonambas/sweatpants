@@ -1,4 +1,51 @@
 import { definePreset } from '@pandacss/dev';
+import * as colors from '@radix-ui/colors';
+
+const colorKeys: Array<keyof typeof colors> = [
+  'amber',
+  'orange',
+  'tomato',
+  'red',
+  'ruby',
+  'crimson',
+  'plum',
+  'purple',
+  'violet',
+  'iris',
+  'indigo',
+  'blue',
+  'cyan',
+  'teal',
+  'jade',
+  'green',
+  'grass',
+  'lime',
+  'mint',
+  'sky',
+];
+
+const semanticColors = colorKeys.reduce((acc, key) => {
+  let scale = {};
+
+  for (const scaleKey of Object.keys(colors[key])) {
+    scale = {
+      ...scale,
+      [scaleKey]: {
+        value: {
+          // @ts-ignore
+          base: colors[key][scaleKey],
+          // @ts-ignore
+          _dark: colors[`${key}Dark`][scaleKey],
+        },
+      },
+    };
+  }
+
+  return {
+    ...acc,
+    ...scale,
+  };
+}, {});
 
 export default definePreset({
   theme: {
@@ -88,184 +135,7 @@ export default definePreset({
         gray10: { value: { base: '#7e808a', _dark: '#7d828a' } },
         gray11: { value: { base: '#60646c', _dark: '#adb1b8' } },
         gray12: { value: { base: '#1c2024', _dark: '#edeef0' } },
-        red1: { value: { base: '#fffcfc', _dark: '#1f1315' } },
-        red2: { value: { base: '#fff7f7', _dark: '#291618' } },
-        red3: { value: { base: '#ffefef', _dark: '#3b191d' } },
-        red4: { value: { base: '#ffe5e5', _dark: '#481a20' } },
-        red5: { value: { base: '#fdd8d8', _dark: '#551c22' } },
-        red6: { value: { base: '#f9c6c6', _dark: '#691d25' } },
-        red7: { value: { base: '#f3aeaf', _dark: '#8c1d28' } },
-        red8: { value: { base: '#eb9091', _dark: '#d21e24' } },
-        red9: { value: { base: '#e5484d', _dark: '#e5484d' } },
-        red10: { value: { base: '#d93d42', _dark: '#f26669' } },
-        red11: { value: { base: '#c62a2f', _dark: '#ff8589' } },
-        red12: { value: { base: '#641723', _dark: '#ffd1d9' } },
-        purple1: { value: { base: '#fdfcfe', _dark: '#17151f' } },
-        purple2: { value: { base: '#fbfaff', _dark: '#1c172b' } },
-        purple3: { value: { base: '#f5f2ff', _dark: '#271f3f' } },
-        purple4: { value: { base: '#ede9fe', _dark: '#2d254c' } },
-        purple5: { value: { base: '#e4defc', _dark: '#342a58' } },
-        purple6: { value: { base: '#d7cff9', _dark: '#3d316a' } },
-        purple7: { value: { base: '#c4b8f3', _dark: '#4c3e89' } },
-        purple8: { value: { base: '#aa99ec', _dark: '#6654c0' } },
-        purple9: { value: { base: '#6e56cf', _dark: '#6e56cf' } },
-        purple10: {
-          value: { base: '#644fc1', _dark: '#836add' },
-        },
-        purple11: {
-          value: { base: '#5746af', _dark: '#b399ff' },
-        },
-        purple12: {
-          value: { base: '#2f265f', _dark: '#e2ddfe' },
-        },
-        blue1: { value: { base: '#fbfdff', _dark: '#0f1720' } },
-        blue2: { value: { base: '#f5faff', _dark: '#0f1b2d' } },
-        blue3: { value: { base: '#edf6ff', _dark: '#11253f' } },
-        blue4: { value: { base: '#e1f0ff', _dark: '#122b4c' } },
-        blue5: { value: { base: '#cee7fe', _dark: '#12325a' } },
-        blue6: { value: { base: '#b7d9f8', _dark: '#123d6f' } },
-        blue7: { value: { base: '#96c7f2', _dark: '#0f5096' } },
-        blue8: { value: { base: '#5eb0ef', _dark: '#1276e2' } },
-        blue9: { value: { base: '#0091ff', _dark: '#0091ff' } },
-        blue10: { value: { base: '#0880ea', _dark: '#3cabff' } },
-        blue11: { value: { base: '#0b68cb', _dark: '#6bc1ff' } },
-        blue12: { value: { base: '#113264', _dark: '#c2e5ff' } },
-        green1: { value: { base: '#fbfefc', _dark: '#0d1912' } },
-        green2: { value: { base: '#f2fcf5', _dark: '#0f1d17' } },
-        green3: { value: { base: '#e9f9ee', _dark: '#12281f' } },
-        green4: { value: { base: '#ddf3e4', _dark: '#143125' } },
-        green5: { value: { base: '#ccebd7', _dark: '#173a2a' } },
-        green6: { value: { base: '#b4dfc4', _dark: '#194633' } },
-        green7: { value: { base: '#92ceac', _dark: '#1f5e41' } },
-        green8: { value: { base: '#5bb98c', _dark: '#2c8c5e' } },
-        green9: { value: { base: '#30a46c', _dark: '#30a46c' } },
-        green10: { value: { base: '#299764', _dark: '#35b979' } },
-        green11: { value: { base: '#18794e', _dark: '#3dd68c' } },
-        green12: { value: { base: '#193b2d', _dark: '#b1f1cb' } },
-        orange1: { value: { base: '#fefcfb', _dark: '#1f1206' } },
-        orange2: { value: { base: '#fff8f4', _dark: '#271504' } },
-        orange3: { value: { base: '#ffedd5', _dark: '#341c0a' } },
-        orange4: { value: { base: '#ffe0bb', _dark: '#3f220d' } },
-        orange5: { value: { base: '#ffd3a4', _dark: '#4b2910' } },
-        orange6: { value: { base: '#ffc291', _dark: '#5d3213' } },
-        orange7: { value: { base: '#ffaa7d', _dark: '#7e4318' } },
-        orange8: { value: { base: '#ed8a5c', _dark: '#c36522' } },
-        orange9: { value: { base: '#f76808', _dark: '#f76808' } },
-        orange10: {
-          value: { base: '#ed5f00', _dark: '#ff802b' },
-        },
-        orange11: {
-          value: { base: '#99543a', _dark: '#ffa366' },
-        },
-        orange12: {
-          value: { base: '#582d1d', _dark: '#ffe0c2' },
-        },
-        yellow1: { value: { base: '#fdfdf9', _dark: '#1c1500' } },
-        yellow2: { value: { base: '#fffbe0', _dark: '#221a04' } },
-        yellow3: { value: { base: '#fff8c6', _dark: '#2c230a' } },
-        yellow4: { value: { base: '#fcf3af', _dark: '#342a0e' } },
-        yellow5: { value: { base: '#f7ea9b', _dark: '#3d3211' } },
-        yellow6: { value: { base: '#ecdd85', _dark: '#493d14' } },
-        yellow7: { value: { base: '#dac56e', _dark: '#615119' } },
-        yellow8: { value: { base: '#c9aa45', _dark: '#8f7d24' } },
-        yellow9: { value: { base: '#fbe32d', _dark: '#fbe32d' } },
-        yellow10: {
-          value: { base: '#f9da10', _dark: '#fcea5c' },
-        },
-        yellow11: {
-          value: { base: '#775f28', _dark: '#ffee33' },
-        },
-        yellow12: {
-          value: { base: '#473b1f', _dark: '#fff5ad' },
-        },
-        amber1: { value: { base: '#fefdfb', _dark: '#1f1300' } },
-        amber2: { value: { base: '#fff9ed', _dark: '#251804' } },
-        amber3: { value: { base: '#fff3d0', _dark: '#30200b' } },
-        amber4: { value: { base: '#ffecb7', _dark: '#39270f' } },
-        amber5: { value: { base: '#ffe0a1', _dark: '#432e12' } },
-        amber6: { value: { base: '#f5d08c', _dark: '#533916' } },
-        amber7: { value: { base: '#e4bb78', _dark: '#6f4d1d' } },
-        amber8: { value: { base: '#d6a35c', _dark: '#a9762a' } },
-        amber9: { value: { base: '#ffc53d', _dark: '#ffc53d' } },
-        amber10: { value: { base: '#ffba1a', _dark: '#ffcb47' } },
-        amber11: { value: { base: '#915930', _dark: '#ffcc4d' } },
-        amber12: { value: { base: '#4f3422', _dark: '#ffe7b3' } },
-        crimson1: {
-          value: { base: '#fffcfd', _dark: '#1d1418' },
-        },
-        crimson2: {
-          value: { base: '#fff7fb', _dark: '#29151d' },
-        },
-        crimson3: {
-          value: { base: '#feeff6', _dark: '#391826' },
-        },
-        crimson4: {
-          value: { base: '#fce5f0', _dark: '#441a2b' },
-        },
-        crimson5: {
-          value: { base: '#f9d8e7', _dark: '#511c31' },
-        },
-        crimson6: {
-          value: { base: '#f4c6db', _dark: '#641e3a' },
-        },
-        crimson7: {
-          value: { base: '#edadc8', _dark: '#881f49' },
-        },
-        crimson8: {
-          value: { base: '#e58fb1', _dark: '#cf1761' },
-        },
-        crimson9: {
-          value: { base: '#e93d82', _dark: '#e93d82' },
-        },
-        crimson10: {
-          value: { base: '#dc3175', _dark: '#f46396' },
-        },
-        crimson11: {
-          value: { base: '#cb1d63', _dark: '#ff85ab' },
-        },
-        crimson12: {
-          value: { base: '#621639', _dark: '#fdd3e8' },
-        },
-        jade1: { value: { base: '#fbfefd', _dark: '#081911' } },
-        jade2: { value: { base: '#effdf6', _dark: '#0b1f16' } },
-        jade3: { value: { base: '#e4faef', _dark: '#0f291e' } },
-        jade4: { value: { base: '#d7f4e6', _dark: '#123124' } },
-        jade5: { value: { base: '#c6ecdb', _dark: '#143a2b' } },
-        jade6: { value: { base: '#b0e0cc', _dark: '#184635' } },
-        jade7: { value: { base: '#8fcfb9', _dark: '#1e5e48' } },
-        jade8: { value: { base: '#56ba9f', _dark: '#238b6f' } },
-        jade9: { value: { base: '#29a383', _dark: '#29a383' } },
-        jade10: { value: { base: '#259678', _dark: '#25ba92' } },
-        jade11: { value: { base: '#1a7a5e', _dark: '#1fd8a4' } },
-        jade12: { value: { base: '#1d3b31', _dark: '#adf0d4' } },
-        mint1: { value: { base: '#f9fefd', _dark: '#081917' } },
-        mint2: { value: { base: '#effefa', _dark: '#0a1f1d' } },
-        mint3: { value: { base: '#ddfbf3', _dark: '#0d2927' } },
-        mint4: { value: { base: '#ccf7ec', _dark: '#0e322e' } },
-        mint5: { value: { base: '#bbeee2', _dark: '#103b36' } },
-        mint6: { value: { base: '#a6e1d3', _dark: '#134842' } },
-        mint7: { value: { base: '#87d0bf', _dark: '#186057' } },
-        mint8: { value: { base: '#51bda7', _dark: '#248f7d' } },
-        mint9: { value: { base: '#86ead4', _dark: '#86ead4' } },
-        mint10: { value: { base: '#7fe1cc', _dark: '#95f3d9' } },
-        mint11: { value: { base: '#27756a', _dark: '#49dfbe' } },
-        mint12: { value: { base: '#16433c', _dark: '#c4f5e1' } },
-        indigo1: { value: { base: '#fdfdfe', _dark: '#131620' } },
-        indigo2: { value: { base: '#f8faff', _dark: '#15192d' } },
-        indigo3: { value: { base: '#f0f4ff', _dark: '#1a2242' } },
-        indigo4: { value: { base: '#e6edfe', _dark: '#1e284f' } },
-        indigo5: { value: { base: '#d9e2fc', _dark: '#202d5c' } },
-        indigo6: { value: { base: '#c6d4f9', _dark: '#24366e' } },
-        indigo7: { value: { base: '#aec0f5', _dark: '#2c438f' } },
-        indigo8: { value: { base: '#8da4ef', _dark: '#3b5dce' } },
-        indigo9: { value: { base: '#3e63dd', _dark: '#3e63dd' } },
-        indigo10: {
-          value: { base: '#3a5ccc', _dark: '#5c73e7' },
-        },
-        indigo11: {
-          value: { base: '#3451b2', _dark: '#99a2ff' },
-        },
-        indigo12: { value: { base: '#1f2d5c', _dark: '#dddffe' } },
+        ...semanticColors,
       },
       shadows: {
         sm: {
