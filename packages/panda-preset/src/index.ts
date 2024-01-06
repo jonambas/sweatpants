@@ -2,12 +2,17 @@ import { definePreset } from '@pandacss/dev';
 import * as colors from '@radix-ui/colors';
 
 const colorKeys: Array<keyof typeof colors> = [
+  'gold',
+  'bronze',
+  'brown',
+  'yellow',
   'amber',
   'orange',
   'tomato',
   'red',
   'ruby',
   'crimson',
+  'pink',
   'plum',
   'purple',
   'violet',
