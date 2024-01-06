@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.7.7
+
+### Patch Changes
+
+- c896c88: Automatically generate Radix colors
+
 ## 0.7.6
 
 ### Patch Changes

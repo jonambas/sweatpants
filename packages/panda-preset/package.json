@@ -1,6 +1,6 @@
 {
   "name": "@sweatpants/panda-preset",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -19,13 +19,11 @@
     "dist"
   ],
   "dependencies": {
-    "@pandacss/dev": "0.23.0"
+    "@pandacss/dev": "0.23.0",
+    "@radix-ui/colors": "3.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
-  "devDependencies": {
-    "@radix-ui/colors": "^3.0.0"
   }
 }
