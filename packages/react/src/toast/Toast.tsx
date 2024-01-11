@@ -33,7 +33,7 @@ const styles = cva({
         },
       },
       neutral: {
-        bg: { base: 'gray12', _dark: 'white' },
+        bg: { base: 'gray12!', _dark: 'white!' },
         color: 'gray1',
         borderColor: { base: 'gray12', _dark: 'white' },
         boxShadow: 'md',
@@ -65,9 +65,11 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>((props, userRef) => {
         })}
       >
         <div>{children}</div>
-        <Button kind="bare" size="xs" onClick={onClose} iconOnly>
-          <Cross />
-        </Button>
+        {onClose ?
+          <Button kind="bare" size="xs" onClick={onClose} iconOnly>
+            <Cross />
+          </Button>
+        : null}
       </div>
     </Card>
   );
