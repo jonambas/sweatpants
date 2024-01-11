@@ -31,17 +31,17 @@ const styles = cva({
       h6: { fontSize: '4', fontWeight: 'bold', lineHeight: '1.7em' },
       p: { fontSize: '4', fontWeight: 'normal', lineHeight: '1.7em' },
       em: { fontSize: '4', fontStyle: 'italic', lineHeight: '1.7em' },
-      strong: { fontSize: '4', fontWeight: 'bold', lineHeight: '1.7em' }
+      strong: { fontSize: '4', fontWeight: 'bold', lineHeight: '1.7em' },
     },
     muted: {
       true: {
-        color: 'gray10'
+        color: 'gray11',
       },
       false: {
-        color: 'gray12'
-      }
-    }
-  }
+        color: 'gray12',
+      },
+    },
+  },
 });
 
 export const Text = forwardRef<HTMLSpanElement, TextProps>((props, userRef) => {

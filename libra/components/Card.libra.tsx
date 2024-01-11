@@ -3,7 +3,7 @@ import {
   ButtonGroup,
   Card,
   Stack,
-  Text
+  Text,
 } from '../../packages/react/src';
 import { css } from '@styles/css';
 
@@ -167,4 +167,22 @@ directory('Card', () => {
       </Stack>
     );
   });
+
+  add('Slot as anchor', () => (
+    <Card asChild>
+      <a href="https://github.com/jonambas/sweatpants">
+        <Text>This is an {'<a>'} tag</Text>
+        <Text>
+          Nibh venenatis cras sed felis eget. At consectetur lorem donec massa
+          sapien faucibus et molestie. Sit amet mattis vulputate enim. Egestas
+          dui id ornare arcu odio ut sem nulla.
+        </Text>
+        <Card.Divider />
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
+        </Text>
+      </a>
+    </Card>
+  ));
 });

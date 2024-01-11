@@ -8,14 +8,17 @@ import {
 } from 'react';
 import { Divider } from './CardDivider';
 import { CardContext, CardContextValue } from './Card.context';
+import { Slot } from '../slot/Slot';
 
 export type CardProps = ComponentPropsWithRef<'div'> & {
   space?: CardContextValue['space'];
   kind?: CardContextValue['kind'];
+  asChild?: boolean;
 };
 
 const styles = cva({
   base: {
+    display: 'block',
     borderRadius: 'md',
     bg: 'contentBg',
     w: '100%',
@@ -45,6 +48,7 @@ const styles = cva({
 
 const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {
   const {
+    asChild,
     children,
     className,
     space = 'normal',
@@ -52,15 +56,17 @@ const Card = forwardRef<HTMLDivElement, CardProps>((props, userRef) => {
     ...rest
   } = props;
 
+  const Element = asChild ? Slot : 'div';
+
   return (
     <CardContext.Provider value={{ kind, space }}>
-      <div
+      <Element
         ref={userRef}
         className={cx(styles({ space, kind }), className)}
         {...rest}
       >
         {children}
-      </div>
+      </Element>
     </CardContext.Provider>
   );
 }) as ForwardRefExoticComponent<CardProps> & {
