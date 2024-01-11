@@ -1,5 +1,14 @@
 # @sweatpants/panda-preset
 
+## 0.7.8
+
+### Patch Changes
+
+- 1853104: - `Toast` does not render close button if `onClose` is not provided
+  - Fixes `Toast`` background color
+  - Adds `Card` `asChild` prop
+  - Upgrades Panda to latest
+
 ## 0.7.7
 
 ### Patch Changes

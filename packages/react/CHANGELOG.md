@@ -1,5 +1,14 @@
 # @sweatpants/react
 
+## 0.7.28
+
+### Patch Changes
+
+- 1853104: - `Toast` does not render close button if `onClose` is not provided
+  - Fixes `Toast`` background color
+  - Adds `Card` `asChild` prop
+  - Upgrades Panda to latest
+
 ## 0.7.27
 
 ### Patch Changes
