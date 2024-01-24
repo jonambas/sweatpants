@@ -36,6 +36,6 @@
     "@react-hook/resize-observer": "1.2.6",
     "date-fns": "2.30.0",
     "framer-motion": "10.16.16",
-    "react-day-picker": "8.9.1"
+    "react-day-picker": "8.10.0"
   }
 }
