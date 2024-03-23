@@ -41,8 +41,6 @@ const content = css({
   borderTopLeftRadius: 'xl',
   borderBottomLeftRadius: '0',
   borderTopRightRadius: 'xl',
-  borderTopWidth: '1px',
-  borderTopColor: 'borders',
   boxShadow: '0 0 12px 0px rgba(0,0,0,0.05)',
   p: '6',
   maxWidth: '100%',
@@ -56,9 +54,6 @@ const content = css({
     top: '0',
     borderBottomLeftRadius: 'xl',
     borderTopRightRadius: '0',
-    borderTopWidth: '0px',
-    borderLeftWidth: '1px',
-    borderLeftColor: 'borders',
   },
 });
 
