@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.8.2
+
+### Patch Changes
+
+- bc01c11: Slightly brighten colors.gray2
+
 ## 0.8.1
 
 ### Patch Changes
