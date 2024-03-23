@@ -120,7 +120,7 @@ export default definePreset({
           value: { base: '{colors.gray3}', _dark: '{colors.gray1}' },
         },
         contentBg: {
-          value: { base: '{colors.gray1}', _dark: '#1f2024' },
+          value: { base: '{colors.gray1}', _dark: '{colors.gray2}' },
         },
         borders: {
           value: {
@@ -129,7 +129,7 @@ export default definePreset({
           },
         },
         gray1: { value: { base: '#fcfcfd', _dark: '#18181a' } },
-        gray2: { value: { base: '#f9f9fb', _dark: '#1b1b1f' } },
+        gray2: { value: { base: '#f9f9fb', _dark: '#1f2024' } },
         gray3: { value: { base: '#f2f2f5', _dark: '#27282d' } },
         gray4: { value: { base: '#ebebef', _dark: '#2e3035' } },
         gray5: { value: { base: '#e4e4e9', _dark: '#35373c' } },
