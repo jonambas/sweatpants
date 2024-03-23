@@ -1,5 +1,12 @@
 # @sweatpants/react
 
+## 0.8.0
+
+### Minor Changes
+
+- 8ed4e19: - Remove Drawer borders
+  - Update background color semantic tokens
+
 ## 0.7.28
 
 ### Patch Changes
