@@ -120,7 +120,7 @@ export default definePreset({
           value: { base: '{colors.gray3}', _dark: '{colors.gray1}' },
         },
         contentBg: {
-          value: { base: '{colors.gray1}', _dark: '{colors.gray2}' },
+          value: { base: '{colors.gray1}', _dark: '#1f2024' },
         },
         borders: {
           value: {
