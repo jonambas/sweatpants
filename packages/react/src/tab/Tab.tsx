@@ -29,7 +29,7 @@ const styles = cva({
   variants: {
     selected: {
       true: {
-        color: 'gray12',
+        color: 'gray12!',
         _after: { opacity: '1!' },
       },
       false: {},
