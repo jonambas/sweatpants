@@ -7,7 +7,7 @@ import {
   forwardRef,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { css, cva, cx } from '@styles/css';
 import { Label } from '../label/Label';
@@ -24,12 +24,12 @@ export type TextFieldProps = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
 };
 
 const containerStyles = css({
-  w: '100%'
+  w: '100%',
 });
 
 const inputContainerStyles = css({
   position: 'relative',
-  zIndex: '1'
+  zIndex: '1',
 });
 
 const inputStyles = cva({
@@ -49,42 +49,42 @@ const inputStyles = cva({
     outline: 'none',
     color: 'gray12',
     '&:hover:not(:focus)': {
-      borderColor: 'gray8'
+      borderColor: 'gray8',
     },
     _focus: {
       borderColor: 'blue9',
-      background: 'blue2'
-    }
+      background: 'blue2',
+    },
   },
   variants: {
     align: {
       left: { textAlign: 'left' },
-      right: { textAlign: 'right' }
+      right: { textAlign: 'right' },
     },
     size: {
       lg: {
         fontSize: '6',
         paddingX: '5',
-        height: '2.5rem'
+        height: '2.5rem',
       },
       md: { fontSize: '5', paddingX: '4', height: '2rem' },
-      sm: { fontSize: '3', paddingX: '4', height: '1.75rem' }
+      sm: { fontSize: '3', paddingX: '4', height: '1.75rem' },
     },
     hasError: {
       true: {
         borderColor: 'red8',
         background: 'red2',
         '&:hover:not(:focus)': {
-          borderColor: 'red9'
+          borderColor: 'red9',
         },
         _focus: {
           borderColor: 'red9',
-          background: 'red2'
-        }
+          background: 'red2',
+        },
       },
-      false: {}
-    }
-  }
+      false: {},
+    },
+  },
 });
 
 const prefixOrSuffixStyles = css({
@@ -96,7 +96,7 @@ const prefixOrSuffixStyles = css({
   fontSize: '2',
   color: 'gray11',
   paddingX: '4',
-  pointerEvents: 'none'
+  pointerEvents: 'none',
 });
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
@@ -120,7 +120,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     useEffect(() => {
       const styles: HTMLAttributes<'input'>['style'] = {
         paddingLeft: prefix ? `calc(1rem + 1ch)` : undefined,
-        paddingRight: suffix ? `calc(1rem + 1ch)` : undefined
+        paddingRight: suffix ? `calc(1rem + 1ch)` : undefined,
       };
 
       if (prefixRef.current) {
@@ -169,7 +169,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 TextField.displayName = 'TextField';
