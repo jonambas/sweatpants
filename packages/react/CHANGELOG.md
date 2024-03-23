@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.8.1
+
+### Patch Changes
+
+- f4fb30f: Fix selected Tab font color
+
 ## 0.8.0
 
 ### Minor Changes
