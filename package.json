@@ -27,7 +27,7 @@
   "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
     "@changesets/cli": "2.27.1",
-    "@pandacss/dev": "0.36.0",
+    "@pandacss/dev": "0.36.1",
     "@rollup/plugin-alias": "5.0.1",
     "@sweatpants/libra": "0.0.38",
     "@types/react": "18.2.48",
@@ -41,7 +41,7 @@
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-esbuild": "6.1.0",
     "rollup-plugin-preserve-directives": "^0.2.0",
-    "typescript": "5.2.2"
+    "typescript": "5.4.3"
   },
   "workspaces": [
     "packages/panda-preset",
