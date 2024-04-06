@@ -41,7 +41,7 @@
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-esbuild": "6.1.1",
     "rollup-plugin-preserve-directives": "^0.2.0",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "workspaces": [
     "packages/panda-preset",
