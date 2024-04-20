@@ -35,7 +35,7 @@
     "@radix-ui/react-slot": "1.0.2",
     "@react-hook/resize-observer": "1.2.6",
     "date-fns": "3.6.0",
-    "framer-motion": "10.16.16",
+    "framer-motion": "10.18.0",
     "react-day-picker": "8.10.0"
   }
 }
