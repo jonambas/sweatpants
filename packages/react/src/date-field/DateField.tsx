@@ -4,7 +4,7 @@ import { ChangeEventHandler, forwardRef, useEffect, useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 
 import { TextField, TextFieldProps } from '../text-field/TextField';
-import { DatePicker } from '../date-picker/DatePicker';
+import { DatePicker, DatePickerProps } from '../date-picker/DatePicker';
 import { css } from '@styles/css';
 import { Card } from '../card/Card';
 import { Calendar } from '../icons/icons';
@@ -15,7 +15,7 @@ import {
   isBefore,
   isValid,
   parse,
-  subYears
+  subYears,
 } from 'date-fns';
 
 export type DateFieldProps = Omit<
@@ -26,9 +26,10 @@ export type DateFieldProps = Omit<
   defaultValue?: Date;
   value?: Date;
   onValueChange?: (value: Date) => void;
+  className?: string;
   fromDate?: Date;
   toDate?: Date;
-  className?: string;
+  datePickerProps?: DatePickerProps;
 };
 
 const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
@@ -45,7 +46,8 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
       hideLabel = false,
       size = 'md',
       fromDate = subYears(new Date(), 20),
-      toDate = addYears(new Date(), 20)
+      toDate = addYears(new Date(), 20),
+      datePickerProps = {},
     } = props;
 
     const [open, setOpen] = useState(false);
@@ -59,11 +61,11 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     };
 
     const [internalValue, setInternalValue] = useState<string>(
-      dayToString(value || defaultValue || new Date())
+      dayToString(value || defaultValue || new Date()),
     );
 
     const [displayMonth, setDisplayMonth] = useState<Date>(
-      stringToDay(internalValue)
+      stringToDay(internalValue),
     );
 
     const onDatePickerSelect = (day?: Date) => {
@@ -149,12 +151,13 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
               onSelect={onDatePickerSelect}
               fromDate={fromDate}
               toDate={toDate}
+              {...datePickerProps}
             />
           </Card>
         </Popover.Content>
       </Popover.Root>
     );
-  }
+  },
 );
 
 DateField.displayName = 'DateField';
