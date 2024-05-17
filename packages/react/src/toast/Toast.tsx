@@ -21,9 +21,9 @@ const styles = cva({
   variants: {
     tone: {
       negative: {
-        bg: { base: 'red11', _dark: 'red7' },
+        bg: { base: 'red11', _dark: 'red9' },
         color: { base: 'red2', _dark: 'white' },
-        borderColor: { base: 'red11', _dark: 'red8' },
+        borderColor: { base: 'red11', _dark: 'red10' },
         boxShadow: 'md',
         '& button': {
           color: { base: 'red5!', _dark: 'red12!' },
