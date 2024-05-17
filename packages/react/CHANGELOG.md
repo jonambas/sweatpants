@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.8.3
+
+### Patch Changes
+
+- 782e415: Add DateField DatePicker props pass through, adjust Toast contrast
+
 ## 0.8.2
 
 ### Patch Changes
