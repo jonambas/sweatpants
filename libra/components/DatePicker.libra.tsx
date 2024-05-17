@@ -42,4 +42,19 @@ describe('DatePicker', () => {
       </>
     );
   });
+
+  add('With custom DatePicker props', () => {
+    return (
+      <>
+        <DateField
+          id="datepicker"
+          toDate={new Date(2027, 1, 1)}
+          fromDate={new Date(2019, 1, 1)}
+          datePickerProps={{
+            disabled: { dayOfWeek: [0, 6] },
+          }}
+        />
+      </>
+    );
+  });
 });
