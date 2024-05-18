@@ -33,7 +33,7 @@
     "@radix-ui/react-popover": "1.0.7",
     "@radix-ui/react-select": "2.0.0",
     "@radix-ui/react-slot": "1.0.2",
-    "@react-hook/resize-observer": "1.2.6",
+    "@react-hook/resize-observer": "2.0.1",
     "date-fns": "3.6.0",
     "framer-motion": "10.18.0",
     "react-day-picker": "8.10.1"
