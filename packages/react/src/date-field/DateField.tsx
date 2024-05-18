@@ -18,6 +18,14 @@ import {
   subYears,
 } from 'date-fns';
 
+const dayToString = (day: Date) => {
+  return format(day, 'MM/dd/yyyy');
+};
+
+const stringToDay = (day: string) => {
+  return parse(day, 'MM/dd/yyyy', new Date());
+};
+
 export type DateFieldProps = Omit<
   TextFieldProps,
   'type' | 'value' | 'defaultValue'
@@ -51,30 +59,22 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     } = props;
 
     const [open, setOpen] = useState(false);
-
-    const dayToString = (day: Date) => {
-      return format(day, 'MM/dd/yyyy');
-    };
-
-    const stringToDay = (day: string) => {
-      return parse(day, 'MM/dd/yyyy', new Date());
-    };
-
-    const [internalValue, setInternalValue] = useState<string>(
+    const [fieldValue, setFieldValue] = useState<string>(
       dayToString(value || defaultValue || new Date()),
     );
 
     const [displayMonth, setDisplayMonth] = useState<Date>(
-      stringToDay(internalValue),
+      stringToDay(fieldValue),
     );
 
     const onDatePickerSelect = (day?: Date) => {
       if (day) {
-        setInternalValue(dayToString(day));
+        setFieldValue(dayToString(day));
+        setOpen(false);
       }
     };
 
-    const datePickerValue = stringToDay(internalValue);
+    const selected = stringToDay(fieldValue);
 
     const sanitizeValue = (dateValue: string) => {
       let dateString = stringToDay(dateValue);
@@ -94,18 +94,22 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     };
 
     useEffect(() => {
-      const sanitizedValue = sanitizeValue(internalValue);
+      const sanitizedValue = sanitizeValue(fieldValue);
 
       if (!!sanitizedValue) {
         onValueChange?.(sanitizedValue);
       }
-    }, [internalValue]);
+    }, [fieldValue]);
 
     const handleFieldOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+      if (!open) {
+        setOpen(true);
+      }
+
       const string = e.currentTarget.value;
       const sanitizedValue = sanitizeValue(string);
 
-      setInternalValue(string);
+      setFieldValue(string);
 
       if (!!sanitizedValue) {
         setDisplayMonth(sanitizedValue);
@@ -126,13 +130,8 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             hasError={hasError}
             hideLabel={hideLabel}
             placeholder="MM/DD/YYYY"
-            value={internalValue}
-            onChange={(e) => {
-              if (!open) {
-                setOpen(true);
-              }
-              handleFieldOnChange(e);
-            }}
+            value={fieldValue}
+            onChange={handleFieldOnChange}
             ref={userRef}
             suffix={<Calendar width={14} height={14} />}
           />
@@ -143,11 +142,9 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             className={css({ position: 'relative', m: '3', zIndex: '20' })}
           >
             <DatePicker
-              onMonthChange={(d) => {
-                setDisplayMonth(d);
-              }}
+              onMonthChange={setDisplayMonth}
               month={displayMonth}
-              selected={datePickerValue}
+              selected={selected}
               onSelect={onDatePickerSelect}
               fromDate={fromDate}
               toDate={toDate}
