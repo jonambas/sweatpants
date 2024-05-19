@@ -4,7 +4,7 @@ import {
   Drawer,
   Stack,
   DateField,
-  Select
+  Select,
 } from '../../packages/react/src';
 
 directory('Drawer', () => {

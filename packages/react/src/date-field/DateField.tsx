@@ -1,12 +1,9 @@
 'use client';
 
 import { ChangeEventHandler, forwardRef, useEffect, useState } from 'react';
-import * as Popover from '@radix-ui/react-popover';
 
 import { TextField, TextFieldProps } from '../text-field/TextField';
 import { DatePicker, DatePickerProps } from '../date-picker/DatePicker';
-import { css } from '@styles/css';
-import { Card } from '../card/Card';
 import { Calendar } from '../icons/icons';
 import {
   addYears,
@@ -17,6 +14,7 @@ import {
   parse,
   subYears,
 } from 'date-fns';
+import { Popover } from '../popover/popover';
 
 const dayToString = (day: Date) => {
   return format(day, 'MM/dd/yyyy');
@@ -117,8 +115,8 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     };
 
     return (
-      <Popover.Root open={open} onOpenChange={setOpen}>
-        <Popover.Trigger asChild>
+      <Popover open={open} onOpenChange={setOpen}>
+        <Popover.Trigger>
           <TextField
             align={align}
             autoComplete="off"
@@ -136,23 +134,18 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             suffix={<Calendar width={14} height={14} />}
           />
         </Popover.Trigger>
-        <Popover.Content asChild onOpenAutoFocus={(e) => e.preventDefault()}>
-          <Card
-            kind="elevated"
-            className={css({ position: 'relative', m: '3', zIndex: '20' })}
-          >
-            <DatePicker
-              onMonthChange={setDisplayMonth}
-              month={displayMonth}
-              selected={selected}
-              onSelect={onDatePickerSelect}
-              fromDate={fromDate}
-              toDate={toDate}
-              {...datePickerProps}
-            />
-          </Card>
+        <Popover.Content onOpenAutoFocus={(e) => e.preventDefault()}>
+          <DatePicker
+            onMonthChange={setDisplayMonth}
+            month={displayMonth}
+            selected={selected}
+            onSelect={onDatePickerSelect}
+            fromDate={fromDate}
+            toDate={toDate}
+            {...datePickerProps}
+          />
         </Popover.Content>
-      </Popover.Root>
+      </Popover>
     );
   },
 );
