@@ -1,5 +1,11 @@
 # Sweatpants
 
+⚠️⚠️⚠️⚠️
+
+Please don't use this. This is a sandbox for personal side projects and I cannot recommend Sweatpants for production environments.
+
+⚠️⚠️⚠️⚠️
+
 ## @sweatpants/react
 
 A simple React component library. See [sweatpants.vercel.app](https://sweatpants.vercel.app).
