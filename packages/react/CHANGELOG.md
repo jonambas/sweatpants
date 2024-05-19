@@ -1,5 +1,15 @@
 # @sweatpants/react
 
+## 0.9.0
+
+### Minor Changes
+
+- 72ed757: Add Popover component. Fix Drawer and Dailog `defaultOpen` state. Adjust `md` box shadow.
+
+### Patch Changes
+
+- e1a6a13: DateField now closes the popover when a day is selected
+
 ## 0.8.3
 
 ### Patch Changes

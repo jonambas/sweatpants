@@ -1,5 +1,11 @@
 # @sweatpants/panda-preset
 
+## 0.9.0
+
+### Minor Changes
+
+- 72ed757: Add Popover component. Fix Drawer and Dailog `defaultOpen` state. Adjust `md` box shadow.
+
 ## 0.8.1
 
 ### Patch Changes
