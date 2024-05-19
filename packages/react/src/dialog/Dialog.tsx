@@ -74,7 +74,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>((props, userRef) => {
     onOpenChange?.(value);
   };
 
-  const finalOpen = defaultOpen ?? open ?? internalOpen;
+  const finalOpen = open ?? internalOpen;
 
   return (
     <RadixDialog.Root

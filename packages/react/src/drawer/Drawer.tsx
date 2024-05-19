@@ -93,7 +93,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>((props, userRef) => {
     onOpenChange?.(value);
   };
 
-  const finalOpen = defaultOpen ?? open ?? internalOpen;
+  const finalOpen = open ?? internalOpen;
 
   return (
     <Dialog.Root

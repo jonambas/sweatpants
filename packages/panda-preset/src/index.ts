@@ -147,7 +147,8 @@ export default definePreset({
           value: '0 1px 2px 0 rgba(0,0,0,0.05)',
         },
         md: {
-          value: '0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1)',
+          value:
+            '0 3px 5px 0 rgba(0,0,0,0.07), 0 1px 2px -1px rgba(0,0,0,0.07)',
         },
         focus: {
           value: '0 0 0 1px {colors.baseBg}, 0 0 0 3px {colors.blue9}',

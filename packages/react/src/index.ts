@@ -10,6 +10,7 @@ export * from './drawer/Drawer';
 export * from './icons/icons';
 export * from './label/Label';
 export * from './link/Link';
+export * from './popover/popover';
 export * from './select/Select';
 export * from './screen-reader-only/ScreenReaderOnly';
 export * from './slot/Slot';
