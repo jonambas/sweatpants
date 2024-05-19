@@ -1,10 +1,9 @@
 import {
   Button,
-  Text,
   Dialog,
   Stack,
   DateField,
-  Select
+  Select,
 } from '../../packages/react/src';
 
 directory('Dialog', () => {
