@@ -3,4 +3,4 @@
 '@sweatpants/react': patch
 ---
 
-Add Popover component
+Add Popover component. Fix Drawer uncontrolled state. Adjust `md` box shadow.
