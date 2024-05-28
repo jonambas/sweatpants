@@ -3,9 +3,9 @@
 import * as RadixTooltip from '@radix-ui/react-tooltip';
 import {
   createContext,
-  FC,
+  type FC,
   forwardRef,
-  PropsWithChildren,
+  type PropsWithChildren,
   useContext,
   useState,
 } from 'react';
