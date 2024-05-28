@@ -4,7 +4,6 @@ import * as RadixTooltip from '@radix-ui/react-tooltip';
 import {
   createContext,
   type FC,
-  forwardRef,
   type PropsWithChildren,
   useContext,
   useState,
@@ -61,51 +60,41 @@ export interface TooltipContentProps extends RadixTooltip.TooltipContentProps {
   hideArrow?: boolean;
 }
 
-const Content = forwardRef<HTMLDivElement, TooltipContentProps>(
-  (props, userRef) => {
-    const { children, hideArrow = false, size = 'md', ...rest } = props;
-    const context = useContext(TooltipContext);
+const Content: FC<TooltipContentProps> = (props) => {
+  const { children, hideArrow = false, size = 'md', ...rest } = props;
+  const context = useContext(TooltipContext);
 
-    return (
-      <AnimatePresence>
-        {context.open ?
-          <RadixTooltip.Content
-            arrowPadding={3}
-            {...rest}
-            asChild
-            ref={userRef}
-            aria-hidden
+  return (
+    <AnimatePresence>
+      {context.open ?
+        <RadixTooltip.Content arrowPadding={3} {...rest} asChild aria-hidden>
+          <motion.div
+            transition={{ duration: 0.1, ease: 'easeInOut' }}
+            initial={{
+              opacity: 0,
+              transform: 'scale(0.9)',
+            }}
+            animate={{
+              opacity: 1,
+              transform: 'scale(1)',
+            }}
           >
-            <motion.div
-              transition={{ duration: 0.1, ease: 'easeInOut' }}
-              initial={{
-                opacity: 0,
-                transform: 'scale(0.9)',
-              }}
-              animate={{
-                opacity: 1,
-                transform: 'scale(1)',
-              }}
-            >
-              {!hideArrow ?
-                <RadixTooltip.Arrow
-                  width={10}
-                  height={3}
-                  className={css({
-                    fill: { base: 'gray12', _dark: 'white' },
-                  })}
-                />
-              : null}
-              <div className={contentStyles({ size, hideArrow })}>
-                {children}
-              </div>
-            </motion.div>
-          </RadixTooltip.Content>
-        : null}
-      </AnimatePresence>
-    );
-  },
-);
+            {!hideArrow ?
+              <RadixTooltip.Arrow
+                width={10}
+                height={3}
+                className={css({
+                  fill: { base: 'gray12', _dark: 'white' },
+                })}
+              />
+            : null}
+            <div className={contentStyles({ size, hideArrow })}>{children}</div>
+          </motion.div>
+        </RadixTooltip.Content>
+      : null}
+    </AnimatePresence>
+  );
+};
 
 const Root: FC<RadixTooltip.TooltipProps> = (props) => {
   const {
