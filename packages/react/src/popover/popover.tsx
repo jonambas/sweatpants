@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  createContext,
-  forwardRef,
-  ForwardRefExoticComponent,
-  useContext,
-  useState,
-  type FC,
-} from 'react';
+import { createContext, useContext, useState, type FC } from 'react';
 import * as RadixPopover from '@radix-ui/react-popover';
 import { motion, AnimatePresence } from 'framer-motion';
 import { css, cx } from '@styles/css';
@@ -15,23 +8,13 @@ import { Card } from '../card/Card';
 
 const PopoverContext = createContext<{ open?: boolean }>({});
 
-const Trigger: FC<RadixPopover.PopoverTriggerProps> = ({
-  children,
-  ...rest
-}) => {
-  return (
-    <RadixPopover.Trigger asChild {...rest}>
-      {children}
-    </RadixPopover.Trigger>
-  );
-};
-
 const Content: FC<RadixPopover.PopoverContentProps> = ({
   children,
   className,
   ...rest
 }) => {
   const context = useContext(PopoverContext);
+
   return (
     <AnimatePresence>
       {context.open ?
@@ -76,43 +59,44 @@ const Content: FC<RadixPopover.PopoverContentProps> = ({
   );
 };
 
-const Popover = forwardRef<HTMLDivElement, RadixPopover.PopoverProps>(
-  (props) => {
-    const {
-      children,
-      open: controlledOpen,
-      defaultOpen,
-      onOpenChange,
-      ...rest
-    } = props;
+const Root: FC<RadixPopover.PopoverProps> = (props) => {
+  const {
+    children,
+    open: controlledOpen,
+    defaultOpen,
+    onOpenChange,
+    ...rest
+  } = props;
 
-    const [open, setOpen] = useState(defaultOpen ?? controlledOpen ?? false);
+  const [open, setOpen] = useState(defaultOpen ?? controlledOpen ?? false);
 
-    const handleOpenChange = (value: boolean) => {
-      setOpen(value);
-      onOpenChange?.(value);
-    };
+  const handleOpenChange = (value: boolean) => {
+    setOpen(value);
+    onOpenChange?.(value);
+  };
 
-    const finalOpen = controlledOpen ?? open;
+  const finalOpen = controlledOpen ?? open;
 
-    return (
-      <PopoverContext.Provider value={{ open: finalOpen }}>
-        <RadixPopover.Root
-          open={finalOpen}
-          onOpenChange={handleOpenChange}
-          {...rest}
-        >
-          {children}
-        </RadixPopover.Root>
-      </PopoverContext.Provider>
-    );
-  },
-) as ForwardRefExoticComponent<RadixPopover.PopoverProps> & {
-  Trigger: typeof Trigger;
-  Content: typeof Content;
+  return (
+    <PopoverContext.Provider value={{ open: finalOpen }}>
+      <RadixPopover.Root
+        open={finalOpen}
+        onOpenChange={handleOpenChange}
+        {...rest}
+      >
+        {children}
+      </RadixPopover.Root>
+    </PopoverContext.Provider>
+  );
 };
 
-Popover.Trigger = Trigger;
-Popover.Content = Content;
+Root.displayName = 'Popover.Root';
+Content.displayName = 'Popover.Content';
 
-export { Popover };
+export const Popover = {
+  Root,
+  Content,
+  Trigger: RadixPopover.Trigger,
+  Close: RadixPopover.Close,
+  Portal: RadixPopover.Portal,
+};
