@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.10.0
+
+### Minor Changes
+
+- a3756ec: Add Tooltip component
+
 ## 0.9.0
 
 ### Minor Changes
