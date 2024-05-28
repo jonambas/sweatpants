@@ -115,7 +115,7 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
     };
 
     return (
-      <Popover open={open} onOpenChange={setOpen}>
+      <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger>
           <TextField
             align={align}
@@ -145,7 +145,7 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             {...datePickerProps}
           />
         </Popover.Content>
-      </Popover>
+      </Popover.Root>
     );
   },
 );
