@@ -36,7 +36,7 @@
     "@radix-ui/react-tooltip": "1.0.7",
     "@react-hook/resize-observer": "2.0.1",
     "date-fns": "3.6.0",
-    "framer-motion": "11.2.7",
+    "framer-motion": "11.2.8",
     "react-day-picker": "8.10.1"
   }
 }
