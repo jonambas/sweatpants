@@ -1,5 +1,12 @@
 # @sweatpants/react
 
+## 0.10.1
+
+### Patch Changes
+
+- 9c127e4: Fix forwardRef warning, align Popover and Tooltip APIs
+- e087840: Add Tooltip animations
+
 ## 0.10.0
 
 ### Minor Changes
