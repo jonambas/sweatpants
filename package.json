@@ -27,7 +27,7 @@
   "homepage": "https://github.com/jonambas/sweatpants#readme",
   "devDependencies": {
     "@changesets/cli": "2.27.5",
-    "@pandacss/dev": "0.39.2",
+    "@pandacss/dev": "0.40.0",
     "@rollup/plugin-alias": "5.1.0",
     "@sweatpants/libra": "0.0.40",
     "@types/react": "18.3.3",
