@@ -7,7 +7,7 @@ describe('DatePicker', () => {
   });
 
   add('With DateField', () => {
-    return <DateField id="datepicker" />;
+    return <DateField id="datepicker" label="Label" />;
   });
 
   add('With DateField and fromDate', () => {
