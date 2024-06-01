@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.10.2
+
+### Patch Changes
+
+- d27894f: Fix DateField label alignment within a trigger
+
 ## 0.10.1
 
 ### Patch Changes
