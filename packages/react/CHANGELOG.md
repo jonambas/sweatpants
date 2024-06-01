@@ -1,5 +1,11 @@
 # @sweatpants/react
 
+## 0.10.4
+
+### Patch Changes
+
+- 3a3baff: Wrap Tooltip.Content with forwardRef so it works with Tooltip.Portal
+
 ## 0.10.3
 
 ### Patch Changes
