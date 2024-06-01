@@ -35,7 +35,7 @@ const styles = cva({
       neutral: {
         bg: { base: 'gray12!', _dark: 'white!' },
         color: 'gray1',
-        borderColor: { base: 'gray12', _dark: 'white' },
+        borderColor: { base: 'gray12!', _dark: 'white' },
         boxShadow: 'md',
         '& button': {
           color: 'gray8!',
