@@ -116,7 +116,7 @@ const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 
     return (
       <Popover.Root open={open} onOpenChange={setOpen}>
-        <Popover.Trigger>
+        <Popover.Trigger asChild>
           <TextField
             align={align}
             autoComplete="off"
