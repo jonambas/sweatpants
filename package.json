@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepare": "npm run build:packages && panda codegen",
+    "prepare": "pnpm build:packages && panda codegen",
     "start": "libra start",
     "preview": "npm run prepare && libra preview",
     "build:libra": "libra build",
-    "build:packages": "npm run build --workspaces",
+    "build:packages": "pnpm --filter './packages/**' build",
     "change": "changeset && git add . && git commit -m 'chore(change): add change'",
     "version": "changeset version",
-    "prerelease": "npm run build:packages",
+    "prerelease": "pnpm build:packages",
     "release": "changeset publish",
     "postrelease": "git add . && git commit -m 'chore(change): release' && git push --follow-tags"
   },
@@ -43,15 +43,15 @@
     "rollup-plugin-preserve-directives": "^0.4.0",
     "typescript": "5.4.5"
   },
-  "workspaces": [
-    "packages/panda-preset",
-    "packages/react"
-  ],
   "overrides": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "rollup-plugin-preserve-directives": {
       "rollup": "^4.0.0"
     }
+  },
+  "engines": {
+    "node": "20.13.1",
+    "pnpm": "9.1.4"
   }
 }
