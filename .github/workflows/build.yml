@@ -23,6 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.1
+          version: 9.2
       - run: pnpm i
       - run: pnpm build:packages
