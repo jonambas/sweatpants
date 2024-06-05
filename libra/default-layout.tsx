@@ -5,14 +5,14 @@ import {
   ColorSchemeProvider,
   Link,
   Stack,
-  Text
+  Text,
 } from '../packages/react/src';
 import type { LibraLayout } from '@sweatpants/libra';
 
 const styles = css({
   p: '8',
   bg: 'baseBg',
-  minH: '100vh'
+  minH: '100vh',
 });
 
 const Layout: LibraLayout = ({ children, scheme }) => {

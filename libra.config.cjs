@@ -5,18 +5,18 @@ export default defineConfig({
   title: 'Sweatpants',
   port: 8080,
   inspect: true,
-  layout: './libra/DefaultLayout.tsx',
+  layout: './libra/default-layout.tsx',
   outDir: 'dist',
   viteConfig: () => {
     return {
       resolve: {
         alias: {
-          '@styles/css': resolve(__dirname, './styles/css')
-        }
+          '@styles/css': resolve(__dirname, './styles/css'),
+        },
       },
       optimizeDeps: {
-        exclude: ['@styles/css']
-      }
+        exclude: ['@styles/css'],
+      },
     };
-  }
+  },
 });

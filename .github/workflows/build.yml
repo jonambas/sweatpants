@@ -21,5 +21,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build:packages
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.2
+      - run: pnpm i
+      - run: pnpm build:packages

@@ -1,10 +1,4 @@
-import {
-  Button,
-  ButtonGroup,
-  Card,
-  Stack,
-  Text,
-} from '../../packages/react/src';
+import { Button, ButtonGroup, Card, Stack, Text } from '../../packages/react/src';
 import { css } from '@styles/css';
 
 directory('Card', () => {

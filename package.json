@@ -1,57 +1,57 @@
 {
-  "name": "sweatpants",
+  "name": "@sweatpants/workspace",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "prepare": "npm run build:packages && panda codegen",
-    "start": "libra start",
-    "preview": "npm run prepare && libra preview",
-    "build:libra": "libra build",
-    "build:packages": "npm run build --workspaces",
-    "change": "changeset && git add . && git commit -m 'chore(change): add change'",
-    "version": "changeset version",
-    "prerelease": "npm run build:packages",
-    "release": "changeset publish",
-    "postrelease": "git add . && git commit -m 'chore(change): release' && git push --follow-tags"
+  "homepage": "https://github.com/jonambas/sweatpants#readme",
+  "bugs": {
+    "url": "https://github.com/jonambas/sweatpants/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jonambas/sweatpants.git"
   },
-  "author": "Jon Ambas <jon@jonambas.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jonambas/sweatpants/issues"
+  "author": "Jon Ambas <jon@jonambas.com>",
+  "main": "index.js",
+  "scripts": {
+    "build:libra": "libra build",
+    "build:packages": "pnpm --filter './packages/**' build",
+    "change": "changeset && git add . && git commit -m 'chore(change): add change'",
+    "prepare": "pnpm build:packages && panda codegen",
+    "preview": "npm run prepare && libra preview",
+    "prerelease": "pnpm build:packages",
+    "release": "changeset publish",
+    "postrelease": "git add . && git commit -m 'chore(change): release' && git push --follow-tags",
+    "start": "libra start",
+    "version": "changeset version"
   },
-  "homepage": "https://github.com/jonambas/sweatpants#readme",
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.0.5",
+    "@radix-ui/react-popover": "1.0.7",
+    "@radix-ui/react-select": "2.0.0",
+    "@radix-ui/react-slot": "1.0.2",
+    "@radix-ui/react-tooltip": "1.0.7",
+    "@react-hook/resize-observer": "2.0.1",
+    "date-fns": "3.6.0",
+    "framer-motion": "11.2.9",
+    "react": "18.3.1",
+    "react-day-picker": "8.10.1",
+    "react-dom": "18.3.1"
+  },
   "devDependencies": {
     "@changesets/cli": "2.27.5",
-    "@pandacss/dev": "0.40.0",
-    "@rollup/plugin-alias": "5.1.0",
+    "@pandacss/dev": "0.40.1",
     "@sweatpants/libra": "0.0.40",
+    "@types/node": "20.14.1",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "framer-motion": "11.2.9",
     "prettier": "3.2.5",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
     "rimraf": "5.0.7",
-    "rollup": "4.18.0",
-    "rollup-plugin-bundle-size": "1.0.3",
-    "rollup-plugin-esbuild": "6.1.1",
-    "rollup-plugin-preserve-directives": "^0.4.0",
+    "tsup": "8.1.0",
     "typescript": "5.4.5"
   },
-  "workspaces": [
-    "packages/panda-preset",
-    "packages/react"
-  ],
-  "overrides": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "rollup-plugin-preserve-directives": {
-      "rollup": "^4.0.0"
-    }
+  "engines": {
+    "node": "20.x",
+    "pnpm": "9.x"
   }
 }

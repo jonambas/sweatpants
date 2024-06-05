@@ -6,7 +6,7 @@ const Item = () => (
     className={css({
       height: '2rem',
       width: '10rem',
-      bg: 'blue4'
+      bg: 'blue4',
     })}
   />
 );

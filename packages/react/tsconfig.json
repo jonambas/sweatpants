@@ -23,11 +23,6 @@
       "@styles/*": ["./styles/*"]
     }
   },
-  "include": [
-    "src/**/*.tsx",
-    "src/**/*.ts",
-    "panda.config.ts",
-    "./styles/**/*"
-  ],
+  "include": ["src/**/*.tsx", "src/**/*.ts", "./styles/**/*"],
   "exclude": ["node_modules", "dist"]
 }
