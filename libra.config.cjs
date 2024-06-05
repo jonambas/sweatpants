@@ -9,11 +9,6 @@ export default defineConfig({
   outDir: 'dist',
   viteConfig: () => {
     return {
-      build: {
-        rollupOptions: {
-          external: ['react', 'react-dom'],
-        },
-      },
       resolve: {
         alias: {
           '@styles/css': resolve(__dirname, './styles/css'),
