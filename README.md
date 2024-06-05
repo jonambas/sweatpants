@@ -1,10 +1,6 @@
 # Sweatpants
 
-⚠️⚠️⚠️⚠️
-
-Please don't use this. This is a sandbox for personal side projects and I cannot recommend Sweatpants for production environments.
-
-⚠️⚠️⚠️⚠️
+> [!CAUTION] Please don't use this. This is a sandbox for personal side projects and I cannot recommend Sweatpants for production environments.
 
 ## @sweatpants/react
 
@@ -15,7 +11,9 @@ A simple React component library. See [sweatpants.vercel.app](https://sweatpants
 ```sh
 npm i @sweatpants/react --save
 ```
+
 **Components**
+
 - Button
 - ButtonGroup
 - Card
@@ -43,6 +41,6 @@ npm i @sweatpants/panda-preset --save-dev
 import { defineConfig } from '@pandacss/dev';
 
 export default defineConfig({
-  presets: ['@sweatpants/panda-preset']
+  presets: ['@sweatpants/panda-preset'],
 });
 ```
