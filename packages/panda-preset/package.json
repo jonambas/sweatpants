@@ -2,12 +2,13 @@
   "name": "@sweatpants/panda-preset",
   "version": "0.9.0",
   "description": "",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "build": "tsup",
     "postbuild": "tsc --p tsconfig.json"
   },
   "publishConfig": {
@@ -19,11 +20,7 @@
     "dist"
   ],
   "dependencies": {
-    "@pandacss/dev": "0.40.0",
+    "@pandacss/dev": "0.40.1",
     "@radix-ui/colors": "3.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   }
 }

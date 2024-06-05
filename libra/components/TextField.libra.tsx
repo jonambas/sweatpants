@@ -13,7 +13,7 @@ directory('TextField', () => {
           display: 'flex',
           flexDir: 'column',
           gap: '4',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
         })}
       >
         <TextField
@@ -36,7 +36,7 @@ directory('TextField', () => {
           display: 'flex',
           flexDir: 'column',
           gap: '4',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
         })}
       >
         <TextField id="test2" label="Label" hasError />
@@ -51,7 +51,7 @@ directory('TextField', () => {
           display: 'flex',
           flexDir: 'column',
           gap: '4',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
         })}
       >
         <TextField id="test2" size="sm" label="Label" prefix={'$'} />

@@ -1,5 +1,5 @@
 import { css } from '@styles/css';
-import * as icons from '../../packages/react/src/icons/icons';
+import * as icons from '@sweatpants/react/';
 import { ElementType } from 'react';
 import { Stack, Text } from '../../packages/react/src';
 
@@ -10,7 +10,7 @@ directory('Icons', () => {
         className={css({
           display: 'grid',
           gridTemplateColumns: 'repeat(5, 1fr)',
-          gridGap: '8'
+          gridGap: '8',
         })}
       >
         {Object.keys(icons).map((name) => {

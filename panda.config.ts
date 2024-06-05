@@ -3,11 +3,14 @@ import preset from './packages/panda-preset/src';
 
 export default defineConfig({
   preflight: true,
-  include: ['./libra/**/*.{ts,tsx,js,jsx}', 'packages/react/**/*.tsx'],
-  exclude: [],
+  include: [
+    './libra/**/*.tsx',
+    './packages/react/**/*.tsx',
+  ],
+  exclude: ['node_modules', 'dist'],
   presets: [preset],
 
   // Library options
   outdir: 'styles',
-  hash: true
+  hash: true,
 });

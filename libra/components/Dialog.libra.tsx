@@ -1,10 +1,4 @@
-import {
-  Button,
-  Dialog,
-  Stack,
-  DateField,
-  Select,
-} from '../../packages/react/src';
+import { Button, Dialog, Stack, DateField, Select } from '../../packages/react/src';
 
 directory('Dialog', () => {
   add('Default', () => {

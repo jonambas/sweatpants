@@ -6,19 +6,18 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
       "@styles/*": ["./styles/*"]
-    },
-    "types": ["@sweatpants/libra"]
+    }
   },
-  "include": ["libra/**/*.tsx", "./styles/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["libra/**/*.tsx", "styles/**/*"],
+  "exclude": ["node_modules"]
 }
