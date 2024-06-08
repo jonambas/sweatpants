@@ -50,10 +50,10 @@ importers:
         version: 0.40.1(typescript@5.4.5)
       '@sweatpants/libra':
         specifier: 0.0.40
-        version: 0.0.40(@types/node@20.14.1)(@types/react-dom@18.3.0)(@types/react@18.3.3)(lightningcss@1.23.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)
+        version: 0.0.40(@types/node@20.14.2)(@types/react-dom@18.3.0)(@types/react@18.3.3)(lightningcss@1.23.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)
       '@types/node':
-        specifier: 20.14.1
-        version: 20.14.1
+        specifier: 20.14.2
+        version: 20.14.2
       '@types/react':
         specifier: 18.3.3
         version: 18.3.3
@@ -1295,8 +1295,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@20.14.1':
-    resolution: {integrity: sha512-T2MzSGEu+ysB/FkWfqmhV3PLyQlowdptmmgD20C6QxsS8Fmv5SjpZ1ayXaEC0S21/h5UJ9iA6W/5vSNU5l00OA==}
+  '@types/node@20.14.2':
+    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4349,10 +4349,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@sweatpants/libra@0.0.40(@types/node@20.14.1)(@types/react-dom@18.3.0)(@types/react@18.3.3)(lightningcss@1.23.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)':
+  '@sweatpants/libra@0.0.40(@types/node@20.14.2)(@types/react-dom@18.3.0)(@types/react@18.3.3)(lightningcss@1.23.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)':
     dependencies:
       '@sweatpants/react': 0.8.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@vitejs/plugin-react': 4.2.1(vite@5.2.4(@types/node@20.14.1)(lightningcss@1.23.0))
+      '@vitejs/plugin-react': 4.2.1(vite@5.2.4(@types/node@20.14.2)(lightningcss@1.23.0))
       classnames: 2.3.2
       commander: 11.0.0
       esbuild: 0.19.10
@@ -4361,8 +4361,8 @@ snapshots:
       picocolors: 1.0.0
       react-error-boundary: 3.1.4(react@18.3.1)
       react-router-dom: 6.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      vite: 5.2.4(@types/node@20.14.1)(lightningcss@1.23.0)
-      vite-plugin-inspect: 0.8.3(rollup@4.18.0)(vite@5.2.4(@types/node@20.14.1)(lightningcss@1.23.0))
+      vite: 5.2.4(@types/node@20.14.2)(lightningcss@1.23.0)
+      vite-plugin-inspect: 0.8.3(rollup@4.18.0)(vite@5.2.4(@types/node@20.14.2)(lightningcss@1.23.0))
     transitivePeerDependencies:
       - '@nuxt/kit'
       - '@types/node'
@@ -4431,7 +4431,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@20.14.1':
+  '@types/node@20.14.2':
     dependencies:
       undici-types: 5.26.5
 
@@ -4450,14 +4450,14 @@ snapshots:
 
   '@types/semver@7.5.8': {}
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.4(@types/node@20.14.1)(lightningcss@1.23.0))':
+  '@vitejs/plugin-react@4.2.1(vite@5.2.4(@types/node@20.14.2)(lightningcss@1.23.0))':
     dependencies:
       '@babel/core': 7.24.6
       '@babel/plugin-transform-react-jsx-self': 7.24.6(@babel/core@7.24.6)
       '@babel/plugin-transform-react-jsx-source': 7.24.6(@babel/core@7.24.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.4(@types/node@20.14.1)(lightningcss@1.23.0)
+      vite: 5.2.4(@types/node@20.14.2)(lightningcss@1.23.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6236,7 +6236,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-inspect@0.8.3(rollup@4.18.0)(vite@5.2.4(@types/node@20.14.1)(lightningcss@1.23.0)):
+  vite-plugin-inspect@0.8.3(rollup@4.18.0)(vite@5.2.4(@types/node@20.14.2)(lightningcss@1.23.0)):
     dependencies:
       '@antfu/utils': 0.7.8
       '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
@@ -6247,18 +6247,18 @@ snapshots:
       perfect-debounce: 1.0.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 5.2.4(@types/node@20.14.1)(lightningcss@1.23.0)
+      vite: 5.2.4(@types/node@20.14.2)(lightningcss@1.23.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  vite@5.2.4(@types/node@20.14.1)(lightningcss@1.23.0):
+  vite@5.2.4(@types/node@20.14.2)(lightningcss@1.23.0):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.1
+      '@types/node': 20.14.2
       fsevents: 2.3.3
       lightningcss: 1.23.0
 
