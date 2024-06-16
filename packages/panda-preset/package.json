@@ -20,7 +20,7 @@
     "dist"
   ],
   "dependencies": {
-    "@pandacss/dev": "0.40.1",
+    "@pandacss/dev": "0.41.0",
     "@radix-ui/colors": "3.0.0"
   }
 }
