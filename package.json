@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "2.27.5",
-    "@pandacss/dev": "0.40.1",
+    "@pandacss/dev": "0.46.1",
     "@sweatpants/libra": "0.0.40",
     "@types/node": "20.14.13",
     "@types/react": "18.3.3",

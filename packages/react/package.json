@@ -25,7 +25,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@pandacss/dev": "0.40.1",
+    "@pandacss/dev": "0.46.1",
     "@sweatpants/panda-preset": "workspace:*",
     "react": "18.3.1",
     "react-dom": "18.3.1"
