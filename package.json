@@ -39,7 +39,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.5",
+    "@changesets/cli": "2.27.9",
     "@pandacss/dev": "0.40.1",
     "@sweatpants/libra": "0.0.40",
     "@types/node": "20.14.13",
